@@ -1,14 +1,18 @@
-import { NavBar } from '../../components/NavBar'
 import { PageWrapper } from '../../components/PageWrapper'
 import ParticlesBackground from '../../components/Particles'
 
 const HomePage = () => {
   return (
     <>
-      <NavBar />
-      <img src='https://wallpapercave.com/wp/wp8719460.jpg' alt='temp-img' />
-      <ParticlesBackground />
-      {/* <PageWrapper>{'Inside'}</PageWrapper> */}
+      <PageWrapper>
+        <ParticlesBackground
+          width='100%'
+          height='700px'
+          imgUrl='https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg'
+          imgWidth='100%'
+          imgHeight='700px'
+        />
+      </PageWrapper>
     </>
   )
 }

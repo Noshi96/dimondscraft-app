@@ -1,4 +1,6 @@
-export const customOptionsThree: any = {
+import type { ISourceOptions } from 'tsparticles-engine'
+
+export const customOptionsThree: ISourceOptions = {
   fps_limit: 60,
   interactivity: {
     detect_on: 'canvas',

@@ -1,12 +1,14 @@
-const lineLinkedColor = '#fff'
-const particlesColor = '#fff'
+import type { ISourceOptions } from 'tsparticles-engine'
+
+const lineLinkedColor = '#000'
+const particlesColor = '#000000'
 const numberOfNodes = 120
 const opacityOfDot = 0.1
 const movingSpeed = 1
 const numberOfPolygonSides = 30
-const colorOfBackground = 'transparent'
 
-export const customOptionsOne: any = {
+export const customOptionsOne: ISourceOptions = {
+  fullScreen: { enable: false },
   fps_limit: 60,
   interactivity: {
     detect_on: 'canvas',
@@ -15,7 +17,7 @@ export const customOptionsOne: any = {
       onhover: {
         enable: true,
         mode: 'attract',
-        parallax: { enable: false, force: 60, smooth: 10 },
+        parallax: { enable: true, force: 60, smooth: 10 },
       },
       resize: true,
     },
@@ -76,14 +78,6 @@ export const customOptionsOne: any = {
     scale: 5,
     type: 'none',
     url: '',
-  },
-  background: {
-    color: colorOfBackground,
-    image:
-      'https://diamondscraft.io/wp-content/uploads/2022/03/diamondslogo.png',
-    position: '50% 50%',
-    repeat: 'no-repeat',
-    size: 'cover',
   },
   retina_detect: true,
 }

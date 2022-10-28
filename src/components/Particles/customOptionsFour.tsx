@@ -1,60 +1,53 @@
 import type { ISourceOptions } from 'tsparticles-engine'
 
-export const customOptionsTwo: ISourceOptions = {
-  fullScreen: {
-    enable: true,
-    zIndex: 1,
-  },
+export const customOptionsFour: ISourceOptions = {
   particles: {
     number: {
-      value: 10,
+      value: 80,
       density: {
-        enable: false,
-        value_area: 800,
+        enable: true,
+        value_area: 700,
       },
     },
     color: {
-      value: '#fff',
+      value: '#ffffff',
     },
     shape: {
       type: 'circle',
+      stroke: {
+        width: 0,
+        color: '#000000',
+      },
+      polygon: {
+        nb_sides: 5,
+      },
     },
     opacity: {
-      value: 0.8,
+      value: 0.5,
       random: false,
       anim: {
         enable: false,
-        speed: 1,
+        speed: 0.1,
         opacity_min: 0.1,
         sync: false,
       },
     },
     size: {
-      value: 4,
-      random: false,
+      value: 3,
+      random: true,
       anim: {
         enable: false,
-        speed: 40,
+        speed: 10,
         size_min: 0.1,
-        sync: false,
-      },
-    },
-    rotate: {
-      value: 0,
-      random: true,
-      direction: 'clockwise',
-      animation: {
-        enable: true,
-        speed: 5,
         sync: false,
       },
     },
     line_linked: {
       enable: true,
-      distance: 600,
-      color: '#000',
+      distance: 150,
+      color: '#ffffff',
       opacity: 0.4,
-      width: 2,
+      width: 1,
     },
     move: {
       enable: true,
@@ -63,6 +56,7 @@ export const customOptionsTwo: ISourceOptions = {
       random: false,
       straight: false,
       out_mode: 'out',
+      bounce: false,
       attract: {
         enable: false,
         rotateX: 600,
@@ -73,25 +67,41 @@ export const customOptionsTwo: ISourceOptions = {
   interactivity: {
     detect_on: 'canvas',
     events: {
-      onclick: { enable: true, mode: 'push' },
       onhover: {
         enable: true,
-        mode: 'attract',
-        parallax: { enable: false, force: 60, smooth: 10 },
+        mode: 'grab',
+      },
+      onclick: {
+        enable: true,
+        mode: 'push',
       },
       resize: true,
     },
     modes: {
-      push: { quantity: 4 },
-      attract: { distance: 200, duration: 0.4, factor: 5 },
+      grab: {
+        distance: 140,
+        line_linked: {
+          opacity: 1,
+        },
+      },
+      bubble: {
+        distance: 400,
+        size: 40,
+        duration: 2,
+        opacity: 8,
+        speed: 3,
+      },
+      repulse: {
+        distance: 200,
+        duration: 0.4,
+      },
+      push: {
+        particles_nb: 4,
+      },
+      remove: {
+        particles_nb: 2,
+      },
     },
   },
   retina_detect: true,
-  background: {
-    color: '#fff',
-    image: '',
-    position: '50% 50%',
-    repeat: 'no-repeat',
-    size: 'cover',
-  },
 }
