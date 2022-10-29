@@ -1,4 +1,4 @@
-import { PageWrapper } from '../../components/PageWrapper'
+import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../components/Particles'
 
 const HomePage = () => {
