@@ -1,5 +1,5 @@
-import { NavBar } from '../../components/NavBar'
-import { PageWrapper } from '../../components/PageWrapper'
+import { NavBar } from '../../layouts/NavBar'
+import { PageWrapper } from '../../layouts/PageWrapper'
 
 const HomePage = () => {
   return (
