@@ -1,24 +1,36 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { GlobalStyle } from './styles/global-styles'
-const HomePage = React.lazy(() => import('./pages/HomePage'))
+import { NavBar } from './components/NavBar'
+import HomePage from './pages/HomePage'
+const HomePageLazy = React.lazy(() => import('./pages/HomePage'))
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route
-          path='/projekty/'
-          element={
-            <React.Suspense fallback='Loading...'>
-              <HomePage />
-            </React.Suspense>
-          }
-        />
-      </Routes>
-      <GlobalStyle />
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <React.Suspense fallback='Loading...'>
+                <HomePageLazy />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path='/projekty/'
+            element={
+              <React.Suspense fallback='Loading...'>
+                <HomePageLazy />
+              </React.Suspense>
+            }
+          />
+        </Routes>
+        <GlobalStyle />
+      </BrowserRouter>
+    </>
   )
 }
 
