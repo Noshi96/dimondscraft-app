@@ -1,6 +1,6 @@
 import type { ISourceOptions } from 'tsparticles-engine'
 
-const lineLinkedColor = '#000'
+const lineLinkedColor = '#000000'
 const particlesColor = '#000000'
 const numberOfNodes = 120
 const opacityOfDot = 0.1
