@@ -14,7 +14,7 @@ export const customOptionsTwo: ISourceOptions = {
       },
     },
     color: {
-      value: '#fff',
+      value: '#ffffff',
     },
     shape: {
       type: 'circle',
@@ -52,7 +52,7 @@ export const customOptionsTwo: ISourceOptions = {
     line_linked: {
       enable: true,
       distance: 600,
-      color: '#000',
+      color: '#000000',
       opacity: 0.4,
       width: 2,
     },
@@ -88,7 +88,7 @@ export const customOptionsTwo: ISourceOptions = {
   },
   retina_detect: true,
   background: {
-    color: '#fff',
+    color: '#ffffff',
     image: '',
     position: '50% 50%',
     repeat: 'no-repeat',

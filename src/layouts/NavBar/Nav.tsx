@@ -17,7 +17,7 @@ const Wrapper = styled.nav`
 
 const Item = styled.a`
   text-transform: uppercase;
-  color: #333;
+  color: #333333;
   cursor: pointer;
   text-decoration: none;
   display: flex;
