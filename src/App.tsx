@@ -1,8 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { GlobalStyle } from './styles/global-styles'
-import { NavBar } from './components/NavBar'
-import HomePage from './pages/HomePage'
+import { NavBar } from './layouts/NavBar'
 const HomePageLazy = React.lazy(() => import('./pages/HomePage'))
 
 function App() {

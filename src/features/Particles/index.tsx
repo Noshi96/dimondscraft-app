@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import type { Container, Engine } from 'tsparticles-engine'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
-import { customOptionsFour } from './customOptionsFour'
+import { customOptionsFour } from './store/customOptionsFour'
 import styled from 'styled-components'
 
 interface Props {

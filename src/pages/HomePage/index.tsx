@@ -1,5 +1,5 @@
 import { PageWrapper } from '../../layouts/PageWrapper'
-import ParticlesBackground from '../../components/Particles'
+import ParticlesBackground from '../../features/Particles'
 
 const HomePage = () => {
   return (
