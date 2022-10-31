@@ -1,13 +1,16 @@
 import styled from 'styled-components/macro'
+import { NavLink } from 'react-router-dom'
 
 export function Logo() {
   return (
     <Wrapper>
-      <Image
-        src='https://diamondscraft.io/wp-content/uploads/2022/03/diamondslogo.png'
-        loading='lazy'
-        alt='logo_diamondscraft'
-      />
+      <NavLink to='/'>
+        <Image
+          src='https://diamondscraft.io/wp-content/uploads/2022/03/diamondslogo.png'
+          loading='lazy'
+          alt='logo_diamondscraft'
+        />
+      </NavLink>
     </Wrapper>
   )
 }

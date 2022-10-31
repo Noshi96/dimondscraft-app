@@ -1,14 +1,14 @@
 import styled from 'styled-components/macro'
 import { Logo } from './Logo'
-import { Nav } from './Nav'
 import { PageWrapper } from '../PageWrapper'
+import SwipeableTemporaryDrawer from '../Drawer'
 
 export function NavBar() {
   return (
     <Wrapper>
       <PageWrapper>
         <Logo />
-        <Nav />
+        <SwipeableTemporaryDrawer />
       </PageWrapper>
     </Wrapper>
   )
