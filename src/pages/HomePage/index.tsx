@@ -6,11 +6,11 @@ const HomePage = () => {
     <>
       <PageWrapper>
         <ParticlesBackground
-          width='100%'
-          height='700px'
-          imgUrl='https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg'
-          imgWidth='100%'
-          imgHeight='700px'
+          width='1543px'
+          height='981px'
+          imgUrl='https://cdn.discordapp.com/attachments/275728565100740613/1036023330605645854/unknown.png'
+          imgWidth='1543px'
+          imgHeight='981px;'
         />
       </PageWrapper>
     </>

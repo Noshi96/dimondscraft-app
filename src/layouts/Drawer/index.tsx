@@ -58,6 +58,11 @@ export default function SwipeableTemporaryDrawer() {
         onOpen={toggleDrawer(true)}
         disableBackdropTransition={!iOS}
         disableDiscovery={iOS}
+        PaperProps={{
+          sx: {
+            backgroundColor: '#0A0019',
+          },
+        }}
       >
         {list()}
       </SwipeableDrawer>

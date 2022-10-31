@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import type { Container, Engine } from 'tsparticles-engine'
+import type { Engine } from 'tsparticles-engine'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 import { customOptionsFour } from './config/customOptionsFour'
@@ -14,8 +14,8 @@ interface Props {
 }
 
 const ParticlesBackground = ({
-  width = '100%',
-  height = '100%',
+  width,
+  height,
   imgUrl,
   imgWidth,
   imgHeight,
@@ -24,18 +24,12 @@ const ParticlesBackground = ({
     await loadFull(engine)
   }, [])
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {},
-    []
-  )
-
   return (
     <Wrapper>
       <Image src={imgUrl} alt='logo' width={imgWidth} height={imgHeight} />
       <Particles
         id='tsparticles'
         init={particlesInit}
-        loaded={particlesLoaded}
         options={customOptionsFour}
         width={width}
         height={height}
@@ -46,8 +40,6 @@ const ParticlesBackground = ({
 
 const Wrapper = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
 `
 
 const Image = styled.img`
@@ -55,6 +47,7 @@ const Image = styled.img`
   position: absolute;
   top: 0;
   left: 0;
+  filter: grayscale(100%) contrast(2.75) brightness(30%);
 `
 
 export default ParticlesBackground

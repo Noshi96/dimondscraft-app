@@ -1,32 +1,59 @@
 import styled from 'styled-components/macro'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export function Nav() {
-  const pagesPaths = ['/artists', '/about', '/art', '/our-media', '/links']
-  const location = useLocation()
-  console.log(location)
+  interface PathsTypes {
+    key: string
+    destination: string
+    nameOfPage: string
+  }
+
+  const paths: PathsTypes[] = [
+    {
+      key: 'artists-key',
+      destination: '/artists',
+      nameOfPage: 'Artists',
+    },
+    {
+      key: 'about-key',
+      destination: '/about',
+      nameOfPage: 'About us',
+    },
+    {
+      key: 'art-key',
+      destination: '/art',
+      nameOfPage: 'Art',
+    },
+    {
+      key: 'media-key',
+      destination: '/our-media',
+      nameOfPage: 'Our media',
+    },
+    {
+      key: 'links-key',
+      destination: '/links',
+      nameOfPage: 'Links',
+    },
+  ]
+
   return (
-    <Wrapper>
-      <NavList>
-        {pagesPaths.map((path) => (
-          <Item key={path}>
-            <NavLinkStyled to={path}>
-              {path.slice(1).replaceAll('-', ' ')}
-            </NavLinkStyled>
-          </Item>
-        ))}
-      </NavList>
-    </Wrapper>
+    <NavList>
+      {paths.map(({ key, destination, nameOfPage }) => (
+        <Item key={key}>
+          <NavLinkStyled to={destination}>{nameOfPage}</NavLinkStyled>
+        </Item>
+      ))}
+    </NavList>
   )
 }
 
-const Wrapper = styled.nav``
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
   list-style-type: none;
+  padding-inline-start: 0;
 `
 
 const Item = styled.li`
@@ -35,45 +62,26 @@ const Item = styled.li`
 `
 
 const NavLinkStyled = styled(NavLink)`
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
   text-transform: capitalize;
   text-decoration: none;
-  padding: 2rem 2rem;
   font-size: 1.1rem;
+  transition: all 0.4s;
+
   &:link,
   &:visited {
-    color: #70004b;
+    color: #ffffff;
   }
   &:hover,
   &:active {
+    background-color: #22192f;
     color: #ffaa00;
   }
 
   &.active {
+    background-color: #22192f;
     color: #ffaa00;
   }
 `
-// const Item = styled.a`
-//   text-transform: uppercase;
-//   text-decoration: none;
-//   display: flex;
-//   padding: 0.25rem 1rem;
-//   font-size: 1rem;
-//   font-weight: 600;
-//   align-items: center;
-//   color: #000000;
-//   cursor: pointer;
-
-//   &:hover {
-//     opacity: 0.8;
-//   }
-
-//   &:active {
-//     opacity: 0.4;
-//   }
-
-//   .icon {
-//     margin-right: 0.25rem;
-//   }
-// `
