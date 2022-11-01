@@ -1,3 +1,4 @@
+import { EventSection } from '../../features/EventSection'
 import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../layouts/Particles'
 
@@ -12,6 +13,7 @@ const HomePage = () => {
           imgWidth='100%'
           imgHeight='700px'
         />
+        <EventSection sectionTitle={'NASZE AKTUALNE PROJEKTY:'} />
       </PageWrapper>
     </>
   )
