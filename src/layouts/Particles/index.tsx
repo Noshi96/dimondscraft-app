@@ -22,7 +22,7 @@ const ParticlesBackground = ({ width, imgSrc, imgWidth }: Props) => {
   return (
     <>
       <Image src={imgSrc} alt='logo' width={imgWidth} height={height} />
-      <Particles
+      <StyledParticles
         id='tsparticles'
         init={particlesInit}
         options={customOptionsFour}
@@ -32,6 +32,10 @@ const ParticlesBackground = ({ width, imgSrc, imgWidth }: Props) => {
     </>
   )
 }
+
+const StyledParticles = styled(Particles)`
+  height: ${(props) => (props.height ? props.height : '0')};
+`
 
 const Image = styled.img`
   z-index: -1;
