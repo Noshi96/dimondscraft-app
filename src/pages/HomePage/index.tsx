@@ -1,6 +1,7 @@
 import { EventSection } from '../../features/EventSection'
 import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../layouts/Particles'
+import backgroundPhoto from '../../assets/background.png'
 
 const HomePage = () => {
   return (
@@ -8,10 +9,8 @@ const HomePage = () => {
       <PageWrapper>
         <ParticlesBackground
           width='100%'
-          height='700px'
-          imgUrl='https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg'
+          imgSrc={backgroundPhoto}
           imgWidth='100%'
-          imgHeight='700px'
         />
         <EventSection sectionTitle={'NASZE AKTUALNE PROJEKTY:'} />
       </PageWrapper>
