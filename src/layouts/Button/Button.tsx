@@ -2,15 +2,15 @@ import styled from 'styled-components'
 
 export const Button = styled.button`
   color: #ffffff;
-  background-color: #ffa500;
-  border-radius: 6px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
   padding: 0.75rem 1.75rem;
   cursor: pointer;
 
   &:hover {
-    background-color: #e59400;
+    background-color: #ffffff11;
   }
   &:active {
-    background-color: #ffa500;
+    background-color: transparent;
   }
 `

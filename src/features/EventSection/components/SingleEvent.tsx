@@ -1,15 +1,15 @@
 import styled from 'styled-components'
-import { Button } from './Button'
+import { Button } from '../../../layouts/Button/Button'
 
 interface Props {
-  imgUrl: string
+  imgSrc: string
   alt: string
 }
 
-const SingleEvent = ({ imgUrl, alt }: Props) => {
+const SingleEvent = ({ imgSrc, alt }: Props) => {
   return (
     <Container>
-      <Poster src={imgUrl} alt={alt} loading='lazy' />
+      <Poster src={imgSrc} alt={alt} loading='lazy' />
       <Button>Dowiedz się więcej</Button>
     </Container>
   )
