@@ -1,7 +1,7 @@
 import { EventSection } from '../../features/EventSection'
 import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../layouts/Particles'
-import backgroundPhoto from '../../assets/background.png'
+import backgroundPhoto from '../../assets/samanta.png'
 
 const HomePage = () => {
   return (
