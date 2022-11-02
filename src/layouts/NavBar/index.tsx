@@ -1,14 +1,14 @@
 import styled from 'styled-components/macro'
-import { Logo } from './Logo'
-import { Nav } from './Nav'
+import Logo from './Logo'
 import { PageWrapper } from '../PageWrapper'
+import Drawer from '../Drawer'
 
-export function NavBar() {
+const NavBar = () => {
   return (
     <Wrapper>
       <PageWrapper>
         <Logo />
-        <Nav />
+        <Drawer />
       </PageWrapper>
     </Wrapper>
   )
@@ -30,3 +30,5 @@ const Wrapper = styled.header`
     justify-content: space-between;
   }
 `
+
+export default NavBar

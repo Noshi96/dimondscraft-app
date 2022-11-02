@@ -3,14 +3,15 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
   html,
   body {
-    height: 100%;
-    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 2rem;
     line-height: 1.5;
   }
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding-top: 4rem;
+    height: 100vh;
     background-color: #ffffff;
   }
 
@@ -31,5 +32,9 @@ export const GlobalStyle = createGlobalStyle`
   .icon {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  * {
+  box-sizing: border-box;
   }
 `

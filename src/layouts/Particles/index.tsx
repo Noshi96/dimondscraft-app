@@ -1,60 +1,46 @@
 import { useCallback } from 'react'
-import type { Container, Engine } from 'tsparticles-engine'
+import type { Engine } from 'tsparticles-engine'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 import { customOptionsFour } from './config/customOptionsFour'
 import styled from 'styled-components'
+import { useCurrentHeight } from '../../hooks/useCurrentHeight'
 
 interface Props {
   width?: string
-  height?: string
-  imgUrl?: string
+  imgSrc?: string
   imgWidth?: string
-  imgHeight?: string
 }
 
-const ParticlesBackground = ({
-  width = '100%',
-  height = '100%',
-  imgUrl,
-  imgWidth,
-  imgHeight,
-}: Props) => {
+const ParticlesBackground = ({ width, imgSrc, imgWidth }: Props) => {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine)
   }, [])
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {},
-    []
-  )
+  let height = `${useCurrentHeight()}px`
 
   return (
-    <Wrapper>
-      <Image src={imgUrl} alt='logo' width={imgWidth} height={imgHeight} />
+    <>
+      <Image src={imgSrc} alt='logo' width={imgWidth} height={height} />
       <Particles
         id='tsparticles'
         init={particlesInit}
-        loaded={particlesLoaded}
         options={customOptionsFour}
         width={width}
         height={height}
       />
-    </Wrapper>
+    </>
   )
 }
-
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-`
 
 const Image = styled.img`
   z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
+  filter: grayscale(100%) contrast(2.75) brightness(30%);
+  object-fit: cover;
+  object-position: 70% 0%;
 `
 
 export default ParticlesBackground

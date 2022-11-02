@@ -1,6 +1,7 @@
 import type { ISourceOptions } from 'tsparticles-engine'
 
 export const customOptionsFour: ISourceOptions = {
+  fullScreen: { enable: false },
   particles: {
     number: {
       value: 80,

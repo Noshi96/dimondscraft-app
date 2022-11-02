@@ -1,40 +1,83 @@
 import styled from 'styled-components/macro'
+import { NavLink } from 'react-router-dom'
+import { PathsTypes } from './model'
 
-export function Nav() {
+const Nav = () => {
+  const paths: PathsTypes[] = [
+    {
+      key: 'artists',
+      destination: '/artists',
+      nameOfPage: 'Artists',
+    },
+    {
+      key: 'about',
+      destination: '/about',
+      nameOfPage: 'About us',
+    },
+    {
+      key: 'art',
+      destination: '/art',
+      nameOfPage: 'Art',
+    },
+    {
+      key: 'media',
+      destination: '/our-media',
+      nameOfPage: 'Our media',
+    },
+    {
+      key: 'links',
+      destination: '/links',
+      nameOfPage: 'Links',
+    },
+  ]
+
   return (
-    <Wrapper>
-      <Item>O nas</Item>
-      <Item>projekty</Item>
-      <Item>Change to navLinks</Item>
-    </Wrapper>
+    <NavList>
+      {paths.map(({ key, destination, nameOfPage }) => (
+        <Item key={key}>
+          <NavLinkStyled to={destination}>{nameOfPage}</NavLinkStyled>
+        </Item>
+      ))}
+    </NavList>
   )
 }
 
-const Wrapper = styled.nav`
+const NavList = styled.ul`
   display: flex;
-  margin-right: -1rem;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  list-style-type: none;
+  padding-inline-start: 0;
 `
 
-const Item = styled.a`
-  text-transform: uppercase;
-  color: #333333;
+const Item = styled.li`
   cursor: pointer;
-  text-decoration: none;
+`
+
+const NavLinkStyled = styled(NavLink)`
   display: flex;
-  padding: 0.25rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.4s;
 
-  &:hover {
-    opacity: 0.8;
+  &:link,
+  &:visited {
+    color: #ffffff;
   }
-
+  &:hover,
   &:active {
-    opacity: 0.4;
+    background-color: #22192f;
+    color: #ffaa00;
   }
 
-  .icon {
-    margin-right: 0.25rem;
+  &.active {
+    background-color: #22192f;
+    color: #ffaa00;
   }
 `
+
+export default Nav

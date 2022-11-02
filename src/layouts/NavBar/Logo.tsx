@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro'
+import { NavLink } from 'react-router-dom'
+import logoImg from '../../assets/diamondslogo.png'
 
-export function Logo() {
+const Logo = () => {
   return (
     <Wrapper>
-      <Image
-        src='https://diamondscraft.io/wp-content/uploads/2022/03/diamondslogo.png'
-        loading='lazy'
-        alt='logo_diamondscraft'
-      />
+      <NavLink to='/'>
+        <Image src={logoImg} loading='lazy' alt='logo_diamondscraft' />
+      </NavLink>
     </Wrapper>
   )
 }
@@ -21,3 +21,4 @@ const Image = styled.img`
   width: 100%;
   height: 4rem;
 `
+export default Logo
