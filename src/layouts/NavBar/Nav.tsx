@@ -5,6 +5,11 @@ import { PathsTypes } from './model'
 const Nav = () => {
   const paths: PathsTypes[] = [
     {
+      key: 'home',
+      destination: '/',
+      nameOfPage: 'Home',
+    },
+    {
       key: 'artists',
       destination: '/artists',
       nameOfPage: 'Artists',

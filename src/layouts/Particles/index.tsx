@@ -42,7 +42,6 @@ const Image = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  filter: grayscale(100%) contrast(2.75) brightness(30%);
   object-fit: cover;
   object-position: 70% 0%;
 `

@@ -16,12 +16,13 @@ const NavBar = () => {
 
 const Wrapper = styled.header`
   box-shadow: 0 1px 0 0 #000000;
-  height: 4rem;
+  height: 5rem;
   display: flex;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #090119;
+  color: #ffffff;
   z-index: 2;
 
   ${PageWrapper} {

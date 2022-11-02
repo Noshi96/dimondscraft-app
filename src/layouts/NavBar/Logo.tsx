@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
-import logoImg from '../../assets/diamondslogo.png'
+import logoImg from '../../assets/logoforge.png'
 
 const Logo = () => {
   return (
