@@ -1,36 +1,31 @@
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
+import { PathsTypes } from './model'
 
-export function Nav() {
-  interface PathsTypes {
-    key: string
-    destination: string
-    nameOfPage: string
-  }
-
+const Nav = () => {
   const paths: PathsTypes[] = [
     {
-      key: 'artists-key',
+      key: 'artists',
       destination: '/artists',
       nameOfPage: 'Artists',
     },
     {
-      key: 'about-key',
+      key: 'about',
       destination: '/about',
       nameOfPage: 'About us',
     },
     {
-      key: 'art-key',
+      key: 'art',
       destination: '/art',
       nameOfPage: 'Art',
     },
     {
-      key: 'media-key',
+      key: 'media',
       destination: '/our-media',
       nameOfPage: 'Our media',
     },
     {
-      key: 'links-key',
+      key: 'links',
       destination: '/links',
       nameOfPage: 'Links',
     },
@@ -57,7 +52,6 @@ const NavList = styled.ul`
 `
 
 const Item = styled.li`
-  border: 1px solid black;
   cursor: pointer;
 `
 
@@ -85,3 +79,5 @@ const NavLinkStyled = styled(NavLink)`
     color: #ffaa00;
   }
 `
+
+export default Nav

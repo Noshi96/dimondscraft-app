@@ -3,14 +3,14 @@ import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Nav } from '../NavBar/Nav'
+import Nav from '../NavBar/Nav'
 
 const anchorType = 'right'
 const iOS =
   typeof navigator !== 'undefined' &&
   /iPad|iPhone|iPod/.test(navigator.userAgent)
 
-export default function SwipeableTemporaryDrawer() {
+const Drawer = () => {
   const [state, setState] = useState(false)
 
   const toggleDrawer = (open: boolean) => (
@@ -69,3 +69,5 @@ export default function SwipeableTemporaryDrawer() {
     </>
   )
 }
+
+export default Drawer

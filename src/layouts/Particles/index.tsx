@@ -4,29 +4,24 @@ import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 import { customOptionsFour } from './config/customOptionsFour'
 import styled from 'styled-components'
+import { useCurrentHeight } from '../../hooks/useCurrentHeight'
 
 interface Props {
   width?: string
-  height?: string
-  imgUrl?: string
+  imgSrc?: string
   imgWidth?: string
-  imgHeight?: string
 }
 
-const ParticlesBackground = ({
-  width,
-  height,
-  imgUrl,
-  imgWidth,
-  imgHeight,
-}: Props) => {
+const ParticlesBackground = ({ width, imgSrc, imgWidth }: Props) => {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine)
   }, [])
 
+  let height = `${useCurrentHeight()}px`
+
   return (
-    <Wrapper>
-      <Image src={imgUrl} alt='logo' width={imgWidth} height={imgHeight} />
+    <>
+      <Image src={imgSrc} alt='logo' width={imgWidth} height={height} />
       <Particles
         id='tsparticles'
         init={particlesInit}
@@ -34,13 +29,9 @@ const ParticlesBackground = ({
         width={width}
         height={height}
       />
-    </Wrapper>
+    </>
   )
 }
-
-const Wrapper = styled.div`
-  position: relative;
-`
 
 const Image = styled.img`
   z-index: -1;
@@ -48,6 +39,8 @@ const Image = styled.img`
   top: 0;
   left: 0;
   filter: grayscale(100%) contrast(2.75) brightness(30%);
+  object-fit: cover;
+  object-position: 70% 0%;
 `
 
 export default ParticlesBackground

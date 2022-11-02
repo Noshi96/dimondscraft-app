@@ -1,16 +1,15 @@
 import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../layouts/Particles'
+import backgroundPhoto from '../../assets/background.png'
 
 const HomePage = () => {
   return (
     <>
       <PageWrapper>
         <ParticlesBackground
-          width='1543px'
-          height='981px'
-          imgUrl='https://cdn.discordapp.com/attachments/275728565100740613/1036023330605645854/unknown.png'
-          imgWidth='1543px'
-          imgHeight='981px;'
+          width='100%'
+          imgSrc={backgroundPhoto}
+          imgWidth='100%'
         />
       </PageWrapper>
     </>
