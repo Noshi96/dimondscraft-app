@@ -47,7 +47,7 @@ const Drawer = () => {
         aria-label='menu'
         sx={{ mr: 2 }}
       >
-        <MenuIcon />
+        <MenuIcon style={{fontSize: 40}} />
       </IconButton>
       <SwipeableDrawer
         anchor={anchorType}
