@@ -3,8 +3,7 @@ import styled from 'styled-components'
 export const Button = styled.button`
   color: #ffffff;
   background-color: transparent;
-  border-radius: 6px;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   padding: 0.75rem 1.75rem;
   cursor: pointer;
 
