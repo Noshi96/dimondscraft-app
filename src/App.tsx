@@ -7,6 +7,7 @@ const HomePage = React.lazy(() => import('./pages/HomePage'))
 const ArtistsPage = React.lazy(() => import('./pages/Artists'))
 const AboutPage = React.lazy(() => import('./pages/About'))
 const ArtPage = React.lazy(() => import('./pages/Art'))
+const EventPage = React.lazy(() => import('./pages/EventPage'))
 
 const App = () => {
   return (
@@ -42,6 +43,14 @@ const App = () => {
           element={
             <React.Suspense fallback='Loading...'>
               <ArtPage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path='/event-page'
+          element={
+            <React.Suspense fallback='Loading...'>
+              <EventPage />
             </React.Suspense>
           }
         />
