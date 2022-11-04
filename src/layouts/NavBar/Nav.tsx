@@ -8,6 +8,7 @@ const Nav = () => {
       key: 'home',
       destination: '/',
       nameOfPage: 'Home',
+      exact: true,
     },
     {
       key: 'artists',
@@ -38,9 +39,11 @@ const Nav = () => {
 
   return (
     <NavList>
-      {paths.map(({ key, destination, nameOfPage }) => (
+      {paths.map(({ key, destination, nameOfPage, exact }) => (
         <Item key={key}>
-          <NavLinkStyled to={destination}>{nameOfPage}</NavLinkStyled>
+          <NavLinkStyled end={exact} to={destination}>
+            {nameOfPage}
+          </NavLinkStyled>
         </Item>
       ))}
     </NavList>
