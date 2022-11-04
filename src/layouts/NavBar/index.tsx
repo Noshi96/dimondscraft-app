@@ -23,7 +23,7 @@ const Wrapper = styled.header`
   width: 100%;
   background-color: #090119;
   color: #ffffff;
-  z-index: 2;
+  z-index: 12;
 
   ${PageWrapper} {
     display: flex;
