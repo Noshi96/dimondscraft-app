@@ -1,5 +1,5 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 const ArtistsPage = React.lazy(() => import('./pages/Artists'))
 const AboutPage = React.lazy(() => import('./pages/About'))
@@ -11,7 +11,7 @@ const suspenseComponent = (component: React.ReactNode) => {
   return <React.Suspense fallback='Loading...'>{component}</React.Suspense>
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: suspenseComponent(<RootPage />),
