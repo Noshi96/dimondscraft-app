@@ -69,6 +69,4 @@ const Drawer = () => {
   )
 }
 
-const MenuIconStyled = styled(IconButton)``
-
 export default Drawer
