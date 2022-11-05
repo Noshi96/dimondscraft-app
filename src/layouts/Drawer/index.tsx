@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Box from '@mui/material/Box'
-import styled from 'styled-components'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -68,7 +67,5 @@ const Drawer = () => {
     </>
   )
 }
-
-const MenuIconStyled = styled(IconButton)``
 
 export default Drawer
