@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/dimondscraft-app/static/js/main.a510cb5b.js",
+    "main.js": "/dimondscraft-app/static/js/main.4a5b1af6.js",
     "static/js/552.d50aa968.chunk.js": "/dimondscraft-app/static/js/552.d50aa968.chunk.js",
     "static/js/26.769268c2.chunk.js": "/dimondscraft-app/static/js/26.769268c2.chunk.js",
     "static/js/38.72c13c8e.chunk.js": "/dimondscraft-app/static/js/38.72c13c8e.chunk.js",
-    "static/js/778.73139b61.chunk.js": "/dimondscraft-app/static/js/778.73139b61.chunk.js",
+    "static/js/778.8ebb921b.chunk.js": "/dimondscraft-app/static/js/778.8ebb921b.chunk.js",
     "static/js/86.42ea31f3.chunk.js": "/dimondscraft-app/static/js/86.42ea31f3.chunk.js",
     "static/js/787.f7421bd0.chunk.js": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js",
     "static/js/256.1e6eeddc.chunk.js": "/dimondscraft-app/static/js/256.1e6eeddc.chunk.js",
@@ -19,11 +19,11 @@
     "static/media/PierwszaAukjaTokenow.jpg": "/dimondscraft-app/static/media/PierwszaAukjaTokenow.85cf759b76a5414868e5.jpg",
     "static/media/logoforge.png": "/dimondscraft-app/static/media/logoforge.583b901efc9bc2be1e0b.png",
     "index.html": "/dimondscraft-app/index.html",
-    "main.a510cb5b.js.map": "/dimondscraft-app/static/js/main.a510cb5b.js.map",
+    "main.4a5b1af6.js.map": "/dimondscraft-app/static/js/main.4a5b1af6.js.map",
     "552.d50aa968.chunk.js.map": "/dimondscraft-app/static/js/552.d50aa968.chunk.js.map",
     "26.769268c2.chunk.js.map": "/dimondscraft-app/static/js/26.769268c2.chunk.js.map",
     "38.72c13c8e.chunk.js.map": "/dimondscraft-app/static/js/38.72c13c8e.chunk.js.map",
-    "778.73139b61.chunk.js.map": "/dimondscraft-app/static/js/778.73139b61.chunk.js.map",
+    "778.8ebb921b.chunk.js.map": "/dimondscraft-app/static/js/778.8ebb921b.chunk.js.map",
     "86.42ea31f3.chunk.js.map": "/dimondscraft-app/static/js/86.42ea31f3.chunk.js.map",
     "787.f7421bd0.chunk.js.map": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js.map",
     "256.1e6eeddc.chunk.js.map": "/dimondscraft-app/static/js/256.1e6eeddc.chunk.js.map",
@@ -32,6 +32,6 @@
     "535.42eff71f.chunk.js.map": "/dimondscraft-app/static/js/535.42eff71f.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a510cb5b.js"
+    "static/js/main.4a5b1af6.js"
   ]
 }
