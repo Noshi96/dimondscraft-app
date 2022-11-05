@@ -1,1 +1,1 @@
-{"version":3,"file":"static/js/26.769268c2.chunk.js","mappings":"4IAIA,UAJc,WACZ,OAAO,oCACT,C","sources":["pages/About.tsx"],"sourcesContent":["const About = () => {\r\n  return <h1>About us</h1>\r\n}\r\n\r\nexport default About\r\n"],"names":[],"sourceRoot":""}
+{"version":3,"file":"static/js/26.769268c2.chunk.js","mappings":"4IAIA,UAJc,WACZ,OAAO,oCACT,C","sources":["pages/About.tsx"],"sourcesContent":["const About = () => {\n  return <h1>About us</h1>\n}\n\nexport default About\n"],"names":[],"sourceRoot":""}
