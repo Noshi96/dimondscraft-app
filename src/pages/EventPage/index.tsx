@@ -28,6 +28,12 @@ const EventPage = () => {
   )
 }
 
+const Section = styled.section`
+  background-color: #000000;
+  z-index: 2;
+  position: relative;
+`
+
 const RowWrapper = styled.div`
   display: flex;
   flex: 1;
@@ -41,18 +47,14 @@ const EventContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 6rem 0;
 `
 const HeadLine = styled.h1`
   text-transform: uppercase;
   align-items: center;
   color: #ffffff;
 `
-const Section = styled.section`
-  background-color: #000000;
-  z-index: 2;
-  position: relative;
-  padding-top: 4rem;
-`
+
 const Text = styled.div`
   width: 25rem;
   color: #e5e5e5;
