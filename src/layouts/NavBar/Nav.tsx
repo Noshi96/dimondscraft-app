@@ -65,7 +65,6 @@ const NavLinkStyled = styled(NavLink)`
   justify-content: center;
   padding: 1rem 0;
   text-transform: capitalize;
-  text-decoration: none;
   font-size: 1.1rem;
   transition: all 0.4s;
 
