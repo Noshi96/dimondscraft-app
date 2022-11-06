@@ -1,3 +1,4 @@
+
 import { EventSection } from '../../features/EventSection'
 import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../layouts/Particles'
