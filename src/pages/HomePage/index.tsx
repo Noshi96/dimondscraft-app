@@ -6,6 +6,7 @@ import backgroundPhoto from '../../assets/samanta.png'
 import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
 import styled, { keyframes } from 'styled-components'
 import { useCurrentHeight } from '../../hooks/useCurrentHeight'
+import ArtistsSection from '../../features/ArtistsSection'
 
 const HomePage = () => {
   let height = `${useCurrentHeight()}px`
@@ -30,6 +31,7 @@ const HomePage = () => {
           />
         </MainHome>
         <EventSection sectionTitle={'NASZE AKTUALNE PROJEKTY:'} />
+        <ArtistsSection />
       </PageWrapper>
     </>
   )
