@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import ParticlesBackground from '../../layouts/Particles'
 import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+import { Layout } from '../../styles/breakpoints'
 
 const EventPage = () => {
   const { state } = useLocation()
@@ -34,14 +35,6 @@ const Section = styled.section`
   position: relative;
 `
 
-const RowWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  gap: 4rem;
-  position: relative;
-  margin-top: 2rem;
-`
 const EventContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -55,12 +48,26 @@ const HeadLine = styled.h1`
   color: #ffffff;
 `
 
+const RowWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  margin-top: 2rem;
+
+  @media only screen and (${Layout.tablet}) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+`
+
 const Text = styled.div`
-  width: 25rem;
+  width: 20rem;
   color: #e5e5e5;
   background-color: #090119cc;
-  padding: 2rem;
-  font-size: 1.2rem;
+  padding: 1rem;
+  font-size: 1rem;
   position: relative;
 
   &:after {
@@ -84,10 +91,21 @@ const Text = styled.div`
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
   }
+
+  @media only screen and (${Layout.tablet}) {
+    width: 25rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
 `
 const Image = styled.img`
-  width: 25rem;
-  height: 38rem;
+  width: 20rem;
+  height: 30rem;
+
+  @media only screen and (${Layout.tablet}) {
+    width: 25rem;
+    height: 38rem;
+  }
 `
 
 export default EventPage
