@@ -1,16 +1,26 @@
 import styled from 'styled-components'
 import { Button } from '../../../layouts/Button/Button'
+import { useNavigate } from 'react-router-dom'
+import { Event } from './Models/Event'
 
 interface Props {
   imgSrc: string
   alt: string
+  event: Event
 }
 
-const SingleEvent = ({ imgSrc, alt }: Props) => {
+const SingleEvent = ({ imgSrc, alt, event }: Props) => {
+  const navigate = useNavigate()
+  const destination = '/event-page'
+
+  const navigateToEventHandler = () => {
+    navigate(destination, { state: { event } })
+  }
+
   return (
     <Container>
       <Poster src={imgSrc} alt={alt} loading='lazy' />
-      <Button>Dowiedz się więcej</Button>
+      <Button onClick={navigateToEventHandler}>Dowiedz się więcej</Button>
     </Container>
   )
 }

@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 100vh;
-    background-color: #ffffff;
+    background-color: #000000;
   }
 
   body.fontLoaded {
