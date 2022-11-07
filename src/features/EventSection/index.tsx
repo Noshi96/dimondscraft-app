@@ -23,10 +23,6 @@ const Section = styled.section`
   justify-content: center;
   padding-top: 8rem;
   height: 100%;
-
-  @media only screen and (${Layout.laptop}) {
-    height: 100vh;
-  }
 `
 
 const SectionTitle = styled.h2`
