@@ -41,11 +41,17 @@ const EventContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 6rem 0;
+  height: 100%;
 `
 const HeadLine = styled.h1`
   text-transform: uppercase;
   align-items: center;
   color: #ffffff;
+  font-size: 2rem;
+
+  @media only screen and (${Layout.tablet}) {
+    font-size: 3rem;
+  }
 `
 
 const RowWrapper = styled.div`
