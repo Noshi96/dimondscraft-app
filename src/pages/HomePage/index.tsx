@@ -1,4 +1,3 @@
-
 import { EventSection } from '../../features/EventSection'
 import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../layouts/Particles'
@@ -14,6 +13,11 @@ const HomePage = () => {
   return (
     <>
       <PageWrapper>
+        <ParticlesBackground
+          width='100%'
+          options={customOptionsFour}
+          style={{ position: 'fixed', zIndex: -1 }}
+        />
         <MainHome height={height}>
           <TextWrapper>
             <AnimatedText>|We Forge The Future|</AnimatedText>
@@ -22,11 +26,6 @@ const HomePage = () => {
             src={backgroundPhoto}
             alt='logo'
             width={'100%'}
-            height={height}
-          />
-          <ParticlesBackground
-            width='100%'
-            options={customOptionsFour}
             height={height}
           />
         </MainHome>
@@ -80,7 +79,7 @@ const AnimatedText = styled.span`
 `
 
 const Image = styled.img`
-  z-index: -1;
+  z-index: -2;
   position: absolute;
   top: 0;
   left: 0;

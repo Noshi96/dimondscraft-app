@@ -21,7 +21,6 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   padding-top: 8rem;
-  background-color: #000000;
 `
 
 const SectionTitle = styled.h2`
