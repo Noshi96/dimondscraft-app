@@ -8,6 +8,7 @@ import { useCurrentHeight } from '../../hooks/useCurrentHeight'
 import ArtistsSection from '../../features/ArtistsSection'
 import { useState, useEffect } from 'react'
 import { Layout } from '../../styles/breakpoints'
+import PartnershipSection from '../../features/PartnershipSection'
 
 const HomePage = () => {
   let height = `${useCurrentHeight()}px`
@@ -49,6 +50,7 @@ const HomePage = () => {
           />
         </MainHome>
         <EventSection sectionTitle={'NASZE AKTUALNE PROJEKTY:'} />
+        <PartnershipSection sectionTitle={'Partnerzy'} />
         <ArtistsSection />
       </PageWrapper>
     </>
@@ -56,6 +58,7 @@ const HomePage = () => {
 }
 
 const MainHome = styled.div<{ height: string }>`
+  z-index: 1;
   width: 100%;
   height: ${(props) => props.height};
   position: relative;
