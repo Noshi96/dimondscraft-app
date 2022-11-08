@@ -1,32 +1,50 @@
-
 import { EventSection } from '../../features/EventSection'
 import { PageWrapper } from '../../layouts/PageWrapper'
 import ParticlesBackground from '../../layouts/Particles'
 import backgroundPhoto from '../../assets/samanta.png'
 import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useCurrentHeight } from '../../hooks/useCurrentHeight'
 import ArtistsSection from '../../features/ArtistsSection'
+import { useState, useEffect } from 'react'
+import { Layout } from '../../styles/breakpoints'
 
 const HomePage = () => {
   let height = `${useCurrentHeight()}px`
 
+  const [text, setText] = useState<string>('')
+
+  const textToDisplay = 'We Forge The Future'
+
+  useEffect(() => {
+    let i = 0
+    const interval = setInterval(() => {
+      let newLetter = textToDisplay[i++]
+      setText((prev) => prev.concat(newLetter))
+      if (i === textToDisplay.length) {
+        clearInterval(interval)
+      }
+    }, 80)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       <PageWrapper>
+        <ParticlesBackground
+          width='100%'
+          options={customOptionsFour}
+          style={{ position: 'fixed', zIndex: -1 }}
+        />
         <MainHome height={height}>
           <TextWrapper>
-            <AnimatedText>|We Forge The Future|</AnimatedText>
+            <Headline>{`|${text}|`}</Headline>
           </TextWrapper>
           <Image
             src={backgroundPhoto}
             alt='logo'
             width={'100%'}
-            height={height}
-          />
-          <ParticlesBackground
-            width='100%'
-            options={customOptionsFour}
             height={height}
           />
         </MainHome>
@@ -51,36 +69,21 @@ const TextWrapper = styled.div`
   text-align: center;
 `
 
-const typing = keyframes`
-  from {background-size:0 200%; width: 0}
-`
-
-const blink = keyframes`
- 50% {background-position:0 -100%,0 0}
-`
-
-const AnimatedText = styled.span`
+const Headline = styled.h1`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
   text-transform: uppercase;
-  font-weight: 600;
   font-size: 3rem;
-  --n: 23;
-  color: transparent;
-  background: linear-gradient(-90deg, #ffffff 5px, #0000 0) 10px 0,
-    linear-gradient(#ffffff 0 0) 0 0;
-  background-size: calc(var(--n) * 1ch) 200%;
-  -webkit-background-clip: padding-box, text;
-  background-clip: padding-box, text;
-  background-repeat: no-repeat;
-  animation: ${blink} 0.7s infinite steps(1),
-    ${typing} calc(var(--n) * 0.2s) steps(var(--n)) forwards;
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (${Layout.tablet}) {
     font-size: 4rem;
   }
 `
 
 const Image = styled.img`
-  z-index: -1;
+  z-index: -2;
   position: absolute;
   top: 0;
   left: 0;

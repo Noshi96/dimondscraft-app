@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Button } from '../../../layouts/Button/Button'
 import { useNavigate } from 'react-router-dom'
 import { Event } from './Models/Event'
+import { Layout } from '../../../styles/breakpoints'
 
 interface Props {
   imgSrc: string
@@ -32,8 +33,13 @@ const Container = styled.div`
   gap: 1.5rem;
 `
 const Poster = styled.img`
-  width: 260px;
-  height: 368px;
+  width: 16rem;
+  height: 23rem;
+
+  @media only screen and (${Layout.tablet}) {
+    width: 19rem;
+    height: 28rem;
+  }
 `
 
 export default SingleEvent

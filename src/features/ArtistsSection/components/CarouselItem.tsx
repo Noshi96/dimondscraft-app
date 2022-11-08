@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Layout } from '../../../styles/breakpoints'
 
 interface Props {
   name: string
@@ -35,16 +36,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* padding-left: 4rem;
+  transform: translateX(-4rem); */
 `
 
 const Image = styled.img`
-  width: 100%;
-  height: auto;
-  padding-left: 2rem;
-  transform: translateX(-1.98rem);
+  width: 15rem;
+  height: 15rem;
 
-  @media screen and (max-width: 600px) {
-    padding-left: 2rem;
+  @media only screen and (${Layout.tablet}) {
     width: 20rem;
     height: 20rem;
   }

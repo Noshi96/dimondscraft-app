@@ -11,6 +11,7 @@ import raf from '../../assets/raf-tarnawski.jpg'
 import styled from 'styled-components'
 import CarouselItem from './components/CarouselItem'
 import { useCurrentWidth } from '../../hooks/useCurrentWidth'
+import { Layout } from '../../styles/breakpoints'
 
 const ArtistsSection = () => {
   let width = useCurrentWidth()
@@ -27,14 +28,14 @@ const ArtistsSection = () => {
   }
 
   const items = [
-    <CarouselItem name={'Andrzej'} src={andrzej} />,
-    <CarouselItem name={'Gosia'} src={gosia} />,
-    <CarouselItem name={'Jan'} src={jan} />,
-    <CarouselItem name={'Jaroslaw'} src={jaroslaw} />,
-    <CarouselItem name={'Lucyna'} src={lucyna} />,
-    <CarouselItem name={'Malgorzata'} src={malgorzata} />,
-    <CarouselItem name={'Piotr'} src={piotr} />,
-    <CarouselItem name={'Raf'} src={raf} />,
+    <CarouselItem name={'Andrzej Kielar'} src={andrzej} />,
+    <CarouselItem name={'Małgorzata Kosiec'} src={gosia} />,
+    <CarouselItem name={'Jan DrNico Okliński '} src={jan} />,
+    <CarouselItem name={'Jarosław Jaśnikowski'} src={jaroslaw} />,
+    <CarouselItem name={'Lucyna Góralczyk'} src={lucyna} />,
+    <CarouselItem name={'Małgorzata Bankowska'} src={malgorzata} />,
+    <CarouselItem name={'Piotr Horodyński'} src={piotr} />,
+    <CarouselItem name={'Raf Tarnawski'} src={raf} />,
   ]
 
   return (
@@ -45,7 +46,7 @@ const ArtistsSection = () => {
         responsive={width < 700 ? responsiveMobile : responsiveDesktop}
         mouseTracking
         disableDotsControls
-        autoPlayInterval={4000}
+        autoPlayInterval={3000}
         animationDuration={500}
         infinite
         animationType='slide'
@@ -62,18 +63,22 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   margin-top: 6rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding: 0;
 
-  @media screen and (max-width: 600px) {
-    padding: 0;
+  @media only screen and (${Layout.tablet}) {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 `
 
 const Title = styled.h2`
   align-self: flex-start;
   color: #ffffff;
-  font-size: 3rem;
+  padding-left: 5rem;
+  @media only screen and (${Layout.tablet}) {
+    font-size: 2rem;
+    padding-left: 3rem;
+  }
 `
 
 export default ArtistsSection

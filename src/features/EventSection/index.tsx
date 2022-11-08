@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Layout } from '../../styles/breakpoints'
 import EventList from './components/EventList'
 
 interface Props {
@@ -21,10 +22,14 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   padding-top: 8rem;
-  background-color: #000000;
+  height: 100%;
 `
 
 const SectionTitle = styled.h2`
   color: #ffffff;
   text-transform: uppercase;
+
+  @media only screen and (${Layout.tablet}) {
+    font-size: 2rem;
+  }
 `
