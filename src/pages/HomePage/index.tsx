@@ -8,6 +8,7 @@ import { useCurrentHeight } from '../../hooks/useCurrentHeight'
 import ArtistsSection from '../../features/ArtistsSection'
 import { useState, useEffect } from 'react'
 import { Layout } from '../../styles/breakpoints'
+import EntrySection from '../../features/EntrySection'
 
 const HomePage = () => {
   let height = `${useCurrentHeight()}px`
@@ -32,7 +33,7 @@ const HomePage = () => {
   return (
     <>
       <PageWrapper>
-        <ParticlesBackground
+        {/* <ParticlesBackground
           width='100%'
           options={customOptionsFour}
           style={{ position: 'fixed', zIndex: -1 }}
@@ -47,7 +48,8 @@ const HomePage = () => {
             width={'100%'}
             height={height}
           />
-        </MainHome>
+        </MainHome> */}
+        <EntrySection />
         <EventSection sectionTitle={'NASZE AKTUALNE PROJEKTY:'} />
         <ArtistsSection />
       </PageWrapper>

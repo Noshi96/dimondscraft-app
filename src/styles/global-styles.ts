@@ -5,7 +5,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    padding-top: 2rem;
     line-height: 1.5;
   }
 
