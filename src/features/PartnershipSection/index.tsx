@@ -6,6 +6,7 @@ import fantastyka from '../../assets/partnership/fantastyka.png'
 import rotary from '../../assets/partnership/rotary.png'
 import cashify from '../../assets/partnership/cashify.png'
 import sopra from '../../assets/partnership/sopra.png'
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 
 interface Props {
   sectionTitle: string
@@ -13,28 +14,32 @@ interface Props {
 
 const PartnershipSection = ({ sectionTitle }: Props) => {
   return (
-    <Section>
-      <SectionTitle>{sectionTitle}</SectionTitle>
-      <ImageList>
-        <img src={alexandrinum} alt='sopra' />
-        <img src={annakubisz} alt='sopra' />
-        <img src={fantastyka} alt='sopra' />
-        <img src={rotary} alt='sopra' />
-        <img src={sopra} alt='sopra' />
-        <img src={cashify} alt='sopra' />
-      </ImageList>
-    </Section>
+    <ExtendedAdjustingSection>
+      <Container>
+        <SectionTitle>{sectionTitle}</SectionTitle>
+        <ImageList>
+          <img src={alexandrinum} alt='sopra' />
+          <img src={annakubisz} alt='sopra' />
+          <img src={fantastyka} alt='sopra' />
+          <img src={rotary} alt='sopra' />
+          <img src={sopra} alt='sopra' />
+          <img src={cashify} alt='sopra' />
+        </ImageList>
+      </Container>
+    </ExtendedAdjustingSection>
   )
 }
 
-const Section = styled.section`
+const ExtendedAdjustingSection = styled(AdjustingSection)`
+  padding-top: 8rem;
+`
+
+const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  padding-top: 8rem;
-  height: 100%;
 `
 
 const SectionTitle = styled.h2`
