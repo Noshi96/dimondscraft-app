@@ -311,9 +311,12 @@ const RightBottomOutside = styled.img`
 const TextWrapper = styled.div`
   position: absolute;
   left: 50%;
-  top: 90%;
+  top: 80%;
   transform: translate(-50%, -50%);
   text-align: center;
+  @media only screen and (${Layout.tablet}) {
+    top: 90%;
+  }
 `
 
 const Headline = styled.h1`
