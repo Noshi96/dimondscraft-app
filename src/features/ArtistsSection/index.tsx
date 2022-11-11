@@ -12,6 +12,7 @@ import styled from 'styled-components'
 import CarouselItem from './components/CarouselItem'
 import { useCurrentWidth } from '../../hooks/useCurrentWidth'
 import { Layout } from '../../styles/breakpoints'
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 
 const ArtistsSection = () => {
   let width = useCurrentWidth()
@@ -39,7 +40,7 @@ const ArtistsSection = () => {
   ]
 
   return (
-    <Wrapper>
+    <AdjustingSection>
       <Title>Nasi Artyści</Title>
 
       <AliceCarousel
@@ -52,24 +53,9 @@ const ArtistsSection = () => {
         animationType='slide'
         items={items}
       />
-    </Wrapper>
+    </AdjustingSection>
   )
 }
-
-const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin-top: 6rem;
-  padding: 0;
-
-  @media only screen and (${Layout.tablet}) {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
-`
 
 const Title = styled.h2`
   align-self: flex-start;

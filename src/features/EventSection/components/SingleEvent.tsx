@@ -21,7 +21,7 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
   return (
     <Container>
       <Poster src={imgSrc} alt={alt} loading='lazy' />
-      <Button onClick={navigateToEventHandler}>Dowiedz się więcej</Button>
+      <ExtendedButton onClick={navigateToEventHandler}>Dowiedz się więcej</ExtendedButton>
     </Container>
   )
 }
@@ -31,15 +31,23 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  margin-bottom: 1rem;
 `
 const Poster = styled.img`
   width: 16rem;
   height: 23rem;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
 
   @media only screen and (${Layout.tablet}) {
     width: 19rem;
     height: 28rem;
   }
+`
+
+const ExtendedButton = styled(Button)`
+  width: 100%;
+  height: 80px;
 `
 
 export default SingleEvent

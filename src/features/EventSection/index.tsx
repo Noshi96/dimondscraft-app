@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Layout } from '../../styles/breakpoints'
 import EventList from './components/EventList'
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 
 interface Props {
   sectionTitle: string
@@ -8,28 +8,12 @@ interface Props {
 
 export function EventSection({ sectionTitle }: Props) {
   return (
-    <Section>
-      <SectionTitle>{sectionTitle}</SectionTitle>
+    <ExtendedAdjustingSection>
       <EventList />
-    </Section>
+    </ExtendedAdjustingSection>
   )
 }
 
-const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
+const ExtendedAdjustingSection = styled(AdjustingSection)`
   padding-top: 8rem;
-  height: 100%;
-`
-
-const SectionTitle = styled.h2`
-  color: #ffffff;
-  text-transform: uppercase;
-
-  @media only screen and (${Layout.tablet}) {
-    font-size: 2rem;
-  }
 `
