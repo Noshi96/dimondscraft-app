@@ -40,7 +40,7 @@ const ArtistsSection = () => {
   ]
 
   return (
-    <AdjustingSection>
+    <ExtendedAdjustingSection>
       <Title>Nasi Artyści</Title>
 
       <AliceCarousel
@@ -53,9 +53,13 @@ const ArtistsSection = () => {
         animationType='slide'
         items={items}
       />
-    </AdjustingSection>
+    </ExtendedAdjustingSection>
   )
 }
+
+const ExtendedAdjustingSection = styled(AdjustingSection)`
+  padding-top: 8rem;
+`
 
 const Title = styled.h2`
   align-self: flex-start;
