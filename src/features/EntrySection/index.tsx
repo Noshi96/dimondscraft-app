@@ -277,11 +277,12 @@ const Droid = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -48%);
+  transform: translate(-50%, -47%);
   transform-origin: top center;
   width: 390px;
   animation: ${hideDroidAnimation}, ${moveDroidToTopAnimation},
     ${scaleUpAndDownAnimation};
+  transform-origin: 0 30%;
 `
 
 const Glow = styled.img`
