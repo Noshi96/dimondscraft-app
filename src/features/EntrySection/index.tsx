@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import background from '../../assets/entry/background.svg'
 import leftMiddleShape1 from '../../assets/entry/left_middle_shape_1.svg'
@@ -17,99 +17,18 @@ import glow1 from '../../assets/entry/glow1.png'
 import glow2 from '../../assets/entry/glow2.png'
 import glow3 from '../../assets/entry/glow3.png'
 import { Layout } from '../../styles/breakpoints'
-
-interface AnimationProps {
-  animationLength?: string
-  animationDelay?: string
-}
-
-const moveFromLeftToRight = keyframes`
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-`
-const moveFromRightToLeft = keyframes`
-  0% {
-    transform: translateX(50%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-`
-const moveFromBottomToTop = keyframes`
-  0% {
-    transform: translate(-50%, 50%);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
-`
-
-const hideDroid = keyframes` 
-    0% {
-      transform: translate(-50%, 50%);
-    }
-    100% {
-      transform: translate(-50%, 50%);
-    }
-`
-
-const showStars = keyframes`
-  0% {
-    opacity: 0;
-    scale: 3.5;
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
-  }`
-
-const scaleUpAndDown = keyframes`
-0% {
-  scale: 1;
-}
-50% {
-  scale: 1.05;
-}
-100% {
-  scale: 1;
-}`
-
-const leftAnimation = ({ animationLength = '2s' }: AnimationProps) => css`
-  ${moveFromLeftToRight} ${animationLength}
-`
-
-const rightAnimation = ({ animationLength = '2s' }: AnimationProps) => css`
-  ${moveFromRightToLeft} ${animationLength}
-`
-
-const toTopAnimation = ({ animationLength = '2s' }: AnimationProps) => css`
-  ${moveFromBottomToTop} ${animationLength}
-`
-
-const hideDroidAnimation = () => css`
-  ${hideDroid} 2s linear 0s
-`
-
-const moveDroidToTopAnimation = () => css`
-  ${moveFromBottomToTop} 1s linear 1s
-`
-
-const showInsideRhombAnimation = ({
-  animationLength = '2s',
-}: AnimationProps) => css`
-  ${showStars} ${animationLength}
-`
-
-const scaleUpAndDownAnimation = () => css`
-  ${scaleUpAndDown} 5s infinite linear 3.5s
-`
-
-const animationLength = '2s'
-const animationLength3s = '3s'
+import {
+  AnimationProps,
+  animationLength,
+  animationLength3s,
+  leftAnimation,
+  rightAnimation,
+  toTopAnimation,
+  hideDroidAnimation,
+  moveDroidToTopAnimation,
+  scaleUpAndDownAnimation,
+  showInsideRhombAnimation,
+} from './animations'
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -120,7 +39,7 @@ const EntrySection = () => {
 
   useEffect(() => {
     async function typeText() {
-      await delay(500)
+      await delay(2500)
       let i = 0
       const interval = setInterval(async () => {
         let newLetter = textToDisplay[i++]
@@ -128,9 +47,9 @@ const EntrySection = () => {
         if (i === textToDisplay.length) {
           clearInterval(interval)
         }
-      }, 80)
+      }, 140)
     }
-    //typeText()
+    typeText()
   }, [])
 
   return (
@@ -191,54 +110,13 @@ const EntrySection = () => {
             <RightBottomOutside src={shape4} alt='right_bottom_outside' />
           </OutsideLayerRight>
         </Content>
-        {/* <TextWrapper>
+        <TextWrapper>
           <Headline>{`|${text}|`}</Headline>
-        </TextWrapper> */}
+        </TextWrapper>
       </Wrapper>
     </>
   )
 }
-
-const GlowLayer = styled.div``
-const BehindMainLayer = styled.div<AnimationProps>`
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  animation: ${showInsideRhombAnimation}, ${scaleUpAndDownAnimation};
-`
-const MainDroidLayer = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`
-const OverlappingDroidLayer = styled.div<AnimationProps>`
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  animation: ${showInsideRhombAnimation}, ${scaleUpAndDownAnimation};
-`
-const OutsideLayerLeft = styled.div<AnimationProps>`
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  animation: ${leftAnimation};
-`
-const OutsideLayerRight = styled.div<AnimationProps>`
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  animation: ${rightAnimation};
-`
-
-const Content = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`
 
 const Wrapper = styled.section<AnimationProps>`
   width: 100%;
@@ -247,12 +125,95 @@ const Wrapper = styled.section<AnimationProps>`
   overflow-x: hidden;
   overflow-y: hidden;
 `
-
 const Background = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
+`
+const Content = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+`
+const OutsideLayerLeft = styled.div<AnimationProps>`
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  animation: ${leftAnimation};
+`
+
+const LeftTopOutside = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-1040%, -705%);
+  width: 30px;
+`
+
+const LeftMiddleOutside = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-1140%, 15%);
+  width: 45px;
+`
+
+const LeftBottomOutside = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45px;
+  transform: translate(-940%, 560%);
+`
+
+const MainDroidLayer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`
+
+const BehindMainLayer = styled.div<AnimationProps>`
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  animation: ${showInsideRhombAnimation}, ${scaleUpAndDownAnimation};
+`
+
+const RightMiddleInside = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(240%, -50%);
+  width: 85px;
+`
+
+const RightTopInside = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(180%, -115%);
+  width: 85px;
+`
+
+const LeftTopInside = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-280%, -115%);
+  width: 85px;
+`
+
+const GlowLayer = styled.div``
+
+const Glow = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
 `
 
 const MainMiddleShape = styled.img`
@@ -285,12 +246,12 @@ const Droid = styled.img<AnimationProps>`
   transform-origin: 0 30%;
 `
 
-const Glow = styled.img`
+const OverlappingDroidLayer = styled.div<AnimationProps>`
+  width: 100%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 650px;
+  left: 0;
+  animation: ${showInsideRhombAnimation}, ${scaleUpAndDownAnimation};
 `
 
 const LeftMiddleInside = styled.img`
@@ -308,20 +269,7 @@ const LeftBottomInside = styled.img`
   transform: translate(-230%, 60%);
   width: 85px;
 `
-const RightTopInside = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(180%, -115%);
-  width: 85px;
-`
-const LeftTopInside = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-280%, -115%);
-  width: 85px;
-`
+
 const RightBottomInside = styled.img`
   position: absolute;
   top: 50%;
@@ -329,36 +277,13 @@ const RightBottomInside = styled.img`
   transform: translate(130%, 60%);
   width: 85px;
 `
-const RightMiddleInside = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(240%, -50%);
-  width: 85px;
-`
 
-const LeftTopOutside = styled.img`
+const OutsideLayerRight = styled.div<AnimationProps>`
+  width: 100%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-1040%, -705%);
-  width: 30px;
-`
-
-const LeftMiddleOutside = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-1140%, 15%);
-  width: 45px;
-`
-
-const LeftBottomOutside = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 45px;
-  transform: translate(-940%, 560%);
+  right: 0%;
+  animation: ${rightAnimation};
 `
 
 const RightTopOutside = styled.img`
@@ -383,25 +308,25 @@ const RightBottomOutside = styled.img`
   width: 85px;
 `
 
-// const TextWrapper = styled.div`
-//   position: absolute;
-//   left: 50%;
-//   top: 80%;
-//   transform: translate(-50%, -50%);
-//   text-align: center;
-// `
+const TextWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+`
 
-// const Headline = styled.h1`
-//   display: flex;
-//   justify-content: center;
-//   text-align: center;
-//   color: #ffffff;
-//   text-transform: uppercase;
-//   font-size: 3rem;
+const Headline = styled.h1`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 3rem;
 
-//   @media only screen and (${Layout.tablet}) {
-//     font-size: 4rem;
-//   }
-// `
+  @media only screen and (${Layout.tablet}) {
+    font-size: 4rem;
+  }
+`
 
 export default EntrySection
