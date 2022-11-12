@@ -1,6 +1,20 @@
 import { createGlobalStyle } from 'styled-components'
+import regular from '../fonts/metropolis.bold.otf'
+import bold from '../fonts/metropolis.bold.otf'
 
 export const GlobalStyle = createGlobalStyle`
+
+  @font-face {
+    font-family: Metropolis;
+    src: url(${regular}) format("opentype");
+  }
+
+  @font-face {
+    font-family: Metropolis;
+    font-weight: 700;
+    src: url(${bold}) format("opentype");
+  }
+
   html,
   body {
     margin: 0;
@@ -9,13 +23,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Metropolis;
     height: 100vh;
     background-color: #000000;
   }
 
   body.fontLoaded {
-    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Metropolis;
   }
   
   p,
