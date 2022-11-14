@@ -128,10 +128,23 @@ export const fadeInAnimation = ({
   ${fadeIn} ${animationSecondLength} linear ${animationDelay}
 `
 
+export const fadeInBackGlowAnimation = ({
+  animationLength = '2s',
+}: AnimationProps) => css`
+  ${fadeIn} ${animationLength}
+`
+
 export const lengthOfTime = {
+  sec025: '0.25s',
   sec05: '0.5s',
   sec1: '1s',
   sec2: '2s',
+  sec21: '2.1s',
+  sec22: '2.2s',
+  sec23: '2.3s',
+  sec24: '2.4s',
+  sec25: '2.5s',
+  sec26: '2.6s',
   sec3: '3s',
   sec4: '4s',
   sec5: '5s',
