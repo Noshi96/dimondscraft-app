@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import background from '../../assets/entry/background.svg'
 import leftMiddleShape1 from '../../assets/entry/left_middle_shape_1.svg'
 import leftMiddleShape2 from '../../assets/entry/left_middle_shape_2.svg'
@@ -19,100 +19,139 @@ import glow3 from '../../assets/entry/glow3.png'
 import { Layout } from '../../styles/breakpoints'
 import {
   AnimationProps,
-  animationLength,
-  animationLength3s,
   leftAnimation,
   rightAnimation,
   toTopAnimation,
   hideDroidAnimation,
   moveDroidToTopAnimation,
   scaleUpAndDownAnimation,
-  showInsideRhombAnimation,
+  hideRhombsAnimation,
+  fadeInAnimation,
+  lengthOfTime,
+  fadeInBackGlowAnimation,
 } from './animations'
-
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+import { useTextTyping } from '../../hooks/useTextTyping'
+import { delay } from '../../utils/DelayFunction'
 
 const EntrySection = () => {
   const [text, setText] = useState<string>('')
 
-  const textToDisplay = 'We Forge The Future'
+  useTextTyping(delay, setText)
 
-  useEffect(() => {
-    async function typeText() {
-      await delay(2500)
-      let i = 0
-      const interval = setInterval(async () => {
-        let newLetter = textToDisplay[i++]
-        setText((prev) => prev.concat(newLetter))
-        if (i === textToDisplay.length) {
-          clearInterval(interval)
-        }
-      }, 140)
-    }
-    typeText()
-  }, [])
+  const {
+    sec025,
+    sec2,
+    sec21,
+    sec22,
+    sec23,
+    sec24,
+    sec25,
+    sec26,
+  } = lengthOfTime
 
   return (
     <>
+      <Background src={background} alt='background' />
       <Wrapper>
-        <Background src={background} alt='background' />
         <Content>
-          <OutsideLayerLeft animationLength={animationLength}>
+          <OutsideLayerLeft animationLength={sec2}>
             <LeftTopOutside src={shape1} alt='left_top_outside' />
             <LeftMiddleOutside src={shape6} alt='left_middle_outside' />
             <LeftBottomOutside src={shape3} alt='left_bottom_outside' />
           </OutsideLayerLeft>
 
           <MainDroidLayer>
-            <BehindMainLayer animationLength={animationLength3s}>
-              <RightMiddleInside
-                src={rightMiddleShape2}
-                alt='right_middle_inside'
-              />
-              <RightTopInside src={rightMiddleShape1} alt='right_top_inside' />
-              <LeftTopInside src={rightMiddleShape1} alt='left_top_inside' />
+            <BehindMainLayer>
+              <RightMiddleInsideDiv
+                animationLength={sec25}
+                animationSecondLength={sec025}
+                animationDelay={sec25}
+              >
+                <RightMiddleInside
+                  src={rightMiddleShape2}
+                  alt='right_middle_inside'
+                />
+              </RightMiddleInsideDiv>
+              <RightTopInsideDiv
+                animationLength={sec23}
+                animationSecondLength={sec025}
+                animationDelay={sec23}
+              >
+                <RightTopInside
+                  src={rightMiddleShape1}
+                  alt='right_top_inside'
+                />
+              </RightTopInsideDiv>
+              <LeftTopInsideDiv
+                animationLength={sec21}
+                animationSecondLength={sec025}
+                animationDelay={sec21}
+              >
+                <LeftTopInside src={rightMiddleShape1} alt='left_top_inside' />
+              </LeftTopInsideDiv>
             </BehindMainLayer>
 
-            <GlowLayer>
+            <GlowLayer animationLength={sec2}>
               <Glow src={glow1} alt='glow1' />
               <Glow src={glow2} alt='glow2' />
               <Glow src={glow3} alt='glow3' />
             </GlowLayer>
 
             <MainMiddleShape
-              animationLength={animationLength}
+              animationLength={sec2}
               src={mainMiddleShape}
               alt='main_middle_shape'
             />
-            <DroidMask>
-              <Droid src={droid} alt='droid' />
-            </DroidMask>
 
-            <OverlappingDroidLayer animationLength={animationLength3s}>
-              <LeftMiddleInside
-                src={leftMiddleShape1}
-                alt='left_middle_inside'
-              />
-              <LeftBottomInside
-                src={leftMiddleShape2}
-                alt='left_bottom_inside'
-              />
-              <RightBottomInside
-                src={rightMiddleShape1}
-                alt='right_bottom_inside'
-              />
+            <MiddleLayer>
+              <DroidMask>
+                <Droid src={droid} alt='droid' />
+              </DroidMask>
+              <TextWrapper>
+                <Headline>{`${text}`}</Headline>
+              </TextWrapper>
+            </MiddleLayer>
+
+            <OverlappingDroidLayer>
+              <LeftMiddleInsideDiv
+                animationLength={sec26}
+                animationSecondLength={sec025}
+                animationDelay={sec26}
+              >
+                <LeftMiddleInside
+                  src={leftMiddleShape1}
+                  alt='left_middle_inside'
+                />
+              </LeftMiddleInsideDiv>
+              <LeftBottomInsideDiv
+                animationLength={sec24}
+                animationSecondLength={sec025}
+                animationDelay={sec24}
+              >
+                <LeftBottomInside
+                  src={leftMiddleShape2}
+                  alt='left_bottom_inside'
+                />
+              </LeftBottomInsideDiv>
+              <RightBottomInsideDiv
+                animationLength={sec22}
+                animationSecondLength={sec025}
+                animationDelay={sec22}
+              >
+                <RightBottomInside
+                  src={rightMiddleShape1}
+                  alt='right_bottom_inside'
+                />
+              </RightBottomInsideDiv>
             </OverlappingDroidLayer>
           </MainDroidLayer>
 
-          <OutsideLayerRight animationLength={animationLength}>
+          <OutsideLayerRight animationLength={sec2}>
             <RightTopOutside src={shape2} alt='right_top_outside' />
             <RightMiddleOutside src={shape5} alt='right_middle_outside' />
             <RightBottomOutside src={shape4} alt='right_bottom_outside' />
           </OutsideLayerRight>
         </Content>
-        <TextWrapper>
-          <Headline>{`|${text}|`}</Headline>
-        </TextWrapper>
       </Wrapper>
     </>
   )
@@ -127,7 +166,7 @@ const Wrapper = styled.section<AnimationProps>`
 `
 const Background = styled.img`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   position: absolute;
 `
@@ -179,7 +218,10 @@ const BehindMainLayer = styled.div<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 0;
-  animation: ${showInsideRhombAnimation}, ${scaleUpAndDownAnimation};
+`
+
+const RightMiddleInsideDiv = styled.div<AnimationProps>`
+  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
 `
 
 const RightMiddleInside = styled.img`
@@ -189,6 +231,9 @@ const RightMiddleInside = styled.img`
   transform: translate(240%, -50%);
   width: 85px;
 `
+const RightTopInsideDiv = styled.div<AnimationProps>`
+  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
+`
 
 const RightTopInside = styled.img`
   position: absolute;
@@ -196,6 +241,9 @@ const RightTopInside = styled.img`
   left: 50%;
   transform: translate(180%, -115%);
   width: 85px;
+`
+const LeftTopInsideDiv = styled.div<AnimationProps>`
+  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
 `
 
 const LeftTopInside = styled.img`
@@ -206,7 +254,9 @@ const LeftTopInside = styled.img`
   width: 85px;
 `
 
-const GlowLayer = styled.div``
+const GlowLayer = styled.div<AnimationProps>`
+  animation: ${fadeInBackGlowAnimation};
+`
 
 const Glow = styled.img`
   position: absolute;
@@ -223,6 +273,15 @@ const MainMiddleShape = styled.img`
   transform: translate(-50%, -50%);
   width: 500px;
   animation: ${toTopAnimation};
+`
+
+const MiddleLayer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 713px;
 `
 
 const DroidMask = styled.div`
@@ -251,9 +310,11 @@ const OverlappingDroidLayer = styled.div<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 0;
-  animation: ${showInsideRhombAnimation}, ${scaleUpAndDownAnimation};
 `
 
+const LeftMiddleInsideDiv = styled.div<AnimationProps>`
+  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
+`
 const LeftMiddleInside = styled.img`
   position: absolute;
   top: 50%;
@@ -262,12 +323,19 @@ const LeftMiddleInside = styled.img`
   width: 46px;
 `
 
+const LeftBottomInsideDiv = styled.div<AnimationProps>`
+  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
+`
+
 const LeftBottomInside = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-230%, 60%);
   width: 85px;
+`
+const RightBottomInsideDiv = styled.div<AnimationProps>`
+  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
 `
 
 const RightBottomInside = styled.img`
@@ -309,26 +377,30 @@ const RightBottomOutside = styled.img`
 `
 
 const TextWrapper = styled.div`
+  width: 100%;
   position: absolute;
   left: 50%;
-  top: 80%;
-  transform: translate(-50%, -50%);
+  bottom: 0%;
+  transform: translate(-50%, 0%);
   text-align: center;
-  @media only screen and (${Layout.tablet}) {
-    top: 90%;
-  }
+  /* @media only screen and (${Layout.tablet}) {
+    bottom: 60%;
+  } */
 `
 
 const Headline = styled.h1`
+  z-index: 10;
   display: flex;
   justify-content: center;
   text-align: center;
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 
   @media only screen and (${Layout.tablet}) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 `
 
