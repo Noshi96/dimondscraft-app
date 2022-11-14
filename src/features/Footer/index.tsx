@@ -12,6 +12,7 @@ import TwitterLogo from '../../assets/media/twitter.png'
 import YouTubeLogo from '../../assets/media/youtube.png'
 
 import { MediaIcon } from './models/MediaIcon'
+import { AdjustingSection } from "../../layouts/AdjustingSection/AdjustingSection";
 
 const Footer = () => {
   const additionalMedia: MediaIcon[] = [
@@ -30,50 +31,52 @@ const Footer = () => {
   ]
 
   return (
-    <Section>
-      <ContentWrapper>
-        <Topper>
-          {' '}
-          💎 <span> DIAMONDS CRAFT </span>{' '}
-        </Topper>
-
-        <RowWrapper>
+      <FullWidthContainer>
+        <ExtendedAdjustingSection>
           <ColumnWrapper>
-            <SocialMedia
-              headerText={'Jesteśmy dostępni także na:'}
-              media={additionalMedia}
-            ></SocialMedia>
-            <NavigationMenu></NavigationMenu>
             <CryptoPrices></CryptoPrices>
           </ColumnWrapper>
+
           <ColumnWrapper>
             <SocialMedia
-              headerText={'Dołącz do naszej społeczności:'}
-              media={baseMedia}
+                headerText={'Dołącz do naszej społeczności:'}
+                media={baseMedia}
+            ></SocialMedia>
+
+            <SocialMedia
+                headerText={'Jesteśmy dostępni także na:'}
+                media={additionalMedia}
             ></SocialMedia>
           </ColumnWrapper>
-        </RowWrapper>
+        </ExtendedAdjustingSection>
 
-        <Restrictions> Ⓒ DIAMONDS CRAFT. ALL RIGHTS RESERVED. </Restrictions>
-      </ContentWrapper>
-    </Section>
+        <ExtendedAdjustingSection>
+          <NavigationMenu></NavigationMenu>
+        </ExtendedAdjustingSection>
+
+        <ExtendedAdjustingSection>
+          <Restrictions> Ⓒ DIAMONDS CRAFT. ALL RIGHTS RESERVED. </Restrictions>
+        </ExtendedAdjustingSection>
+      </FullWidthContainer>
   )
 }
 
-const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #252525;
-  color: #ffffff;
-  box-sizing: border-box;
-  padding: 100px 0 50px;
+const FullWidthContainer = styled.div`
+  width: 100%;
+  background: #000000;
+  padding-top: 8rem;
 `
 
-const ContentWrapper = styled.div`
-  margin: 0 auto;
-  padding: 0.5rem;
+const ExtendedAdjustingSection = styled(AdjustingSection)`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media only screen and (${Layout.laptop}) {
+    flex-direction: row;
+  }
+  
 `
 
 const ColumnWrapper = styled.div`
@@ -85,33 +88,10 @@ const ColumnWrapper = styled.div`
   }
 `
 
-const RowWrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-
-  @media only screen and (${Layout.laptop}) {
-    flex-direction: row;
-    gap: 0 5rem;
-  }
-`
-
-const Topper = styled.div`
-  margin: 0 auto 4rem auto;
-  color: #aeaeae;
-  font-size: 12px;
-  font-weight: bold;
-
-  span {
-    margin-left: 0.25rem;
-  }
-`
-
 const Restrictions = styled.div`
   margin: 4rem auto 0 auto;
   color: #aeaeae;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: bold;
 `
 

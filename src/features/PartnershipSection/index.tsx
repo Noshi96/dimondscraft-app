@@ -14,21 +14,29 @@ interface Props {
 
 const PartnershipSection = ({ sectionTitle }: Props) => {
   return (
-    <ExtendedAdjustingSection>
-      <Container>
-        <SectionTitle>{sectionTitle}</SectionTitle>
-        <ImageList>
-          <img src={alexandrinum} alt='sopra' />
-          <img src={annakubisz} alt='sopra' />
-          <img src={fantastyka} alt='sopra' />
-          <img src={rotary} alt='sopra' />
-          <img src={sopra} alt='sopra' />
-          <img src={cashify} alt='sopra' />
-        </ImageList>
-      </Container>
-    </ExtendedAdjustingSection>
+      <FullWidthContainer>
+        <ExtendedAdjustingSection>
+          <Container>
+            <SectionTitle>{sectionTitle}</SectionTitle>
+            <ImageList>
+              <img src={alexandrinum} alt='sopra' />
+              <img src={annakubisz} alt='sopra' />
+              <img src={fantastyka} alt='sopra' />
+              <img src={rotary} alt='sopra' />
+              <img src={sopra} alt='sopra' />
+              <img src={cashify} alt='sopra' />
+            </ImageList>
+          </Container>
+        </ExtendedAdjustingSection>
+      </FullWidthContainer>
   )
 }
+
+const FullWidthContainer = styled.div`
+  width: 100%;
+  background-image: linear-gradient(#080924, #000000);
+  padding-bottom: 5rem;
+`
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
   padding-top: 8rem;

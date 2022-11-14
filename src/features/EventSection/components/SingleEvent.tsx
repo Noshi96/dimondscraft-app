@@ -34,8 +34,8 @@ const Container = styled.div`
   margin-bottom: 1rem;
 `
 const Poster = styled.img`
-  width: 16rem;
-  height: 23rem;
+  width: 100%;
+  height: auto;
   box-sizing: border-box;
   border: 1px solid #ffffff;
 

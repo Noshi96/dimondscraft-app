@@ -36,8 +36,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-left: 4rem;
-  transform: translateX(-4rem); */
 `
 
 const Image = styled.img`
