@@ -16,8 +16,8 @@ export function useTextTyping(
         if (i === textToDisplay.length) {
           clearInterval(interval)
         }
-      }, 140)
+      }, 60)
     }
     typeText()
-  }, [])
+  }, [delay, setText])
 }

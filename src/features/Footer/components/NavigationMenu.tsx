@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Header3 } from '../layouts/Header3'
 import { NavLink } from 'react-router-dom'
 import { Layout } from '../../../styles/breakpoints'
 
