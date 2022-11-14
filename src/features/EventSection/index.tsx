@@ -4,12 +4,20 @@ import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSectio
 
 export function EventSection() {
   return (
-    <ExtendedAdjustingSection>
-      <EventList />
-    </ExtendedAdjustingSection>
+      <FullWidthContainer>
+        <ExtendedAdjustingSection>
+          <EventList />
+        </ExtendedAdjustingSection>
+      </FullWidthContainer>
   )
 }
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
-  padding-top: 8rem;
+  padding-top: 3rem;
+  
+`
+
+const FullWidthContainer = styled.div`
+  width: 100%;
+  background: #080924;
 `

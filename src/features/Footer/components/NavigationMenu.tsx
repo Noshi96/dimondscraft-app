@@ -6,7 +6,6 @@ import { Layout } from '../../../styles/breakpoints'
 const NavigationMenu = () => {
   return (
     <Container>
-      <Header3> Menu: </Header3>
       <NavigationWrapper>
         <LinksColumn>
           <NavLinkStyled end={true} to={'/'}>
@@ -34,14 +33,8 @@ const Container = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: column;
   color: #ffffff;
   margin-bottom: 1rem;
-  min-height: 100px;
-
-  @media only screen and (${Layout.laptop}) {
-    flex-direction: row;
-  }
 `
 
 const NavigationWrapper = styled.div`
@@ -69,9 +62,9 @@ const NavLinkStyled = styled(NavLink)`
   border: transparent;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  font-size: 14px;
+  font-size: 1.2rem;
   box-sizing: border-box;
-  padding: 4px 4px;
+  padding: 6px 8px;
 
   &:hover {
     background: #ffffff11;

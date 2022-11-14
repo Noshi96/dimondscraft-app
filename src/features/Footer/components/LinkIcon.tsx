@@ -14,12 +14,12 @@ const LinkIcon = ({ path, redirectionLink }: Props) => {
 }
 
 const Icon = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 64px;
+  height: 64px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
   }
 `
 
