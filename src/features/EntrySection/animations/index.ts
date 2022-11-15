@@ -61,7 +61,7 @@ const fadeIn = keyframes`
 const onEntryScaleInsideRhombs = keyframes`
   0% {
     opacity: 0;
-    scale: 3.5;
+    scale: 5;
   }
   100% {
     opacity: 1;
@@ -102,9 +102,9 @@ export const hideDroidAnimation = () => css`
 `
 
 export const hideRhombsAnimation = ({
-  animationLength = '3s',
+  animationDelay = '1s',
 }: AnimationProps) => css`
-  ${hideRhombs} ${animationLength} linear 0s
+  ${hideRhombs} ${animationDelay} linear 0s
 `
 
 export const moveDroidToTopAnimation = () => css`
@@ -112,9 +112,10 @@ export const moveDroidToTopAnimation = () => css`
 `
 
 export const showInsideRhombAnimation = ({
-  animationLength = '2s',
+  animationLength = '0.25s',
+  animationDelay = '1s',
 }: AnimationProps) => css`
-  ${onEntryScaleInsideRhombs} ${animationLength}
+  ${onEntryScaleInsideRhombs} ${animationLength} linear ${animationDelay}
 `
 
 export const scaleUpAndDownAnimation = () => css`

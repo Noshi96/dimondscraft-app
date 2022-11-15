@@ -29,6 +29,7 @@ import {
   fadeInAnimation,
   lengthOfTime,
   fadeInBackGlowAnimation,
+  showInsideRhombAnimation,
 } from './animations'
 import { useTextTyping } from '../../hooks/useTextTyping'
 import { delay } from '../../utils/DelayFunction'
@@ -62,33 +63,24 @@ const EntrySection = () => {
 
           <MainDroidLayer>
             <BehindMainLayer>
-              <RightMiddleInsideDiv
-                animationLength={sec25}
-                animationSecondLength={sec025}
+              <RightMiddleInside
+                src={rightMiddleShape2}
+                alt='right_middle_inside'
+                animationLength={sec025}
                 animationDelay={sec25}
-              >
-                <RightMiddleInside
-                  src={rightMiddleShape2}
-                  alt='right_middle_inside'
-                />
-              </RightMiddleInsideDiv>
-              <RightTopInsideDiv
-                animationLength={sec23}
-                animationSecondLength={sec025}
+              />
+              <RightTopInside
+                src={rightMiddleShape1}
+                alt='right_top_inside'
+                animationLength={sec025}
                 animationDelay={sec23}
-              >
-                <RightTopInside
-                  src={rightMiddleShape1}
-                  alt='right_top_inside'
-                />
-              </RightTopInsideDiv>
-              <LeftTopInsideDiv
-                animationLength={sec21}
-                animationSecondLength={sec025}
+              />
+              <LeftTopInside
+                src={rightMiddleShape1}
+                alt='left_top_inside'
+                animationLength={sec025}
                 animationDelay={sec21}
-              >
-                <LeftTopInside src={rightMiddleShape1} alt='left_top_inside' />
-              </LeftTopInsideDiv>
+              />
             </BehindMainLayer>
 
             <GlowLayer animationLength={sec2}>
@@ -113,36 +105,24 @@ const EntrySection = () => {
             </MiddleLayer>
 
             <OverlappingDroidLayer>
-              <LeftMiddleInsideDiv
-                animationLength={sec26}
-                animationSecondLength={sec025}
+              <LeftMiddleInside
+                src={leftMiddleShape1}
+                alt='left_middle_inside'
+                animationLength={sec025}
                 animationDelay={sec26}
-              >
-                <LeftMiddleInside
-                  src={leftMiddleShape1}
-                  alt='left_middle_inside'
-                />
-              </LeftMiddleInsideDiv>
-              <LeftBottomInsideDiv
-                animationLength={sec24}
-                animationSecondLength={sec025}
+              />
+              <LeftBottomInside
+                src={leftMiddleShape2}
+                alt='left_bottom_inside'
+                animationLength={sec025}
                 animationDelay={sec24}
-              >
-                <LeftBottomInside
-                  src={leftMiddleShape2}
-                  alt='left_bottom_inside'
-                />
-              </LeftBottomInsideDiv>
-              <RightBottomInsideDiv
-                animationLength={sec22}
-                animationSecondLength={sec025}
+              />
+              <RightBottomInside
+                src={rightMiddleShape1}
+                alt='right_bottom_inside'
+                animationLength={sec025}
                 animationDelay={sec22}
-              >
-                <RightBottomInside
-                  src={rightMiddleShape1}
-                  alt='right_bottom_inside'
-                />
-              </RightBottomInsideDiv>
+              />
             </OverlappingDroidLayer>
           </MainDroidLayer>
 
@@ -220,38 +200,31 @@ const BehindMainLayer = styled.div<AnimationProps>`
   left: 0;
 `
 
-const RightMiddleInsideDiv = styled.div<AnimationProps>`
-  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
-`
-
-const RightMiddleInside = styled.img`
+const RightMiddleInside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(240%, -50%);
   width: 85px;
-`
-const RightTopInsideDiv = styled.div<AnimationProps>`
-  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
+  animation: ${hideRhombsAnimation}, ${showInsideRhombAnimation};
 `
 
-const RightTopInside = styled.img`
+const RightTopInside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(180%, -115%);
   width: 85px;
-`
-const LeftTopInsideDiv = styled.div<AnimationProps>`
-  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
+  animation: ${hideRhombsAnimation}, ${showInsideRhombAnimation};
 `
 
-const LeftTopInside = styled.img`
+const LeftTopInside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-280%, -115%);
   width: 85px;
+  animation: ${hideRhombsAnimation}, ${showInsideRhombAnimation};
 `
 
 const GlowLayer = styled.div<AnimationProps>`
@@ -300,8 +273,7 @@ const Droid = styled.img<AnimationProps>`
   transform: translate(-50%, -47%);
   transform-origin: top center;
   width: 390px;
-  animation: ${hideDroidAnimation}, ${moveDroidToTopAnimation},
-    ${scaleUpAndDownAnimation};
+  animation: ${hideDroidAnimation}, ${moveDroidToTopAnimation};
   transform-origin: 0 30%;
 `
 
@@ -312,38 +284,31 @@ const OverlappingDroidLayer = styled.div<AnimationProps>`
   left: 0;
 `
 
-const LeftMiddleInsideDiv = styled.div<AnimationProps>`
-  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
-`
-const LeftMiddleInside = styled.img`
+const LeftMiddleInside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-600%, -50%);
   width: 46px;
+  animation: ${hideRhombsAnimation}, ${showInsideRhombAnimation};
 `
 
-const LeftBottomInsideDiv = styled.div<AnimationProps>`
-  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
-`
-
-const LeftBottomInside = styled.img`
+const LeftBottomInside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-230%, 60%);
   width: 85px;
-`
-const RightBottomInsideDiv = styled.div<AnimationProps>`
-  animation: ${hideRhombsAnimation}, ${fadeInAnimation};
+  animation: ${hideRhombsAnimation}, ${showInsideRhombAnimation};
 `
 
-const RightBottomInside = styled.img`
+const RightBottomInside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(130%, 60%);
   width: 85px;
+  animation: ${hideRhombsAnimation}, ${showInsideRhombAnimation};
 `
 
 const OutsideLayerRight = styled.div<AnimationProps>`
