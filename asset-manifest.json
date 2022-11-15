@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/dimondscraft-app/static/css/main.930a1fd3.css",
-    "main.js": "/dimondscraft-app/static/js/main.112fddb8.js",
+    "main.js": "/dimondscraft-app/static/js/main.c220d495.js",
     "static/js/552.d50aa968.chunk.js": "/dimondscraft-app/static/js/552.d50aa968.chunk.js",
     "static/js/26.769268c2.chunk.js": "/dimondscraft-app/static/js/26.769268c2.chunk.js",
     "static/js/86.5c3b60f9.chunk.js": "/dimondscraft-app/static/js/86.5c3b60f9.chunk.js",
     "static/js/156.984dd8cf.chunk.js": "/dimondscraft-app/static/js/156.984dd8cf.chunk.js",
-    "static/js/926.7ef19d11.chunk.js": "/dimondscraft-app/static/js/926.7ef19d11.chunk.js",
+    "static/js/926.2ef18f49.chunk.js": "/dimondscraft-app/static/js/926.2ef18f49.chunk.js",
     "static/js/787.f7421bd0.chunk.js": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js",
     "static/css/301.fbbdc698.chunk.css": "/dimondscraft-app/static/css/301.fbbdc698.chunk.css",
     "static/js/301.6f2e9fd6.chunk.js": "/dimondscraft-app/static/js/301.6f2e9fd6.chunk.js",
@@ -60,12 +60,12 @@
     "static/media/shape1.svg": "/dimondscraft-app/static/media/shape1.2526904ecb9a397219ef5d75c8d49967.svg",
     "static/media/shape3.svg": "/dimondscraft-app/static/media/shape3.f883c7f0de1cfe5e036b14d9aca83a63.svg",
     "main.930a1fd3.css.map": "/dimondscraft-app/static/css/main.930a1fd3.css.map",
-    "main.112fddb8.js.map": "/dimondscraft-app/static/js/main.112fddb8.js.map",
+    "main.c220d495.js.map": "/dimondscraft-app/static/js/main.c220d495.js.map",
     "552.d50aa968.chunk.js.map": "/dimondscraft-app/static/js/552.d50aa968.chunk.js.map",
     "26.769268c2.chunk.js.map": "/dimondscraft-app/static/js/26.769268c2.chunk.js.map",
     "86.5c3b60f9.chunk.js.map": "/dimondscraft-app/static/js/86.5c3b60f9.chunk.js.map",
     "156.984dd8cf.chunk.js.map": "/dimondscraft-app/static/js/156.984dd8cf.chunk.js.map",
-    "926.7ef19d11.chunk.js.map": "/dimondscraft-app/static/js/926.7ef19d11.chunk.js.map",
+    "926.2ef18f49.chunk.js.map": "/dimondscraft-app/static/js/926.2ef18f49.chunk.js.map",
     "787.f7421bd0.chunk.js.map": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js.map",
     "301.fbbdc698.chunk.css.map": "/dimondscraft-app/static/css/301.fbbdc698.chunk.css.map",
     "301.6f2e9fd6.chunk.js.map": "/dimondscraft-app/static/js/301.6f2e9fd6.chunk.js.map",
@@ -76,6 +76,6 @@
   },
   "entrypoints": [
     "static/css/main.930a1fd3.css",
-    "static/js/main.112fddb8.js"
+    "static/js/main.c220d495.js"
   ]
 }
