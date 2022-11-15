@@ -19,9 +19,7 @@ const CarouselItem = ({ name, src }: Props) => {
           onDragStart={handleDragStart}
           role='presentation'
         />
-        <TextWrapper>
-          <Name>{name}</Name>
-        </TextWrapper>
+        <Name>{name}</Name>
       </ContentWrapper>
     </Wrapper>
   )
@@ -42,43 +40,25 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 15rem;
   height: 15rem;
+  border: 1px solid #ffffff;
 
   @media only screen and (${Layout.tablet}) {
     width: 20rem;
     height: 20rem;
   }
 `
-const Name = styled.p`
-  display: inline-block;
-  font-size: 1.4rem;
-  color: #ffffff;
-  padding: 0.2rem 0.5rem;
-  position: relative;
-
-  &:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-left: 1px solid #ffffff;
-    border-top: 1px solid #ffffff;
-  }
-
-  &:before {
-    position: absolute;
-    content: '';
-    bottom: 0;
-    right: 0;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-right: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-  }
-`
-const TextWrapper = styled.div`
-  position: relative;
+const Name = styled.div`
   width: 100%;
+  border: 1px solid #ffffff;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #ffffff;
+
+  @media only screen and (${Layout.tablet}) {
+    font-size: 1.4rem;
+  }
 `
+
 export default CarouselItem
