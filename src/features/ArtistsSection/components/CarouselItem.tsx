@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Layout } from '../../../styles/breakpoints'
+import { DragEventHandler } from 'react'
 
 interface Props {
   name: string
@@ -7,7 +8,7 @@ interface Props {
 }
 
 const CarouselItem = ({ name, src }: Props) => {
-  const handleDragStart = (e: any) => e.preventDefault()
+  const handleDragStart: DragEventHandler = (e) => e.preventDefault()
 
   return (
     <Wrapper>

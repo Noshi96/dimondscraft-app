@@ -13,6 +13,7 @@ import CarouselItem from './components/CarouselItem'
 import { useCurrentWidth } from '../../hooks/useCurrentWidth'
 import { Layout } from '../../styles/breakpoints'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import Icon from '../../layouts/Icon'
 
 const ArtistsSection = () => {
   let width = useCurrentWidth()
@@ -39,10 +40,24 @@ const ArtistsSection = () => {
     <CarouselItem name={'Raf Tarnawski'} src={raf} />,
   ]
 
+  const renderNextButton = () => {
+    return (
+      <ContainerRight>
+        <ButtonNext>
+          <StyledArrowIcon name='arrow_right' />
+        </ButtonNext>
+        <FillerSpaceRight />
+      </ContainerRight>
+    )
+  }
+
+  const renderPrevButton = () => {
+    return <></>
+  }
+
   return (
     <ExtendedAdjustingSection>
       <Title>Nasi Artyści</Title>
-
       <AliceCarousel
         responsive={width < 700 ? responsiveMobile : responsiveDesktop}
         mouseTracking
@@ -52,6 +67,8 @@ const ArtistsSection = () => {
         infinite
         animationType='slide'
         items={items}
+        renderPrevButton={renderPrevButton}
+        renderNextButton={renderNextButton}
       />
     </ExtendedAdjustingSection>
   )
@@ -68,6 +85,64 @@ const Title = styled.h2`
   @media only screen and (${Layout.tablet}) {
     font-size: 2rem;
     padding-left: 3rem;
+  }
+`
+
+const ContainerRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+`
+
+const StyledArrowIcon = styled(Icon)`
+  font-size: 5rem;
+  color: #ffffff;
+  ${(props) =>
+    props.name === 'arrow_left' ? 'margin-right: 2rem;' : 'margin-left: 2rem;'}
+
+  @media only screen and (${Layout.tablet}) {
+    font-size: 10rem;
+  }
+`
+
+const ButtonNext = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 15rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  cursor: pointer;
+
+  @media only screen and (${Layout.tablet}) {
+    width: 16rem;
+    height: 20rem;
+  }
+`
+
+const FillerSpaceRight = styled.div`
+  display: flex;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  width: 8rem;
+  flex-grow: 1;
+
+  @media only screen and (${Layout.tablet}) {
+    width: 16rem;
   }
 `
 
