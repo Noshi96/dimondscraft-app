@@ -1,5 +1,6 @@
 import React from 'react'
 import { RouterProvider, createHashRouter } from 'react-router-dom'
+import 'material-icons/iconfont/material-icons.css'
 
 const ArtistsPage = React.lazy(() => import('./pages/Artists'))
 const AboutPage = React.lazy(() => import('./pages/About'))
