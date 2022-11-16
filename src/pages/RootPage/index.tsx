@@ -17,11 +17,13 @@ const RootPage = () => {
   return (
     <>
       <NavBar />
-      <EntrySection />
+      <div id={'entryPageStartHook'}></div>
+      <EntrySection/>
+      <div id={'entryPageEndHook'}></div>
       {outlet || suspenseComponent(<HomePage />)}
       <Footer />
       <GlobalStyle />
-      <ScrollRestoration />
+      {/*<ScrollRestoration />*/}
     </>
   )
 }

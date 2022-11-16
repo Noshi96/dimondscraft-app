@@ -7,6 +7,9 @@ interface Props {
     className?: string;
 }
 
+const iconSize = 36;
+const iconRightMargin = 16;
+
 
 const TokenData = ({ iconPath, name, price, className }: Props) => {
     return (
@@ -27,29 +30,28 @@ const TokenDataWrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.5rem;
 `
 
 const CryptoSignature = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 `
 
 const Icon = styled.img`
-  width: 64px;
-  height: 64px;
-  margin-right: 1rem;
+  width:  ${iconSize}px;
+  height: ${iconSize}px;
+  margin-right: ${iconRightMargin}px;
 `
 
 const Name = styled.div`
   margin-right: 4rem;
-  font-size: 3rem;
+  font-size: 2rem;
 `;
 
 const Price = styled.div`
-  font-size: 1.2rem;
-  margin: 1.5rem 0 0 2rem;
+  font-size: 2rem;
+  margin: 0.5rem 0 0 ${iconSize / 2}px;
   color: #aaaaaa;
 `;
 

@@ -3,4 +3,5 @@ export interface PathsTypes {
   destination: string
   nameOfPage: string
   exact?: boolean
+  scrollHook: 'entryPageStartHook' | 'entryPageEndHook'
 }

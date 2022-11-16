@@ -14,8 +14,8 @@ const LinkIcon = ({ path, redirectionLink }: Props) => {
 }
 
 const Icon = styled.img`
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
   transition: all 0.3s ease-in-out;
 
   &:hover {

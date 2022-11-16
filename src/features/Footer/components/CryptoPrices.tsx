@@ -67,7 +67,7 @@ const CryptoPrices = () => {
             <Header3> Aktualne ceny kryptowalut: </Header3>
             <TokenDataStyled iconPath={ BitcoinLogo } name={ 'Bitcoin (BTC)' } price={ prices?.bitcoin }></TokenDataStyled>
             <TokenDataStyled iconPath={ EthereumLogo } name={ 'Ethereum (ETH)' } price={ prices?.ethereum }></TokenDataStyled>
-            <TokenDataStyled iconPath={ CardanoLogo } name={ 'Cardano 2(ADA)' } price={ prices?.cardano }></TokenDataStyled>
+            <TokenDataStyled iconPath={ CardanoLogo } name={ 'Cardano (ADA)' } price={ prices?.cardano }></TokenDataStyled>
             <TokenDataStyled iconPath={ DogeLogo } name={ 'Dogecoin (doge)' } price={ prices?.doge }></TokenDataStyled>
         </Container>
     )

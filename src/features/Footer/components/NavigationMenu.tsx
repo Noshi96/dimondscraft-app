@@ -13,13 +13,7 @@ const NavigationMenu = () => {
           </NavLinkStyled>
         </LinksColumn>
         <LinksColumn>
-          <NavLinkStyled to={'/artists'}>
-            {' '}
-            {'Media'.toUpperCase()}{' '}
-          </NavLinkStyled>
-        </LinksColumn>
-        <LinksColumn>
-          <NavLinkStyled to={'/art'}> {'O nas'.toUpperCase()} </NavLinkStyled>
+          <NavLinkStyled to={'/about'}> {'O nas'.toUpperCase()} </NavLinkStyled>
         </LinksColumn>
       </NavigationWrapper>
     </Container>
@@ -43,7 +37,7 @@ const NavigationWrapper = styled.div`
   gap: 1rem 1rem;
 
   @media only screen and (${Layout.laptop}) {
-    margin: 1rem 0 0 1rem;
+    margin: 1rem 0 0 0;
   }
 `
 
