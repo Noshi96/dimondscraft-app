@@ -4,6 +4,12 @@ export interface AnimationProps {
   animationLength?: string
   animationSecondLength?: string
   animationDelay?: string
+  startPositionX?: string[]
+  startPositionY?: string[]
+  endPositionX?: string[]
+  endPositionY?: string[]
+  duration?: string[]
+  delay?: string[]
 }
 
 const moveFromLeftToRight = keyframes`
@@ -28,6 +34,28 @@ const moveFromBottomToTop = keyframes`
   }
   100% {
     transform: translate(-50%, -50%);
+  }
+`
+
+const moveDiamondFromBottomToTop = (
+  startPositionX: string,
+  startPositionY: string,
+  endPositionX: string,
+  endPositionY: string
+) => keyframes`
+  0% {
+    transform: translate(${startPositionX}%, ${startPositionY}%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(${endPositionX}%, ${endPositionY}%);
   }
 `
 
@@ -133,6 +161,38 @@ export const fadeInBackGlowAnimation = ({
   animationLength = '2s',
 }: AnimationProps) => css`
   ${fadeIn} ${animationLength}
+`
+
+export const moveDiamondsFromBottomToTopAnimation = ({
+  duration = ['2s'],
+  delay = ['2s'],
+  startPositionX = ['100', '0'],
+  startPositionY = ['200', '0'],
+  endPositionX = ['300', '0'],
+  endPositionY = ['400', '0'],
+}: AnimationProps) => css`
+  animation-name: ${moveDiamondFromBottomToTop(
+      startPositionX[0],
+      startPositionY[0],
+      endPositionX[0],
+      endPositionY[0]
+    )},
+    ${moveDiamondFromBottomToTop(
+      startPositionX[1],
+      startPositionY[1],
+      endPositionX[1],
+      endPositionY[1]
+    )},
+    ${moveDiamondFromBottomToTop(
+      startPositionX[2],
+      startPositionY[2],
+      endPositionX[2],
+      endPositionY[2]
+    )};
+  animation-duration: ${duration[0]}, ${duration[1]}, ${duration[2]};
+  animation-timing-function: linear, linear, linear;
+  animation-delay: ${delay[0]}, ${delay[1]}, ${delay[2]};
+  animation-iteration-count: 1, 1, infinite;
 `
 
 export const lengthOfTime = {
