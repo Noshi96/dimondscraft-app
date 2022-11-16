@@ -19,8 +19,6 @@ import glow3 from '../../assets/entry/glow3.png'
 import { Layout } from '../../styles/breakpoints'
 import {
   AnimationProps,
-  leftAnimation,
-  rightAnimation,
   toTopAnimation,
   hideDroidAnimation,
   moveDroidToTopAnimation,
@@ -28,6 +26,7 @@ import {
   lengthOfTime,
   fadeInBackGlowAnimation,
   showInsideRhombAnimation,
+  moveDiamondsFromBottomToTopAnimation,
 } from './animations'
 import { useTextTyping } from '../../hooks/useTextTyping'
 import { delay } from '../../utils/DelayFunction'
@@ -53,10 +52,67 @@ const EntrySection = () => {
       <Background src={background} alt='background' />
       <Wrapper>
         <Content>
-          <OutsideLayerLeft animationLength={sec2}>
-            <LeftTopOutside src={shape1} alt='left_top_outside' />
-            <LeftMiddleOutside src={shape6} alt='left_middle_outside' />
-            <LeftBottomOutside src={shape3} alt='left_bottom_outside' />
+          <OutsideLayerLeft>
+            <LeftTopOutside
+              src={shape1}
+              alt='left_top_outside'
+              startPositionX={['-2740', '-2740', '-2740']}
+              startPositionY={['1176', '1176', '1176']}
+              endPositionX={['-2740', '-2740', '-2740']}
+              endPositionY={['-1281', '-1281', '-1281']}
+              duration={['3s', '5s', '2s']}
+              delay={['0s', '3s', '8s']}
+            />
+            <LeftMiddleOutside
+              src={shape6}
+              alt='left_middle_outside'
+              startPositionX={['-1390', '-1390', '-1390']}
+              startPositionY={['786', '786', '786']}
+              endPositionX={['-1390', '-1390', '-1390']}
+              endPositionY={['-880', '-880', '-880']}
+              duration={['4s', '6s', '3s']}
+              delay={['0s', '4s', '10s']}
+            />
+            <LeftBottomOutside
+              src={shape3}
+              alt='left_bottom_outside'
+              startPositionX={['-940', '-940', '-940']}
+              startPositionY={['785', '785', '785']}
+              endPositionX={['-940', '-940', '-940']}
+              endPositionY={['-880', '-880', '-880']}
+              duration={['3s', '3s', '5s']}
+              delay={['0s', '3s', '6s']}
+            />
+            <LeftTopOutside
+              src={shape1}
+              alt='left_top_outside'
+              startPositionX={['-540', '-540', '-540']}
+              startPositionY={['1176', '1176', '1176']}
+              endPositionX={['-540', '-540', '-540']}
+              endPositionY={['-1281', '-1281', '-1281']}
+              duration={['3s', '2.5s', '2s']}
+              delay={['0s', '3s', '5.5s']}
+            />
+            <LeftMiddleOutside
+              src={shape6}
+              alt='left_middle_outside'
+              startPositionX={['-40', '-40', '-40']}
+              startPositionY={['786', '786', '786']}
+              endPositionX={['-40', '-40', '-40']}
+              endPositionY={['-880', '-880', '-880']}
+              duration={['4s', '5s', '3s']}
+              delay={['0s', '4s', '9s']}
+            />
+            <LeftBottomOutside
+              src={shape3}
+              alt='left_bottom_outside'
+              startPositionX={['240', '240', '240']}
+              startPositionY={['785', '785', '785']}
+              endPositionX={['240', '240', '240']}
+              endPositionY={['-880', '-880', '-880']}
+              duration={['3s', '3.5s', '5s']}
+              delay={['0s', '3s', '6.5s']}
+            />
           </OutsideLayerLeft>
 
           <MainDroidLayer>
@@ -124,10 +180,37 @@ const EntrySection = () => {
             </OverlappingDroidLayer>
           </MainDroidLayer>
 
-          <OutsideLayerRight animationLength={sec2}>
-            <RightTopOutside src={shape2} alt='right_top_outside' />
-            <RightMiddleOutside src={shape5} alt='right_middle_outside' />
-            <RightBottomOutside src={shape4} alt='right_bottom_outside' />
+          <OutsideLayerRight>
+            <RightTopOutside
+              src={shape2}
+              alt='right_top_outside'
+              startPositionX={['940', '940', '940']}
+              startPositionY={['887', '887', '887']}
+              endPositionX={['940', '940', '940']}
+              endPositionY={['-982', '-982', '-982']}
+              duration={['3s', '4s', '2s']}
+              delay={['0s', '3s', '7s']}
+            />
+            <RightMiddleOutside
+              src={shape5}
+              alt='right_middle_outside'
+              startPositionX={['1140', '1140', '1140']}
+              startPositionY={['707', '707', '707']}
+              endPositionX={['1140', '1140', '1140']}
+              endPositionY={['-800', '-800', '-800']}
+              duration={['3s', '2s', '3s']}
+              delay={['0s', '3s', '5s']}
+            />
+            <RightBottomOutside
+              src={shape4}
+              alt='right_bottom_outside'
+              startPositionX={['925', '925', '925']}
+              startPositionY={['414', '414', '414']}
+              endPositionX={['925', '925', '925']}
+              endPositionY={['-516', '-516', '-516']}
+              duration={['2s', '4s', '4s']}
+              delay={['0s', '2s', '6s']}
+            />
           </OutsideLayerRight>
         </Content>
       </Wrapper>
@@ -153,36 +236,38 @@ const Content = styled.div`
   width: 100%;
   height: 100%;
 `
-const OutsideLayerLeft = styled.div<AnimationProps>`
+const OutsideLayerLeft = styled.div`
   width: 100%;
   position: absolute;
   top: 50%;
   left: 0%;
-  animation: ${leftAnimation};
 `
 
-const LeftTopOutside = styled.img`
+const LeftTopOutside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-1040%, -705%);
   width: 30px;
+  ${moveDiamondsFromBottomToTopAnimation};
 `
 
-const LeftMiddleOutside = styled.img`
+const LeftMiddleOutside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-1140%, 15%);
   width: 45px;
+  ${moveDiamondsFromBottomToTopAnimation};
 `
 
-const LeftBottomOutside = styled.img`
+const LeftBottomOutside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   width: 45px;
   transform: translate(-940%, 560%);
+  ${moveDiamondsFromBottomToTopAnimation};
 `
 
 const MainDroidLayer = styled.div`
@@ -309,34 +394,36 @@ const RightBottomInside = styled.img<AnimationProps>`
   animation: ${hideRhombsAnimation}, ${showInsideRhombAnimation};
 `
 
-const OutsideLayerRight = styled.div<AnimationProps>`
+const OutsideLayerRight = styled.div`
   width: 100%;
   position: absolute;
   top: 50%;
   right: 0%;
-  animation: ${rightAnimation};
 `
 
-const RightTopOutside = styled.img`
+const RightTopOutside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(940%, -500%);
   width: 40px;
+  ${moveDiamondsFromBottomToTopAnimation};
 `
-const RightMiddleOutside = styled.img`
+const RightMiddleOutside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(1040%, 50%);
   width: 50px;
+  ${moveDiamondsFromBottomToTopAnimation};
 `
-const RightBottomOutside = styled.img`
+const RightBottomOutside = styled.img<AnimationProps>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(625%, 295%);
   width: 85px;
+  ${moveDiamondsFromBottomToTopAnimation};
 `
 
 const TextWrapper = styled.div`
