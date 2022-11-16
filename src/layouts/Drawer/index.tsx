@@ -58,7 +58,7 @@ const Drawer = () => {
         disableDiscovery={iOS}
         PaperProps={{
           sx: {
-            backgroundColor: '#0A0019',
+            backgroundColor: '#080924',
           },
         }}
       >

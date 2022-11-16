@@ -2,6 +2,13 @@ import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 import { PathsTypes } from './model'
 
+const scrollToEntrySection = (scrollHook: 'entryPageStartHook' | 'entryPageEndHook'): void => {
+  setTimeout(() => {
+    const element = document.getElementById(scrollHook) as HTMLElement;
+    element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'});
+  }, 300)
+}
+
 const Nav = () => {
   const paths: PathsTypes[] = [
     {
@@ -9,39 +16,21 @@ const Nav = () => {
       destination: '/',
       nameOfPage: 'Home',
       exact: true,
-    },
-    {
-      key: 'artists',
-      destination: '/artists',
-      nameOfPage: 'Artists',
+      scrollHook: 'entryPageStartHook',
     },
     {
       key: 'about',
       destination: '/about',
       nameOfPage: 'About us',
-    },
-    {
-      key: 'art',
-      destination: '/art',
-      nameOfPage: 'Art',
-    },
-    {
-      key: 'media',
-      destination: '/our-media',
-      nameOfPage: 'Our media',
-    },
-    {
-      key: 'links',
-      destination: '/links',
-      nameOfPage: 'Links',
+      scrollHook: 'entryPageEndHook',
     },
   ]
 
   return (
     <NavList>
-      {paths.map(({ key, destination, nameOfPage, exact }) => (
+      {paths.map(({ key, destination, nameOfPage, exact, scrollHook }) => (
         <Item key={key}>
-          <NavLinkStyled end={exact} to={destination}>
+          <NavLinkStyled end={exact} to={destination} onClick={() => scrollToEntrySection(scrollHook)}>
             {nameOfPage}
           </NavLinkStyled>
         </Item>
@@ -77,12 +66,12 @@ const NavLinkStyled = styled(NavLink)`
   }
   &:hover,
   &:active {
-    background-color: #22192f;
+    background-color: #2c1b96;
     color: #ffaa00;
   }
 
   &.active {
-    background-color: #22192f;
+    background-color: #2c1b96;
     color: #ffaa00;
   }
 `

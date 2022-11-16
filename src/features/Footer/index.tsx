@@ -71,7 +71,7 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   @media only screen and (${Layout.laptop}) {
     flex-direction: row;
