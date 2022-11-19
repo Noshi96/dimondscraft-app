@@ -8,7 +8,7 @@ export function useTextTyping(
 
   useEffect(() => {
     async function typeText() {
-      await delay(2500)
+      await delay(1200)
       let i = 0
       const interval = setInterval(async () => {
         let newLetter = textToDisplay[i++]

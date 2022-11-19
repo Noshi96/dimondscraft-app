@@ -2,9 +2,11 @@ import styled from 'styled-components'
 import SingleEvent from './SingleEvent'
 import poster1 from '../../../assets/AukcjaTurtleUnite.jpg'
 import poster2 from '../../../assets/PierwszaAukjaTokenow.jpg'
+import poster2hq from '../../../assets/1_9_20.jpg'
 import poster3 from '../../../assets/plakat2AukcjaTokenow.jpg'
 import poster4 from '../../../assets/SummerArtBreak.jpg'
 import poster5 from '../../../assets/SummerArtBreak2.jpg'
+import poster6 from '../../../assets/art1.jpg'
 import { EventType } from './Models/EventType'
 
 const EventList = () => {
@@ -13,11 +15,11 @@ const EventList = () => {
   const events: EventType[] = [
     {
       alt: 'turtle-event-poster',
-      imgSrc: poster1,
+      imgSrc: poster6,
       event: {
-        title: 'turtle event',
-        imgSrc: poster1,
-        alt: 'turtle-event-poster',
+        title: 'Art revolution',
+        imgSrc: poster6,
+        alt: 'Art-revolution',
         contentText: `1 ${content}`,
       },
     },
@@ -26,7 +28,7 @@ const EventList = () => {
       imgSrc: poster2,
       event: {
         title: 'first token event',
-        imgSrc: poster2,
+        imgSrc: poster2hq,
         alt: 'first-token-event-poster',
         contentText: `2 ${content}`,
       },
@@ -59,6 +61,16 @@ const EventList = () => {
         imgSrc: poster5,
         alt: 'summer-art-break-2-poster',
         contentText: `5 ${content}`,
+      },
+    },
+    {
+      alt: 'turtle-event-poster',
+      imgSrc: poster1,
+      event: {
+        title: 'turtle event',
+        imgSrc: poster1,
+        alt: 'turtle-event-poster',
+        contentText: `1 ${content}`,
       },
     },
   ]

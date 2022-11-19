@@ -35,7 +35,7 @@ const Container = styled.div`
 const LinkIconsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 `
 

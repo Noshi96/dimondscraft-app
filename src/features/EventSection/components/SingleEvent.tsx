@@ -16,6 +16,11 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
 
   const navigateToEventHandler = () => {
     navigate(destination, { state: { event } })
+
+    setTimeout(() => {
+      const element = document.getElementById('entryPageEndHook') as HTMLElement;
+      element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'});
+    }, 300)
   }
 
   return (
@@ -40,8 +45,8 @@ const Poster = styled.img`
   border: 1px solid #ffffff;
 
   @media only screen and (${Layout.tablet}) {
-    width: 19rem;
-    height: 28rem;
+    width: auto;
+    height: 350px;
   }
 `
 

@@ -5,9 +5,8 @@ import gosia from '../../assets/gosia-kosiec-fot-agnieszka-cytacka.jpg'
 import jan from '../../assets/jan-drnico-oklinski-artysta.jpg'
 import jaroslaw from '../../assets/jaroslaw-jasnikowski-artist-painter.jpg'
 import lucyna from '../../assets/lucyna-goralczyk.jpg'
-import malgorzata from '../../assets/malgorzata-bankowska-artist-painter.jpg'
 import piotr from '../../assets/piotr-horodynski-artysta-malarz.jpg'
-import raf from '../../assets/raf-tarnawski.jpg'
+import orzechowski from '../../assets/orzechowski.png'
 import styled from 'styled-components'
 import CarouselItem from './components/CarouselItem'
 import { useCurrentWidth } from '../../hooks/useCurrentWidth'
@@ -30,14 +29,13 @@ const ArtistsSection = () => {
   }
 
   const items = [
+    <CarouselItem name={'Janusz Orzechowski'} src={orzechowski} />,
+    <CarouselItem name={'Jan DrNico Okliński '} src={jan} />,
     <CarouselItem name={'Andrzej Kielar'} src={andrzej} />,
     <CarouselItem name={'Małgorzata Kosiec'} src={gosia} />,
-    <CarouselItem name={'Jan DrNico Okliński '} src={jan} />,
     <CarouselItem name={'Jarosław Jaśnikowski'} src={jaroslaw} />,
     <CarouselItem name={'Lucyna Góralczyk'} src={lucyna} />,
-    <CarouselItem name={'Małgorzata Bankowska'} src={malgorzata} />,
     <CarouselItem name={'Piotr Horodyński'} src={piotr} />,
-    <CarouselItem name={'Raf Tarnawski'} src={raf} />,
   ]
 
   const renderNextButton = () => {
@@ -75,7 +73,7 @@ const ArtistsSection = () => {
 }
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
-  padding-top: 8rem;
+  padding: 8rem 0 4rem;
 `
 
 const Title = styled.h2`

@@ -10,15 +10,10 @@ const KnowUsBetterSection = () => {
   return (
     <FullWidthContainer>
       <ExtendedAdjustingSection>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+        <Header> Technologia blockchain dla Twojego biznesu </Header>
+        Jeśli poszukujesz kompleksowych rozwiązań i zastosowania technologii Web3,
+        jeśli chcesz przenieść swoje produkty lub usługi do Metaverse w sposób bezpieczny i kompleksowy skontaktuj się z nami aby poznać szczegóły oferty dla Ciebie.
+        Pomożemy, doradzimy i wdrożymy Twoje produkty w formie Tokenu NFT.
         <SpotifyWidget>
           <iframe
             style={style}
@@ -50,9 +45,16 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
     padding: 3rem 4rem;
   }
 
-  @media only screen and (${Layout.desktop}) {
-    padding: 3rem 12rem;
+  @media only screen and (${Layout.laptop}) {
+    padding: 3rem 10rem;
   }
+`
+
+const Header = styled.h3`
+  font-size: 2rem;
+  margin: 0;
+  padding-top: 5.5rem;
+  box-sizing: border-box;
 `
 
 const SpotifyWidget = styled.div`
@@ -63,7 +65,7 @@ const SpotifyWidget = styled.div`
   padding: 1rem 0 0 0;
 
   @media only screen and (${Layout.laptop}) {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 `
 

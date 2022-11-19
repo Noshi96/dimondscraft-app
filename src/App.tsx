@@ -7,6 +7,7 @@ const AboutPage = React.lazy(() => import('./pages/AboutUsPage'))
 const ArtPage = React.lazy(() => import('./pages/Art'))
 const EventPage = React.lazy(() => import('./pages/EventPage'))
 const RootPage = React.lazy(() => import('./pages/RootPage'))
+const ContactPage = React.lazy(() => import('./pages/ContactPage'))
 
 const suspenseComponent = (component: React.ReactNode) => {
   return <React.Suspense fallback='Loading...'>{component}</React.Suspense>
@@ -24,6 +25,10 @@ const router = createHashRouter([
       {
         path: 'about',
         element: suspenseComponent(<AboutPage />),
+      },
+      {
+        path: 'contact',
+        element: suspenseComponent(<ContactPage />),
       },
       {
         path: 'art',
