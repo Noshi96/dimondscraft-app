@@ -12,5 +12,5 @@ export function useChangeStateOnScroll(
     return () => {
       window.removeEventListener('scroll', controlNavbar)
     }
-  }, [])
+  })
 }
