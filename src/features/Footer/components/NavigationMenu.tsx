@@ -5,8 +5,12 @@ import { Layout } from '../../../styles/breakpoints'
 const NavigationMenu = () => {
   const smoothNavigate = () => {
     setTimeout(() => {
-      const element = document.getElementById('entryPageEndHook') as HTMLElement;
-      element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'});
+      const element = document.getElementById('entryPageEndHook') as HTMLElement
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'start',
+      })
     }, 300)
   }
 
@@ -20,10 +24,22 @@ const NavigationMenu = () => {
           </NavLinkStyled>
         </LinksColumn>
         <LinksColumn>
-          <NavLinkStyled to={'/about'} onClick={smoothNavigate}> {'O nas'.toUpperCase()} </NavLinkStyled>
+          <NavLinkStyled to={'/about'} onClick={smoothNavigate}>
+            {' '}
+            {'O nas'.toUpperCase()}{' '}
+          </NavLinkStyled>
         </LinksColumn>
         <LinksColumn>
-          <NavLinkStyled to={'/contact'} onClick={smoothNavigate}> {'Kontakt'.toUpperCase()} </NavLinkStyled>
+          <NavLinkStyled to={'/gallery'} onClick={smoothNavigate}>
+            {' '}
+            {'Galeria'.toUpperCase()}{' '}
+          </NavLinkStyled>
+        </LinksColumn>
+        <LinksColumn>
+          <NavLinkStyled to={'/contact'} onClick={smoothNavigate}>
+            {' '}
+            {'Kontakt'.toUpperCase()}{' '}
+          </NavLinkStyled>
         </LinksColumn>
       </NavigationWrapper>
     </Container>
@@ -44,6 +60,7 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 1rem 1rem;
 
   @media only screen and (${Layout.laptop}) {

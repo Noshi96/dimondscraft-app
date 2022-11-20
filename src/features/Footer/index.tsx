@@ -9,63 +9,63 @@ import TwitterLogo from '../../assets/media/twitter.png'
 import OneBidLogo from '../../assets/media/onebidlogo.png'
 
 import { MediaIcon } from './models/MediaIcon'
-import { AdjustingSection } from "../../layouts/AdjustingSection/AdjustingSection";
-import { customOptionsFour } from "../../layouts/Particles/config/customOptionsFour";
-import ParticlesBackground from "../../layouts/Particles";
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+import ParticlesBackground from '../../layouts/Particles'
 
 const Footer = () => {
   const baseMedia: MediaIcon[] = [
-      { path: TwitterLogo, redirectionLink: 'https://twitter.com/diamondsct' },
+    { path: TwitterLogo, redirectionLink: 'https://twitter.com/diamondsct' },
   ]
   const additionalMedia: MediaIcon[] = [
-      { path: OpenseaLogo, redirectionLink: 'https://opensea.io/DCFT/' },
-      { path: OneBidLogo, redirectionLink: 'https://onebid.pl/pl/auction/-/3391' },
+    { path: OpenseaLogo, redirectionLink: 'https://opensea.io/DCFT/' },
+    {
+      path: OneBidLogo,
+      redirectionLink: 'https://onebid.pl/pl/auction/-/3391',
+    },
   ]
 
-
-
   return (
-      <FullWidthContainer>
-          <ParticlesBackground
-              width='100%'
-              height='100%'
-              options={customOptionsFour}
-              style={{ position: 'absolute', zIndex: '-1' }}
-              id={'FooterParticles'}
-          />
-        <ExtendedAdjustingSection>
-          <ColumnWrapper>
-            <CryptoPrices></CryptoPrices>
-          </ColumnWrapper>
+    <FullWidthContainer>
+      <ParticlesBackground
+        width='100%'
+        height='100%'
+        options={customOptionsFour}
+        style={{ position: 'absolute', zIndex: '-1' }}
+        id={'FooterParticles'}
+      />
+      <ExtendedAdjustingSection>
+        <ColumnWrapper>
+          <CryptoPrices></CryptoPrices>
+        </ColumnWrapper>
 
-          <ColumnWrapper>
-            <SocialMedia
-                headerText={'Dołącz do naszej społeczności:'}
-                media={baseMedia}
-            ></SocialMedia>
+        <ColumnWrapper>
+          <SocialMedia
+            headerText={'Dołącz do naszej społeczności:'}
+            media={baseMedia}
+          ></SocialMedia>
 
-            <SocialMedia
-                headerText={'Jesteśmy dostępni także na:'}
-                media={additionalMedia}
-            ></SocialMedia>
-          </ColumnWrapper>
-        </ExtendedAdjustingSection>
+          <SocialMedia
+            headerText={'Jesteśmy dostępni także na:'}
+            media={additionalMedia}
+          ></SocialMedia>
+        </ColumnWrapper>
+      </ExtendedAdjustingSection>
 
-        <ExtendedAdjustingSection>
-          <NavigationMenu></NavigationMenu>
-        </ExtendedAdjustingSection>
+      <ExtendedAdjustingSection>
+        <NavigationMenu />
+      </ExtendedAdjustingSection>
 
-        <ExtendedAdjustingSection>
-          <Restrictions> Ⓒ DIAMONDS CRAFT. ALL RIGHTS RESERVED. </Restrictions>
-        </ExtendedAdjustingSection>
-      </FullWidthContainer>
+      <ExtendedAdjustingSection>
+        <Restrictions> Ⓒ DIAMONDS CRAFT. ALL RIGHTS RESERVED. </Restrictions>
+      </ExtendedAdjustingSection>
+    </FullWidthContainer>
   )
 }
 
 const FullWidthContainer = styled.div`
   width: 100%;
   background: transparent;
-  
 `
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
@@ -77,7 +77,6 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
   @media only screen and (${Layout.laptop}) {
     flex-direction: row;
   }
-  
 `
 
 const ColumnWrapper = styled.div`

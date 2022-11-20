@@ -1,96 +1,34 @@
 import styled from 'styled-components'
-import { Layout } from '../../styles/breakpoints'
 import { GallerySection } from '../../features/GallerySection'
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { Layout } from '../../styles/breakpoints'
 
 const GalleryPage = () => {
   return (
-    <Section>
+    <GradientFullWidthContainer>
+      <HeadLine>GALERIA</HeadLine>
       <GallerySection />
-    </Section>
+    </GradientFullWidthContainer>
   )
 }
 
-const Section = styled.section`
+const GradientFullWidthContainer = styled(AdjustingSection)`
   width: 100%;
-  height: 100%;
+  background: linear-gradient(#080924, #000000);
+  padding-top: 4rem;
 `
 
-const EventContainer = styled.div`
+const HeadLine = styled.h2`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 6rem 0;
-  height: 100%;
-`
-const HeadLine = styled.h1`
-  text-transform: uppercase;
-  align-items: center;
+  justify-content: flex-start;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.4rem;
+  margin-left: 2rem;
 
   @media only screen and (${Layout.tablet}) {
-    font-size: 3rem;
-  }
-`
-
-const RowWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  position: relative;
-  margin-top: 2rem;
-
-  @media only screen and (${Layout.tablet}) {
-    flex-direction: row;
-    align-items: stretch;
-  }
-`
-
-const Text = styled.div`
-  width: 20rem;
-  color: #e5e5e5;
-  background-color: #090119cc;
-  padding: 1rem;
-  font-size: 1rem;
-  position: relative;
-
-  &:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 3rem;
-    height: 3rem;
-    border-left: 2px solid #ffffff;
-    border-top: 2px solid #ffffff;
-  }
-
-  &:before {
-    position: absolute;
-    content: '';
-    bottom: 0;
-    right: 0;
-    width: 3rem;
-    height: 3rem;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-  }
-
-  @media only screen and (${Layout.tablet}) {
-    width: 25rem;
-    padding: 2rem;
-    font-size: 1.2rem;
-  }
-`
-const Image = styled.img`
-  width: 20rem;
-  height: 30rem;
-
-  @media only screen and (${Layout.tablet}) {
-    width: 25rem;
-    height: 38rem;
+    font-size: 2rem;
+    margin-left: 12rem;
   }
 `
 

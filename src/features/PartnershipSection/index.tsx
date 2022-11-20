@@ -1,69 +1,70 @@
 import styled from 'styled-components'
 import { Layout } from '../../styles/breakpoints'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import gsap from "gsap";
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 interface Props {
   sectionTitle: string
 }
 
 interface Sponsor {
-    imageSrc: string
-    bgColor: string
+  imageSrc: string
+  bgColor: string
 }
 
 interface SponsorImageWrapperStyles {
-    bgColor?: string
+  bgColor?: string
 }
 
 const importAll = (r: __WebpackModuleApi.RequireContext) => {
   return r.keys().map(r)
 }
 
+const sponsors = (importAll(
+  require.context(`../../assets/sponsors/`, false, /\.(png|jpe?g|svg)$/)
+) as string[]).map((imageSrc) => {
+  const bgColor = (imageSrc.split('backgroundcolor')[1] || '').substring(0, 6)
 
-const sponsors = (importAll(require.context(`../../assets/sponsors/`, false, /\.(png|jpe?g|svg)$/)) as string[])
-    .map(imageSrc => {
-    const bgColor = (imageSrc.split('backgroundcolor')[1] || '').substring(0, 6)
-
-    return {
-        imageSrc,
-        bgColor: bgColor ? `#${bgColor}` : 'transparent'
-    } as Sponsor;
+  return {
+    imageSrc,
+    bgColor: bgColor ? `#${bgColor}` : 'transparent',
+  } as Sponsor
 })
 
-
 const PartnershipSection = ({ sectionTitle }: Props) => {
-    const eventRef = useRef(null);
-    const navigate = useNavigate()
-    const destination = '/event-page'
+  const eventRef = useRef(null)
 
-    useEffect(() => {
-        const el = eventRef.current;
-        gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 2, scrollTrigger: {
-                trigger: el
-            }})
-    }, [])
-
+  useEffect(() => {
+    const el = eventRef.current
+    gsap.fromTo(
+      el,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: el,
+        },
+      }
+    )
+  }, [])
 
   return (
-      <FullWidthContainer>
-        <ExtendedAdjustingSection>
-          <Container>
-            <SectionTitle>{sectionTitle}</SectionTitle>
-            <ImageList ref={eventRef}>
-              {sponsors.map(
-                  ({ imageSrc ,bgColor}) => (
-                      <SponsorImgWrapper bgColor={bgColor} key={imageSrc}>
-                        <SponsorImg src={imageSrc} alt='sopra' />
-                      </SponsorImgWrapper>
-                )
-              )}
-            </ImageList>
-          </Container>
-        </ExtendedAdjustingSection>
-      </FullWidthContainer>
+    <FullWidthContainer>
+      <ExtendedAdjustingSection>
+        <Container>
+          <SectionTitle>{sectionTitle}</SectionTitle>
+          <ImageList ref={eventRef}>
+            {sponsors.map(({ imageSrc, bgColor }) => (
+              <SponsorImgWrapper bgColor={bgColor} key={imageSrc}>
+                <SponsorImg src={imageSrc} alt='sopra' />
+              </SponsorImgWrapper>
+            ))}
+          </ImageList>
+        </Container>
+      </ExtendedAdjustingSection>
+    </FullWidthContainer>
   )
 }
 
@@ -125,6 +126,5 @@ const SponsorImg = styled.img`
     height: 240px;
   }
 `
-
 
 export default PartnershipSection

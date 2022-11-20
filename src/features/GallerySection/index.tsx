@@ -81,7 +81,7 @@ export function GallerySection() {
   }
 
   return (
-    <FullWidthContainer>
+    <>
       {!showGallery ? (
         <UpperBar>
           <Text>{galleryTitle}</Text>
@@ -111,7 +111,7 @@ export function GallerySection() {
               />
             ))}
       </Gallery>
-    </FullWidthContainer>
+    </>
   )
 }
 
@@ -171,13 +171,4 @@ const Gallery = styled(AdjustingSection)`
   padding-top: 3rem;
   padding-bottom: 8rem;
   justify-content: center;
-
-  @media only screen and (${Layout.laptop}) {
-    justify-content: center;
-  }
-`
-
-const FullWidthContainer = styled.div`
-  width: 100%;
-  background: #080924;
 `

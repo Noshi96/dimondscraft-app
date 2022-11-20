@@ -31,15 +31,15 @@ const Nav = () => {
       scrollHook: 'entryPageEndHook',
     },
     {
-      key: 'contact',
-      destination: '/contact',
-      nameOfPage: 'Kontakt',
+      key: 'gallery',
+      destination: '/gallery',
+      nameOfPage: 'Galeria',
       scrollHook: 'entryPageEndHook',
     },
     {
-      key: 'gallery',
-      destination: '/gallery',
-      nameOfPage: 'Gallery',
+      key: 'contact',
+      destination: '/contact',
+      nameOfPage: 'Kontakt',
       scrollHook: 'entryPageEndHook',
     },
   ]
