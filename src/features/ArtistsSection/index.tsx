@@ -1,12 +1,12 @@
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
-import andrzej from '../../assets/andrzej-kielar-artist-painter.jpg'
-import gosia from '../../assets/gosia-kosiec-fot-agnieszka-cytacka.jpg'
-import jan from '../../assets/jan-drnico-oklinski-artysta.jpg'
-import jaroslaw from '../../assets/jaroslaw-jasnikowski-artist-painter.jpg'
-import lucyna from '../../assets/lucyna-goralczyk.jpg'
-import piotr from '../../assets/piotr-horodynski-artysta-malarz.jpg'
-import orzechowski from '../../assets/orzechowski.png'
+import andrzej from '../../assets/homepage/artists/andrzej-kielar-artist-painter.jpg'
+import gosia from '../../assets/homepage/artists/gosia-kosiec-fot-agnieszka-cytacka.jpg'
+import jan from '../../assets/homepage/artists/jan-drnico-oklinski-artysta.jpg'
+import jaroslaw from '../../assets/homepage/artists/jaroslaw-jasnikowski-artist-painter.jpg'
+import lucyna from '../../assets/homepage/artists/lucyna-goralczyk.jpg'
+import piotr from '../../assets/homepage/artists/piotr-horodynski-artysta-malarz.jpg'
+import orzechowski from '../../assets/homepage/artists/orzechowski.png'
 import styled from 'styled-components'
 import CarouselItem from './components/CarouselItem'
 import { useCurrentWidth } from '../../hooks/useCurrentWidth'
@@ -90,9 +90,13 @@ const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 0;
+  right: -1.5rem;
   top: 0;
   height: 100%;
+
+  @media only screen and (${Layout.tablet}) {
+    right: 0;
+  }
 `
 
 const StyledArrowIcon = styled(Icon)`
@@ -120,6 +124,7 @@ const ButtonNext = styled.div`
     rgba(0, 0, 0, 1) 100%
   );
   cursor: pointer;
+  
 
   @media only screen and (${Layout.tablet}) {
     width: 16rem;

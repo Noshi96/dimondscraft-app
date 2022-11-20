@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 import Detail from '../../assets/contact3.png'
+import { Layout } from "../../styles/breakpoints";
 
 const ContactPage = () => {
     return (
@@ -60,6 +61,11 @@ const Image = styled.img`
   position: absolute;
   right: 0;
   top: 300px;
+  display: none;
+
+  @media only screen and (${Layout.laptop}) {
+    display: block;
+  }
 `
 
 

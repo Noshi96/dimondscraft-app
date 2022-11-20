@@ -14,6 +14,7 @@ const GalleryPage = () => {
 
 const GradientFullWidthContainer = styled(AdjustingSection)`
   width: 100%;
+  max-width: 100%;
   background: linear-gradient(#080924, #000000);
   padding-top: 4rem;
 `

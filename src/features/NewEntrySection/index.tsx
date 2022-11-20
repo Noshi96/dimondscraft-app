@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useState } from 'react'
-import background from '../../assets/newEntrySection/tlo.png'
-import samanta from '../../assets/newEntrySection/samanta.png'
+import background from '../../assets/homepage/newEntrySection/tlosmall.webp'
+import samanta from '../../assets/homepage/newEntrySection/samantacompressed.webp'
 
 import { Layout } from '../../styles/breakpoints'
 
@@ -84,8 +84,8 @@ const Headline = styled.h1`
   margin-top: auto;
   color: #ffffff;
   box-sizing: border-box;
-  padding: 0;
-  font-size: 2rem;
+  padding: 0 0 3rem 0;
+  font-size: 1.7rem;
   text-shadow: 0 0 6px #000000, 0 0 12px #000000, 0 0 18px #000000;
   display: flex;
   justify-content: flex-start;
