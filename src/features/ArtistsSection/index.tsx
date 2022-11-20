@@ -35,9 +35,7 @@ const ArtistsSection = () => {
     <CarouselItem name={'Jan DrNico Okliński '} src={jan} />,
     <CarouselItem name={'Jarosław Jaśnikowski'} src={jaroslaw} />,
     <CarouselItem name={'Lucyna Góralczyk'} src={lucyna} />,
-    <CarouselItem name={'Małgorzata Bankowska'} src={malgorzata} />,
     <CarouselItem name={'Piotr Horodyński'} src={piotr} />,
-    <CarouselItem name={'Raf Tarnawski'} src={raf} />,
   ]
 
   const renderNextButton = () => {

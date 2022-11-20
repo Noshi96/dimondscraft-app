@@ -2,10 +2,16 @@ import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 import { PathsTypes } from './model'
 
-const scrollToEntrySection = (scrollHook: 'entryPageStartHook' | 'entryPageEndHook'): void => {
+const scrollToEntrySection = (
+  scrollHook: 'entryPageStartHook' | 'entryPageEndHook'
+): void => {
   setTimeout(() => {
-    const element = document.getElementById(scrollHook) as HTMLElement;
-    element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'});
+    const element = document.getElementById(scrollHook) as HTMLElement
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'start',
+    })
   }, 300)
 }
 
@@ -24,13 +30,23 @@ const Nav = () => {
       nameOfPage: 'About us',
       scrollHook: 'entryPageEndHook',
     },
+    {
+      key: 'gallery',
+      destination: '/gallery',
+      nameOfPage: 'Gallery',
+      scrollHook: 'entryPageEndHook',
+    },
   ]
 
   return (
     <NavList>
       {paths.map(({ key, destination, nameOfPage, exact, scrollHook }) => (
         <Item key={key}>
-          <NavLinkStyled end={exact} to={destination} onClick={() => scrollToEntrySection(scrollHook)}>
+          <NavLinkStyled
+            end={exact}
+            to={destination}
+            onClick={() => scrollToEntrySection(scrollHook)}
+          >
             {nameOfPage}
           </NavLinkStyled>
         </Item>
