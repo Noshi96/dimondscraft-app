@@ -5,3 +5,7 @@ export interface PathsTypes {
   exact?: boolean
   scrollHook: 'entryPageStartHook' | 'entryPageEndHook'
 }
+
+export interface ScrollTypes {
+  showState: boolean
+}
