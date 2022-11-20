@@ -12,6 +12,7 @@ const ArtPage = React.lazy(() => import('./pages/Art'))
 const EventPage = React.lazy(() => import('./pages/EventPage'))
 const RootPage = React.lazy(() => import('./pages/RootPage'))
 const ContactPage = React.lazy(() => import('./pages/ContactPage'))
+const GalleryPage = React.lazy(() => import('./pages/GalleryPage'))
 
 const suspenseComponent = (component: React.ReactNode) => {
   return <React.Suspense fallback='Loading...'>{component}</React.Suspense>
@@ -41,6 +42,10 @@ const router = createHashRouter([
       {
         path: 'event-page',
         element: suspenseComponent(<EventPage />),
+      },
+      {
+        path: 'gallery',
+        element: suspenseComponent(<GalleryPage />),
       },
     ],
   },
