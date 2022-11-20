@@ -1,5 +1,8 @@
 import styled from 'styled-components'
-import { Layout } from '../../../styles/breakpoints'
+import {
+  AnimationProps,
+  fadeInAnimationTwo,
+} from '../../EntrySection/animations'
 
 interface Props {
   imagePath: string
@@ -9,7 +12,12 @@ interface Props {
 const GalleryElement = ({ imagePath, altImgText }: Props) => {
   return (
     <ColumnWrapper>
-      <Image src={imagePath} alt={altImgText} />
+      <Image
+        src={imagePath}
+        alt={altImgText}
+        loading='lazy'
+        animationLength='0.3s'
+      />
     </ColumnWrapper>
   )
 }
@@ -17,16 +25,14 @@ const GalleryElement = ({ imagePath, altImgText }: Props) => {
 const ColumnWrapper = styled.div`
   min-width: 240px;
   position: relative;
+  //transition: all 0.2s;
 `
 
-const Image = styled.img`
-  height: 16rem;
-  width: 100%;
+const Image = styled.img<AnimationProps>`
+  max-width: 100%;
   object-fit: cover;
 
-  @media only screen and (${Layout.tablet}) {
-    height: 37.5rem;
-  }
+  animation: ${fadeInAnimationTwo};
 `
 
 export default GalleryElement

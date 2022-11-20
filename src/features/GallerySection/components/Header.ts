@@ -1,8 +1,0 @@
-import styled from 'styled-components/macro'
-
-export const Header3 = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1.25rem;
-  font-family: Metropolis, sans-serif;
-  font-weight: 700;
-`

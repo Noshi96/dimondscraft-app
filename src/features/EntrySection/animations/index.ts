@@ -157,6 +157,12 @@ export const fadeInAnimation = ({
   ${fadeIn} ${animationSecondLength} linear ${animationDelay}
 `
 
+export const fadeInAnimationTwo = ({
+  animationLength = '1s',
+}: AnimationProps) => css`
+  ${fadeIn} ${animationLength} linear
+`
+
 export const fadeInBackGlowAnimation = ({
   animationLength = '2s',
 }: AnimationProps) => css`
