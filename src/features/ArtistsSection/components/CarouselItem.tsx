@@ -38,12 +38,13 @@ const Wrapper = styled.div`
 `
 
 const Image = styled.img`
-  width: 15rem;
+  width: auto;
   height: 15rem;
   border: 1px solid #ffffff;
+  object-fit: contain;
 
   @media only screen and (${Layout.tablet}) {
-    width: 20rem;
+
     height: 20rem;
   }
 `

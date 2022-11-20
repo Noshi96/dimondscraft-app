@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useState } from 'react'
 import background from '../../assets/entry/background.svg'
+import samanta from '../../assets/samanta2.jpg'
 import leftMiddleShape1 from '../../assets/entry/left_middle_shape_1.svg'
 import leftMiddleShape2 from '../../assets/entry/left_middle_shape_2.svg'
 import rightMiddleShape1 from '../../assets/entry/right_middle_shape1.svg'

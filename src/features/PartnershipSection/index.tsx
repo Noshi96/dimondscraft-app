@@ -1,30 +1,65 @@
 import styled from 'styled-components'
 import { Layout } from '../../styles/breakpoints'
-import alexandrinum from '../../assets/partnership/alexandrinum.png'
-import annakubisz from '../../assets/partnership/annakubisz.png'
-import fantastyka from '../../assets/partnership/fantastyka.png'
-import rotary from '../../assets/partnership/rotary.png'
-import cashify from '../../assets/partnership/cashify.png'
-import sopra from '../../assets/partnership/sopra.png'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
 
 interface Props {
   sectionTitle: string
 }
 
+interface Sponsor {
+    imageSrc: string
+    bgColor: string
+}
+
+interface SponsorImageWrapperStyles {
+    bgColor?: string
+}
+
+const importAll = (r: __WebpackModuleApi.RequireContext) => {
+  return r.keys().map(r)
+}
+
+
+const sponsors = (importAll(require.context(`../../assets/sponsors/`, false, /\.(png|jpe?g|svg)$/)) as string[])
+    .map(imageSrc => {
+    const bgColor = (imageSrc.split('backgroundcolor')[1] || '').substring(0, 6)
+
+    return {
+        imageSrc,
+        bgColor: bgColor ? `#${bgColor}` : 'transparent'
+    } as Sponsor;
+})
+
+
 const PartnershipSection = ({ sectionTitle }: Props) => {
+    const eventRef = useRef(null);
+    const navigate = useNavigate()
+    const destination = '/event-page'
+
+    useEffect(() => {
+        const el = eventRef.current;
+        gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 2, scrollTrigger: {
+                trigger: el
+            }})
+    }, [])
+
+
   return (
       <FullWidthContainer>
         <ExtendedAdjustingSection>
           <Container>
             <SectionTitle>{sectionTitle}</SectionTitle>
-            <ImageList>
-              <img src={alexandrinum} alt='sopra' />
-              <img src={annakubisz} alt='sopra' />
-              <img src={fantastyka} alt='sopra' />
-              <img src={rotary} alt='sopra' />
-              <img src={sopra} alt='sopra' />
-              <img src={cashify} alt='sopra' />
+            <ImageList ref={eventRef}>
+              {sponsors.map(
+                  ({ imageSrc ,bgColor}) => (
+                      <SponsorImgWrapper bgColor={bgColor} key={imageSrc}>
+                        <SponsorImg src={imageSrc} alt='sopra' />
+                      </SponsorImgWrapper>
+                )
+              )}
             </ImageList>
           </Container>
         </ExtendedAdjustingSection>
@@ -61,17 +96,35 @@ const SectionTitle = styled.h2`
 
 const ImageList = styled.div`
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   gap: 3rem;
 
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 0 0 1rem;
+  box-sizing: border-box;
+
   @media only screen and (${Layout.tablet}) {
-    flex-direction: row;
-    justify-content: center;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding: 0 4rem 0;
   }
 `
+
+const SponsorImgWrapper = styled.div<SponsorImageWrapperStyles>`
+  background: ${({ bgColor }) => bgColor};
+`
+
+const SponsorImg = styled.img`
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+
+  @media only screen and (${Layout.tablet}) {
+    width: 240px;
+    height: 240px;
+  }
+`
+
 
 export default PartnershipSection

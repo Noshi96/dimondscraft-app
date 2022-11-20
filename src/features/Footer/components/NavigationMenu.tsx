@@ -3,17 +3,27 @@ import { NavLink } from 'react-router-dom'
 import { Layout } from '../../../styles/breakpoints'
 
 const NavigationMenu = () => {
+  const smoothNavigate = () => {
+    setTimeout(() => {
+      const element = document.getElementById('entryPageEndHook') as HTMLElement;
+      element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'});
+    }, 300)
+  }
+
   return (
     <Container>
       <NavigationWrapper>
         <LinksColumn>
-          <NavLinkStyled end={true} to={'/'}>
+          <NavLinkStyled end={true} to={'/'} onClick={smoothNavigate}>
             {' '}
             {'Strona główna'.toUpperCase()}{' '}
           </NavLinkStyled>
         </LinksColumn>
         <LinksColumn>
-          <NavLinkStyled to={'/about'}> {'O nas'.toUpperCase()} </NavLinkStyled>
+          <NavLinkStyled to={'/about'} onClick={smoothNavigate}> {'O nas'.toUpperCase()} </NavLinkStyled>
+        </LinksColumn>
+        <LinksColumn>
+          <NavLinkStyled to={'/contact'} onClick={smoothNavigate}> {'Kontakt'.toUpperCase()} </NavLinkStyled>
         </LinksColumn>
       </NavigationWrapper>
     </Container>
@@ -37,7 +47,7 @@ const NavigationWrapper = styled.div`
   gap: 1rem 1rem;
 
   @media only screen and (${Layout.laptop}) {
-    margin: 1rem 0 0 0;
+    margin: 8rem 0 0 0;
   }
 `
 

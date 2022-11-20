@@ -7,13 +7,14 @@ import type { ISourceOptions } from 'tsparticles-engine'
 import type { CSSProperties } from 'react'
 
 interface Props {
+  id: string;
   width?: string
   height?: string
   options?: ISourceOptions
-  style?: CSSProperties
+  style?: CSSProperties,
 }
 
-const ParticlesBackground = ({ width, options, height, style }: Props) => {
+const ParticlesBackground = ({ width, options, height, style, id }: Props) => {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine)
   }, [])
@@ -21,7 +22,7 @@ const ParticlesBackground = ({ width, options, height, style }: Props) => {
   return (
     <>
       <StyledParticles
-        id='tsparticles'
+        id={id}
         init={particlesInit}
         options={options}
         width={width}

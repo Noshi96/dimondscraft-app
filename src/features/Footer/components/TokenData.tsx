@@ -7,8 +7,8 @@ interface Props {
     className?: string;
 }
 
-const iconSize = 36;
-const iconRightMargin = 16;
+const iconSize = 16;
+const iconRightMargin = 8;
 
 
 const TokenData = ({ iconPath, name, price, className }: Props) => {
@@ -46,11 +46,11 @@ const Icon = styled.img`
 
 const Name = styled.div`
   margin-right: 4rem;
-  font-size: 2rem;
+  font-size: 1.2rem;
 `;
 
 const Price = styled.div`
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin: 0.5rem 0 0 ${iconSize / 2}px;
   color: #aaaaaa;
 `;

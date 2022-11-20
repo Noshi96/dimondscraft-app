@@ -3,7 +3,7 @@ import NavBar from '../../layouts/NavBar'
 import { GlobalStyle } from '../../styles/global-styles'
 import { useOutlet } from 'react-router-dom'
 import Footer from '../../features/Footer'
-import EntrySection from '../../features/EntrySection'
+import NewEntrySection from "../../features/NewEntrySection";
 const HomePage = React.lazy(() => import('../../pages/HomePage'))
 
 const suspenseComponent = (component: React.ReactNode) => {
@@ -17,7 +17,7 @@ const RootPage = () => {
     <>
       <NavBar />
       <div id={'entryPageStartHook'}></div>
-      <EntrySection />
+      <NewEntrySection />
       <div id={'entryPageEndHook'}></div>
       {outlet || suspenseComponent(<HomePage />)}
       <Footer />

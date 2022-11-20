@@ -1,7 +1,5 @@
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import ParticlesBackground from '../../layouts/Particles'
-import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
 import { Layout } from '../../styles/breakpoints'
 
 const EventPage = () => {
@@ -12,12 +10,6 @@ const EventPage = () => {
 
   return (
     <Section>
-      <ParticlesBackground
-        width='100%'
-        height='100%'
-        options={customOptionsFour}
-        style={{ position: 'absolute', zIndex: '-1' }}
-      />
       <EventContainer>
         <HeadLine>{title}</HeadLine>
         <RowWrapper>
@@ -30,7 +22,7 @@ const EventPage = () => {
 }
 
 const Section = styled.section`
-  background-color: #000000;
+  background-image: linear-gradient(#080924, #000000);
   z-index: 2;
   position: relative;
 `
@@ -105,11 +97,11 @@ const Text = styled.div`
   }
 `
 const Image = styled.img`
-  width: 20rem;
+  width: auto;
+  max-width: 100vw;
   height: 30rem;
 
   @media only screen and (${Layout.tablet}) {
-    width: 25rem;
     height: 38rem;
   }
 `

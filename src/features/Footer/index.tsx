@@ -5,33 +5,34 @@ import NavigationMenu from './components/NavigationMenu'
 import { Layout } from '../../styles/breakpoints'
 
 import OpenseaLogo from '../../assets/media/opensea.png'
-import DiscordLogo from '../../assets/media/discord.png'
-import InstagramLogo from '../../assets/media/instagram.png'
-import TelegramLogo from '../../assets/media/telegram.png'
 import TwitterLogo from '../../assets/media/twitter.png'
-import YouTubeLogo from '../../assets/media/youtube.png'
+import OneBidLogo from '../../assets/media/onebidlogo.png'
 
 import { MediaIcon } from './models/MediaIcon'
 import { AdjustingSection } from "../../layouts/AdjustingSection/AdjustingSection";
+import { customOptionsFour } from "../../layouts/Particles/config/customOptionsFour";
+import ParticlesBackground from "../../layouts/Particles";
 
 const Footer = () => {
+  const baseMedia: MediaIcon[] = [
+      { path: TwitterLogo, redirectionLink: 'https://twitter.com/diamondsct' },
+  ]
   const additionalMedia: MediaIcon[] = [
-    { path: OpenseaLogo, redirectionLink: 'https://opensea.io/DCFT/' },
+      { path: OpenseaLogo, redirectionLink: 'https://opensea.io/DCFT/' },
+      { path: OneBidLogo, redirectionLink: 'https://onebid.pl/pl/auction/-/3391' },
   ]
 
-  const baseMedia: MediaIcon[] = [
-    { path: TwitterLogo, redirectionLink: 'https://twitter.com/diamondsct' },
-    {
-      path: InstagramLogo,
-      redirectionLink: 'https://www.instagram.com/diamondscraft.io//',
-    },
-    { path: DiscordLogo, redirectionLink: 'https://opensea.io/' },
-    { path: TelegramLogo, redirectionLink: 'https://opensea.io/' },
-    { path: YouTubeLogo, redirectionLink: 'https://opensea.io/' },
-  ]
+
 
   return (
       <FullWidthContainer>
+          <ParticlesBackground
+              width='100%'
+              height='100%'
+              options={customOptionsFour}
+              style={{ position: 'absolute', zIndex: '-1' }}
+              id={'FooterParticles'}
+          />
         <ExtendedAdjustingSection>
           <ColumnWrapper>
             <CryptoPrices></CryptoPrices>
@@ -63,8 +64,8 @@ const Footer = () => {
 
 const FullWidthContainer = styled.div`
   width: 100%;
-  background: #000000;
-  padding-top: 8rem;
+  background: transparent;
+  
 `
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
@@ -82,16 +83,18 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
 const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 4rem;
 
   @media only screen and (${Layout.laptop}) {
     min-width: 400px;
+    margin-top: 12rem;
   }
 `
 
 const Restrictions = styled.div`
   margin: 4rem auto 0 auto;
   color: #aeaeae;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
 `
 

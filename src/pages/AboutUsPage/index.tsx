@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 
-import Auction1 from '../../assets/aboutUs/auction1.jpg'
-import Auction2 from '../../assets/aboutUs/auction2.jpg'
-import Auction3 from '../../assets/aboutUs/auction3.jpg'
+import Auction1 from '../../assets/aboutUs/auction1.png'
+import Auction2 from '../../assets/aboutUs/auction2.png'
+import Auction3 from '../../assets/aboutUs/auction3.png'
 import SamantaPhoto from '../../assets/aboutUs/samanta.jpg'
 import JanekPhoto from '../../assets/aboutUs/janek.jpg'
+import TomaszPhoto from '../../assets/aboutUs/tomasz.jpg'
 
 interface CustomStyledElement {
   marginTop?: string
@@ -108,32 +109,50 @@ const AboutUsPage = () => {
             <TeamMemberPhoto src={SamantaPhoto} alt='Samanta Belling' />
             <Header marginTop={'4rem'}> Samanta Belling </Header>
             <BasicText marginTop={'2.5rem'} maxWidth={'420px'}>
-              Co-founder and CEO
+              CEO i współzałożyciel „Diamondscraft” pierwszego Domu Aukcyjnego w Polsce sprzedającego dzieła sztuki oraz tokeny NFT,
+              który posiada również swoją przestrzeń na platformie Metaverse Spatial,
+              gdzie regularnie organizowane są wystawy NFT oraz aukcje,
+              które symultanicznie odbywają się na żywo oraz online na platformie aukcyjnej.
+              Diamondscraft tworzy pomost pomiędzy tradycyjną, a wirtualną sztuką.
               <br />
               <br />
-              Historyk sztuki, wieloletni kurator, redaktor magazynu Artysta i
-              Sztuka, Prezes zarządu Belle Arte, wiceprezes Fundacji Dziedzictwa
-              Kultury Polskiej, pomysłodawca i współzałożyciel Diamondscraft.
+              Tworząc projekty NFT starannie wyselekcjonowanym artystom.
+              Diamondscraft tworzy również przestrzenie w rozszerzonej rzeczywistości AR,
+              w której można spotykać się z przyjaciółmi i klientami.
               <br />
               <br />
-              Związana z rynkiem sztuki od kilkunastu lat, specialuzująca się w
-              sztuce fantastycznej i realizmie magicznym.
+              Historyk sztuki, studia na Katolickim Uniwersytecie Lubelskim, specjalizacja:
+              inwentaryzatorska oraz konserwatorska, (praca magisterska – „Kolekcjonerzy,
+              a Rynek Sztuki w Polsce po 1989 r.,
+              wieloletni kurator wystaw, marszand, redaktor magazynu „Artysta i Sztuka”,
+              Prezes „Belle Arte” – Galerii Sztuki w Centrum Praskim Koneser, wiceprezes
+              „Fundacji Dziedzictwa Kultury Polskiej” przywracającej pamięć o utraconych dobrach kultury podczas II wojny światowej.
+              <br />
+              <br />
+              Koordynator Aukcji Sztuki Fantastycznej w Desie Unicum,
+              odpowiedzialna za: dobór prac, wycenę dzieł, ustalanie estymacji,
+              potwierdzenie autentyczności prac, kontakty z kolekcjonerami, kontakty z artystami,
+              przygotowanie katalogów: zakres merytoryczny oraz skład graficzny.
+              <br />
+              Promotorka polskich artystów w kraju i za granicą. Związana z rynkiem sztuki od kilkunastu lat
             </BasicText>
           </ColumnWrapper>
           <ColumnWrapper>
-            <TeamMemberPhoto src={SamantaPhoto} alt='Tomasz Belling' />
-            <Header marginTop={'4rem'}> Tomasz Belling </Header>
+            <TeamMemberPhoto src={TomaszPhoto} alt='Tomasz Belling' />
+            <Header marginTop={'4rem'}> Thomas Belling </Header>
             <BasicText marginTop={'2.5rem'} maxWidth={'420px'}>
-              Co-founder and CEO
+              CoFounder & Board Member (Współzałożyciel i członek zarządu)
+              NFT ART Spółka z ograniczoną odpowiedzialnością, twórca marki Diamondscraft.
               <br />
               <br />
-              Historyk sztuki, wieloletni kurator, redaktor magazynu Artysta i
-              Sztuka, Prezes zarządu Belle Arte, wiceprezes Fundacji Dziedzictwa
-              Kultury Polskiej, pomysłodawca i współzałożyciel Diamondscraft.
+
+              Kilkuletnie doświadczenie w branży reklamowej w firma RGB Gdańsk,
+              13 lat doświadczenia w przemyśle energetycznym jako dyrektor w sektorze morza północnego dla kompanii energetyczny Shell i TAKA.
               <br />
               <br />
-              Związana z rynkiem sztuki od kilkunastu lat, specialuzująca się w
-              sztuce fantastycznej i realizmie magicznym.
+
+              Pasjonat i miłośnik sztuk pięknych, kolekcjoner sztuki i współwłaściciel galerii Belle Arte.
+              Współorganizator wielu wystaw i eventów artystycznych.
             </BasicText>
           </ColumnWrapper>
         </ExtendedAdjustingSection>

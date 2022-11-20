@@ -20,14 +20,20 @@ const Nav = () => {
     {
       key: 'home',
       destination: '/',
-      nameOfPage: 'Home',
+      nameOfPage: 'Strona główna',
       exact: true,
       scrollHook: 'entryPageStartHook',
     },
     {
       key: 'about',
       destination: '/about',
-      nameOfPage: 'About us',
+      nameOfPage: 'O nas',
+      scrollHook: 'entryPageEndHook',
+    },
+    {
+      key: 'contact',
+      destination: '/contact',
+      nameOfPage: 'Kontakt',
       scrollHook: 'entryPageEndHook',
     },
     {
