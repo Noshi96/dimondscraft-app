@@ -34,6 +34,7 @@ const sponsors = (importAll(
 
 const PartnershipSection = ({ sectionTitle }: Props) => {
   const eventRef = useRef(null)
+  console.log(sponsors)
 
   useEffect(() => {
     const el = eventRef.current
