@@ -3,6 +3,8 @@ import { Button } from '../../../layouts/Button/Button'
 import { useNavigate } from 'react-router-dom'
 import { Event } from './Models/Event'
 import { Layout } from '../../../styles/breakpoints'
+import gsap from 'gsap'
+import { useRef, useEffect } from "react";
 
 interface Props {
   imgSrc: string
@@ -11,6 +13,7 @@ interface Props {
 }
 
 const SingleEvent = ({ imgSrc, alt, event }: Props) => {
+  const eventRef = useRef(null);
   const navigate = useNavigate()
   const destination = '/event-page'
 
@@ -23,8 +26,16 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
     }, 300)
   }
 
+  useEffect(() => {
+    const el = eventRef.current;
+    gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 2, scrollTrigger: {
+      trigger: el
+    }})
+
+  }, [])
+
   return (
-    <Container>
+    <Container ref={eventRef}>
       <Poster src={imgSrc} alt={alt} loading='lazy' />
       <ExtendedButton onClick={navigateToEventHandler}>Dowiedz się więcej</ExtendedButton>
     </Container>

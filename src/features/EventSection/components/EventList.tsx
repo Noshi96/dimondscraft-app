@@ -14,7 +14,7 @@ const EventList = () => {
 
   const events: EventType[] = [
     {
-      alt: 'turtle-event-poster',
+      alt: 'art revolution',
       imgSrc: poster6,
       event: {
         title: 'Art revolution',
@@ -78,7 +78,7 @@ const EventList = () => {
   return (
     <EventListContainer>
       {events.map(({ alt, imgSrc, event }) => (
-        <SingleEvent key={alt} alt={alt} imgSrc={imgSrc} event={event} />
+        <SingleEvent key={alt} alt={alt} imgSrc={imgSrc} event={event}/>
       ))}
     </EventListContainer>
   )

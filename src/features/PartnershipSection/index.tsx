@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import { Layout } from '../../styles/breakpoints'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
 
 interface Props {
   sectionTitle: string
@@ -32,12 +35,24 @@ const sponsors = (importAll(require.context(`../../assets/sponsors/`, false, /\.
 
 
 const PartnershipSection = ({ sectionTitle }: Props) => {
+    const eventRef = useRef(null);
+    const navigate = useNavigate()
+    const destination = '/event-page'
+
+    useEffect(() => {
+        const el = eventRef.current;
+        gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 2, scrollTrigger: {
+                trigger: el
+            }})
+    }, [])
+
+
   return (
       <FullWidthContainer>
         <ExtendedAdjustingSection>
           <Container>
             <SectionTitle>{sectionTitle}</SectionTitle>
-            <ImageList>
+            <ImageList ref={eventRef}>
               {sponsors.map(
                   ({ imageSrc ,bgColor}) => (
                       <SponsorImgWrapper bgColor={bgColor} key={imageSrc}>
