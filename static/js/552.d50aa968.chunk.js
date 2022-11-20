@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdimondscraft_app=self.webpackChunkdimondscraft_app||[]).push([[552],{7552:function(n,s,t){t.r(s);var r=t(184);s.default=function(){return(0,r.jsx)("h1",{children:"Artists"})}}}]);
-//# sourceMappingURL=552.d50aa968.chunk.js.map
