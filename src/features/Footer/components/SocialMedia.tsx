@@ -1,27 +1,30 @@
 import styled from 'styled-components'
-import { Header3 } from '../layouts/Header3';
-import LinkIcon from "./LinkIcon";
-import { MediaIcon } from "../models/MediaIcon";
-
+import { Header3 } from '../layouts/Header3'
+import LinkIcon from './LinkIcon'
+import { MediaIcon } from '../models/MediaIcon'
 
 interface Props {
-    headerText: string;
-    media: MediaIcon[];
+  headerText: string
+  media: MediaIcon[]
 }
 
-const SocialMedia = ({headerText, media}: Props) => {
-    return (
-        <Container>
-            <Header3> {headerText} </Header3>
-            <LinkIconsWrapper>
-                {media.map(({ path, redirectionLink }, i) => (
-                    <LinkIcon key={i} path={path} redirectionLink={redirectionLink}></LinkIcon>
-                ))}
-            </LinkIconsWrapper>
-        </Container>
-    )
+const SocialMedia = ({ headerText, media }: Props) => {
+  return (
+    <Container>
+      <Header3> {headerText} </Header3>
+      <LinkIconsWrapper>
+        {media.map(({ path, redirectionLink, altText }, i) => (
+          <LinkIcon
+            key={i}
+            path={path}
+            redirectionLink={redirectionLink}
+            altText={altText}
+          />
+        ))}
+      </LinkIconsWrapper>
+    </Container>
+  )
 }
-
 
 const Container = styled.div`
   display: flex;
@@ -39,7 +42,4 @@ const LinkIconsWrapper = styled.div`
   width: 100%;
 `
 
-
-export default SocialMedia;
-
-
+export default SocialMedia
