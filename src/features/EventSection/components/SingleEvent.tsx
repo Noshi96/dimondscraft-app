@@ -1,10 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Button } from '../../../layouts/Button/Button'
 import { useNavigate } from 'react-router-dom'
 import { Event } from './Models/Event'
 import { Layout } from '../../../styles/breakpoints'
 import gsap from 'gsap'
-import { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react'
+import { UpcomingEventType } from './Models/UpcomingEventType'
 
 interface Props {
   imgSrc: string
@@ -13,7 +14,10 @@ interface Props {
 }
 
 const SingleEvent = ({ imgSrc, alt, event }: Props) => {
-  const eventRef = useRef(null);
+  const upcoming = event?.upcomingEvent?.upcoming
+  const upcomingMessage = event?.upcomingEvent?.upcomingMessage
+
+  const eventRef = useRef(null)
   const navigate = useNavigate()
   const destination = '/event-page'
 
@@ -21,34 +25,68 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
     navigate(destination, { state: { event } })
 
     setTimeout(() => {
-      const element = document.getElementById('entryPageEndHook') as HTMLElement;
-      element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'});
+      const element = document.getElementById('entryPageEndHook') as HTMLElement
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'start',
+      })
     }, 300)
   }
 
   useEffect(() => {
-    const el = eventRef.current;
-    gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 2, scrollTrigger: {
-      trigger: el
-    }})
-
+    const el = eventRef.current
+    gsap.fromTo(
+      el,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: el,
+        },
+      }
+    )
   }, [])
 
   return (
-    <Container ref={eventRef}>
+    <Container
+      upcoming={upcoming || false}
+      upcomingMessage={upcomingMessage || ''}
+      ref={eventRef}
+    >
       <Poster src={imgSrc} alt={alt} loading='lazy' />
-      <ExtendedButton onClick={navigateToEventHandler}>Dowiedz się więcej</ExtendedButton>
+      <ExtendedButton onClick={navigateToEventHandler}>
+        Dowiedz się więcej
+      </ExtendedButton>
     </Container>
   )
 }
 
-const Container = styled.div`
+const upcomingEventStyle = ({ upcomingMessage = '' }: UpcomingEventType) => css`
+  &:before {
+    content: '${upcomingMessage}';
+    position: absolute;
+    top: -5%;
+    left: 0;
+    color: #FF00AA;
+
+    @media only screen and (${Layout.tablet}){
+      top: -7%;
+    }
+  }
+`
+
+const Container = styled.div<UpcomingEventType>`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
+  ${({ upcoming }) => (upcoming ? upcomingEventStyle : '')}
 `
+
 const Poster = styled.img`
   width: 100%;
   height: auto;
