@@ -15,13 +15,22 @@ import ParticlesBackground from '../../layouts/Particles'
 
 const Footer = () => {
   const baseMedia: MediaIcon[] = [
-    { path: TwitterLogo, redirectionLink: 'https://twitter.com/diamondsct' },
+    {
+      path: TwitterLogo,
+      redirectionLink: 'https://twitter.com/diamondsct',
+      altText: 'TwitterLogo',
+    },
   ]
   const additionalMedia: MediaIcon[] = [
-    { path: OpenseaLogo, redirectionLink: 'https://opensea.io/DCFT/' },
+    {
+      path: OpenseaLogo,
+      redirectionLink: 'https://opensea.io/DCFT/',
+      altText: 'OpenseaLogo',
+    },
     {
       path: OneBidLogo,
       redirectionLink: 'https://onebid.pl/pl/auction/-/3391',
+      altText: 'OneBidLogo',
     },
   ]
 
@@ -36,19 +45,19 @@ const Footer = () => {
       />
       <ExtendedAdjustingSection>
         <ColumnWrapper>
-          <CryptoPrices></CryptoPrices>
+          <CryptoPrices />
         </ColumnWrapper>
 
         <ColumnWrapper>
           <SocialMedia
             headerText={'Dołącz do naszej społeczności:'}
             media={baseMedia}
-          ></SocialMedia>
+          />
 
           <SocialMedia
             headerText={'Jesteśmy dostępni także na:'}
             media={additionalMedia}
-          ></SocialMedia>
+          />
         </ColumnWrapper>
       </ExtendedAdjustingSection>
 

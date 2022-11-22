@@ -3,12 +3,13 @@ import styled from 'styled-components'
 interface Props {
   path: string
   redirectionLink: string
+  altText: string
 }
 
-const LinkIcon = ({ path, redirectionLink }: Props) => {
+const LinkIcon = ({ path, redirectionLink, altText }: Props) => {
   return (
     <a href={redirectionLink} target={'_blank'} rel='noopener noreferrer'>
-      <Icon src={path}></Icon>
+      <Icon src={path} alt={altText} />
     </a>
   )
 }
