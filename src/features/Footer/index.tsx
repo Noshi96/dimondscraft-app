@@ -7,6 +7,7 @@ import { Layout } from '../../styles/breakpoints'
 import OpenseaLogo from '../../assets/media/opensea.png'
 import TwitterLogo from '../../assets/media/twitter.png'
 import OneBidLogo from '../../assets/media/onebidlogo.png'
+import SpotifyLogo from '../../assets/media/spotify.png'
 
 import { MediaIcon } from './models/MediaIcon'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
@@ -22,16 +23,13 @@ const Footer = () => {
     },
   ]
   const additionalMedia: MediaIcon[] = [
+    { path: OpenseaLogo, redirectionLink: 'https://opensea.io/DCFT/', altText: 'OpenseaLogo' },
     {
-      path: OpenseaLogo,
-      redirectionLink: 'https://opensea.io/DCFT/',
-      altText: 'OpenseaLogo',
+        path: SpotifyLogo,
+        redirectionLink: 'https://open.spotify.com/show/33bLiSdONLfzUd8oNMYLTn?si=5dd99fa2d0744767',
+        altText: 'SpotifyLogo'
     },
-    {
-      path: OneBidLogo,
-      redirectionLink: 'https://onebid.pl/pl/auction/-/3391',
-      altText: 'OneBidLogo',
-    },
+    { path: OneBidLogo, redirectionLink: 'https://onebid.pl/pl/auction/-/3391', altText: 'OneBidLogo'},
   ]
 
   return (

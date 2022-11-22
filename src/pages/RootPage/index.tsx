@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../../layouts/NavBar'
 import { GlobalStyle } from '../../styles/global-styles'
-import { useOutlet } from 'react-router-dom'
+import { ScrollRestoration, useOutlet } from 'react-router-dom'
 import Footer from '../../features/Footer'
 import NewEntrySection from "../../features/NewEntrySection";
 const HomePage = React.lazy(() => import('../../pages/HomePage'))
@@ -22,6 +22,7 @@ const RootPage = () => {
       {outlet || suspenseComponent(<HomePage />)}
       <Footer />
       <GlobalStyle />
+      <ScrollRestoration></ScrollRestoration>
     </>
   )
 }

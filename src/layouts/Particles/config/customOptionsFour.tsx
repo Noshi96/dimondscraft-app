@@ -4,10 +4,10 @@ export const customOptionsFour: ISourceOptions = {
   fullScreen: { enable: false },
   particles: {
     number: {
-      value: 80,
+      value: 70,
       density: {
         enable: true,
-        value_area: 700,
+        value_area: 800,
       },
     },
     color: {
@@ -20,7 +20,7 @@ export const customOptionsFour: ISourceOptions = {
         color: '#000000',
       },
       polygon: {
-        nb_sides: 5,
+        nb_sides: 4,
       },
     },
     opacity: {
@@ -45,14 +45,14 @@ export const customOptionsFour: ISourceOptions = {
     },
     line_linked: {
       enable: true,
-      distance: 120,
+      distance: 110,
       color: '#ffffff',
       opacity: 0.4,
       width: 1,
     },
     move: {
       enable: true,
-      speed: 2,
+      speed: 1,
       direction: 'none',
       random: false,
       straight: false,
@@ -65,6 +65,7 @@ export const customOptionsFour: ISourceOptions = {
       },
     },
   },
+  fpsLimit: 24,
   interactivity: {
     detect_on: 'canvas',
     events: {

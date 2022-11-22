@@ -13,7 +13,7 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage'))
 const GalleryPage = React.lazy(() => import('./pages/GalleryPage'))
 
 const suspenseComponent = (component: React.ReactNode) => {
-  return <React.Suspense fallback='Loading...'>{component}</React.Suspense>
+  return <React.Suspense fallback=''>{component}</React.Suspense>
 }
 
 const router = createHashRouter([

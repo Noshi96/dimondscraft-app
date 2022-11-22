@@ -9,7 +9,9 @@ const ContactPage = () => {
             <ExtendedAdjustingSection>
                 <Header> Kontakt </Header>
                 <BaseText> Jeśli masz pytania lub sugestie, napisz do nas na adres e-mail: </BaseText>
-                <EmailText> info@diamondscraft.io </EmailText>
+                <DataText> info@diamondscraft.io </DataText>
+                <BaseText> Jeśli chcesz kupić nasze obrazy, zadzwoń: </BaseText>
+                <DataText> 798 709 181 </DataText>
                 <Image src={Detail}></Image>
 
             </ExtendedAdjustingSection>
@@ -48,8 +50,8 @@ const BaseText = styled.div`
   line-height: 1.5rem;
 `
 
-const EmailText = styled.div`
-  margin-top: 3rem;
+const DataText = styled.div`
+  margin-top: 1rem;
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: #FF00AA;
