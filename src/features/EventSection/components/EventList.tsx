@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import SingleEvent from './SingleEvent'
-import poster1 from '../../../assets/homepage/posters/AukcjaTurtleUnite.jpg'
 import poster2 from '../../../assets/homepage/posters/PierwszaAukjaTokenow.jpg'
 import poster2hq from '../../../assets/homepage/posters/1_9_20.jpg'
 import poster3 from '../../../assets/homepage/posters/plakat2AukcjaTokenow.jpg'
@@ -21,6 +20,10 @@ const EventList = () => {
         imgSrc: poster6,
         alt: 'Art-revolution',
         contentText: `1 ${content}`,
+        upcomingEvent: {
+          upcoming: true,
+          upcomingMessage: 'Nadchodzące wydarzenie!',
+        },
       },
     },
     {
@@ -63,22 +66,12 @@ const EventList = () => {
         contentText: `5 ${content}`,
       },
     },
-    {
-      alt: 'turtle-event-poster',
-      imgSrc: poster1,
-      event: {
-        title: 'turtle event',
-        imgSrc: poster1,
-        alt: 'turtle-event-poster',
-        contentText: `1 ${content}`,
-      },
-    },
   ]
 
   return (
     <EventListContainer>
       {events.map(({ alt, imgSrc, event }) => (
-        <SingleEvent key={alt} alt={alt} imgSrc={imgSrc} event={event}/>
+        <SingleEvent key={alt} alt={alt} imgSrc={imgSrc} event={event} />
       ))}
     </EventListContainer>
   )
