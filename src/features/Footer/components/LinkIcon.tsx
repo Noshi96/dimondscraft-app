@@ -18,11 +18,9 @@ const Icon = styled.img`
   height: 40px;
   transition: all 0.3s ease-in-out;
   margin-right: 3rem;
-  filter: grayscale(1);
 
   &:hover {
     transform: translateY(-8px);
-    filter: grayscale(0);
   }
 `
 

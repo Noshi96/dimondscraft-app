@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 import { PathsTypes } from './model'
+import { buttonStyle } from "../../styles/button.style";
 
 const scrollToEntrySection = (
   scrollHook: 'entryPageStartHook' | 'entryPageEndHook'
@@ -75,26 +76,19 @@ const Item = styled.li`
 `
 
 const NavLinkStyled = styled(NavLink)`
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-  text-transform: capitalize;
-  font-size: 1.1rem;
-  transition: all 0.4s;
-
-  &:link,
-  &:visited {
-    color: #ffffff;
-  }
-  &:hover,
-  &:active {
-    background-color: #2c1b96;
-    color: #ffaa00;
-  }
-
+  min-height: 60px;
+  ${buttonStyle};
+  border: 1px solid transparent;
   &.active {
     background-color: #2c1b96;
-    color: #ffaa00;
+    color: #ffffff;
+    border: 1px solid transparent;
+  }
+
+  &:hover {
+    background-color: #2c1b96;
+    color: #ffffff;
+    border: 1px solid transparent;
   }
 `
 
