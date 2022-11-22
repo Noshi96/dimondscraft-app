@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dimondscraft-app/static/css/main.930a1fd3.css",
-    "main.js": "/dimondscraft-app/static/js/main.fbfebeae.js",
+    "main.js": "/dimondscraft-app/static/js/main.0c830288.js",
     "static/js/567.8ec265b2.chunk.js": "/dimondscraft-app/static/js/567.8ec265b2.chunk.js",
     "static/js/778.ec334cca.chunk.js": "/dimondscraft-app/static/js/778.ec334cca.chunk.js",
-    "static/js/501.29a69228.chunk.js": "/dimondscraft-app/static/js/501.29a69228.chunk.js",
+    "static/js/501.769accff.chunk.js": "/dimondscraft-app/static/js/501.769accff.chunk.js",
     "static/js/796.2fba88cb.chunk.js": "/dimondscraft-app/static/js/796.2fba88cb.chunk.js",
     "static/js/201.5eaca308.chunk.js": "/dimondscraft-app/static/js/201.5eaca308.chunk.js",
     "static/js/787.f7421bd0.chunk.js": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js",
-    "static/css/624.84242ab9.chunk.css": "/dimondscraft-app/static/css/624.84242ab9.chunk.css",
-    "static/js/624.05e6de09.chunk.js": "/dimondscraft-app/static/js/624.05e6de09.chunk.js",
+    "static/css/674.e7f37c73.chunk.css": "/dimondscraft-app/static/css/674.e7f37c73.chunk.css",
+    "static/js/674.8e318c63.chunk.js": "/dimondscraft-app/static/js/674.8e318c63.chunk.js",
     "static/js/145.8ac0fc24.chunk.js": "/dimondscraft-app/static/js/145.8ac0fc24.chunk.js",
     "static/js/790.05c7f832.chunk.js": "/dimondscraft-app/static/js/790.05c7f832.chunk.js",
     "static/js/170.2d9a6ff0.chunk.js": "/dimondscraft-app/static/js/170.2d9a6ff0.chunk.js",
@@ -46,6 +46,7 @@
     "static/media/014.jpg": "/dimondscraft-app/static/media/014.87eddedcf85bace7e7e4.jpg",
     "static/media/material-icons-sharp.woff": "/dimondscraft-app/static/media/material-icons-sharp.3a4004a46a653d4b2166.woff",
     "static/media/material-icons-outlined.woff2": "/dimondscraft-app/static/media/material-icons-outlined.6f420cf17cc0d7676fad.woff2",
+    "static/media/AukcjaTurtleUnite.jpg": "/dimondscraft-app/static/media/AukcjaTurtleUnite.bf154cf75951a8dbcd70.jpg",
     "static/media/024.jpg": "/dimondscraft-app/static/media/024.dae8e4903ca2af7b37cb.jpg",
     "static/media/072.jpg": "/dimondscraft-app/static/media/072.bda1ab4ac8e0bcf5278e.jpg",
     "static/media/022.jpg": "/dimondscraft-app/static/media/022.e1e3429263aa87662f87.jpg",
@@ -164,21 +165,21 @@
     "static/media/Auction6.txt": "/dimondscraft-app/static/media/Auction6.31d6cfe0d16ae931b73c.txt",
     "static/media/Auction7.txt": "/dimondscraft-app/static/media/Auction7.31d6cfe0d16ae931b73c.txt",
     "main.930a1fd3.css.map": "/dimondscraft-app/static/css/main.930a1fd3.css.map",
-    "main.fbfebeae.js.map": "/dimondscraft-app/static/js/main.fbfebeae.js.map",
+    "main.0c830288.js.map": "/dimondscraft-app/static/js/main.0c830288.js.map",
     "567.8ec265b2.chunk.js.map": "/dimondscraft-app/static/js/567.8ec265b2.chunk.js.map",
     "778.ec334cca.chunk.js.map": "/dimondscraft-app/static/js/778.ec334cca.chunk.js.map",
-    "501.29a69228.chunk.js.map": "/dimondscraft-app/static/js/501.29a69228.chunk.js.map",
+    "501.769accff.chunk.js.map": "/dimondscraft-app/static/js/501.769accff.chunk.js.map",
     "796.2fba88cb.chunk.js.map": "/dimondscraft-app/static/js/796.2fba88cb.chunk.js.map",
     "201.5eaca308.chunk.js.map": "/dimondscraft-app/static/js/201.5eaca308.chunk.js.map",
     "787.f7421bd0.chunk.js.map": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js.map",
-    "624.84242ab9.chunk.css.map": "/dimondscraft-app/static/css/624.84242ab9.chunk.css.map",
-    "624.05e6de09.chunk.js.map": "/dimondscraft-app/static/js/624.05e6de09.chunk.js.map",
+    "674.e7f37c73.chunk.css.map": "/dimondscraft-app/static/css/674.e7f37c73.chunk.css.map",
+    "674.8e318c63.chunk.js.map": "/dimondscraft-app/static/js/674.8e318c63.chunk.js.map",
     "145.8ac0fc24.chunk.js.map": "/dimondscraft-app/static/js/145.8ac0fc24.chunk.js.map",
     "790.05c7f832.chunk.js.map": "/dimondscraft-app/static/js/790.05c7f832.chunk.js.map",
     "170.2d9a6ff0.chunk.js.map": "/dimondscraft-app/static/js/170.2d9a6ff0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.930a1fd3.css",
-    "static/js/main.fbfebeae.js"
+    "static/js/main.0c830288.js"
   ]
 }
