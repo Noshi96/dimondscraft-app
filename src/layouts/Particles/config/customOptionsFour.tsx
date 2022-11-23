@@ -1,14 +1,11 @@
 import type { ISourceOptions } from 'tsparticles-engine'
+const isMobile = window.innerWidth < 780;
 
 export const customOptionsFour: ISourceOptions = {
   fullScreen: { enable: false },
   particles: {
     number: {
-      value: 20,
-      density: {
-        enable: true,
-        value_area: 200,
-      },
+      value: isMobile ? 60 : 150,
     },
     color: {
       value: '#ffffff',
