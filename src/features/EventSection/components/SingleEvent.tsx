@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Button } from '../../../layouts/Button/Button'
-import { useNavigate } from 'react-router-dom'
+import { TempEventButton } from '../../../layouts/Button/Button'
 import { Event } from './Models/Event'
 import { Layout } from '../../../styles/breakpoints'
 import gsap from 'gsap'
@@ -18,21 +17,21 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
   const upcomingMessage = event?.upcomingEvent?.upcomingMessage
 
   const eventRef = useRef(null)
-  const navigate = useNavigate()
-  const destination = '/event-page'
+  // const navigate = useNavigate()
+  // const destination = '/event-page'
 
-  const navigateToEventHandler = () => {
-    navigate(destination, { state: { event } })
+  // const navigateToEventHandler = () => {
+  //   navigate(destination, { state: { event } })
 
-    setTimeout(() => {
-      const element = document.getElementById('entryPageEndHook') as HTMLElement
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'start',
-      })
-    }, 300)
-  }
+  //   setTimeout(() => {
+  //     const element = document.getElementById('entryPageEndHook') as HTMLElement
+  //     element.scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'start',
+  //       inline: 'start',
+  //     })
+  //   }, 300)
+  // }
 
   useEffect(() => {
     const el = eventRef.current
@@ -56,9 +55,8 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
       ref={eventRef}
     >
       <Poster src={imgSrc} alt={alt} loading='lazy' />
-      <ExtendedButton onClick={navigateToEventHandler}>
-        Dowiedz się więcej
-      </ExtendedButton>
+      {/* <ExtendedButton onClick={navigateToEventHandler}> */}
+      <ExtendedButton>Dowiedz się więcej</ExtendedButton>
     </Container>
   )
 }
@@ -99,7 +97,7 @@ const Poster = styled.img`
   }
 `
 
-const ExtendedButton = styled(Button)`
+const ExtendedButton = styled(TempEventButton)`
   width: 100%;
   height: 80px;
 `
