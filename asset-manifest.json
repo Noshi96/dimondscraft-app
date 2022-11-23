@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/dimondscraft-app/static/css/main.930a1fd3.css",
-    "main.js": "/dimondscraft-app/static/js/main.a1ee54a5.js",
+    "main.js": "/dimondscraft-app/static/js/main.4b492540.js",
     "static/js/567.8ec265b2.chunk.js": "/dimondscraft-app/static/js/567.8ec265b2.chunk.js",
     "static/js/778.ec334cca.chunk.js": "/dimondscraft-app/static/js/778.ec334cca.chunk.js",
-    "static/js/110.c35bb080.chunk.js": "/dimondscraft-app/static/js/110.c35bb080.chunk.js",
+    "static/js/110.85cafbb8.chunk.js": "/dimondscraft-app/static/js/110.85cafbb8.chunk.js",
     "static/js/796.ad729153.chunk.js": "/dimondscraft-app/static/js/796.ad729153.chunk.js",
     "static/js/37.aa438904.chunk.js": "/dimondscraft-app/static/js/37.aa438904.chunk.js",
     "static/js/560.98d7a12b.chunk.js": "/dimondscraft-app/static/js/560.98d7a12b.chunk.js",
@@ -183,10 +183,10 @@
     "static/media/Auction6.txt": "/dimondscraft-app/static/media/Auction6.31d6cfe0d16ae931b73c.txt",
     "static/media/Auction7.txt": "/dimondscraft-app/static/media/Auction7.31d6cfe0d16ae931b73c.txt",
     "main.930a1fd3.css.map": "/dimondscraft-app/static/css/main.930a1fd3.css.map",
-    "main.a1ee54a5.js.map": "/dimondscraft-app/static/js/main.a1ee54a5.js.map",
+    "main.4b492540.js.map": "/dimondscraft-app/static/js/main.4b492540.js.map",
     "567.8ec265b2.chunk.js.map": "/dimondscraft-app/static/js/567.8ec265b2.chunk.js.map",
     "778.ec334cca.chunk.js.map": "/dimondscraft-app/static/js/778.ec334cca.chunk.js.map",
-    "110.c35bb080.chunk.js.map": "/dimondscraft-app/static/js/110.c35bb080.chunk.js.map",
+    "110.85cafbb8.chunk.js.map": "/dimondscraft-app/static/js/110.85cafbb8.chunk.js.map",
     "796.ad729153.chunk.js.map": "/dimondscraft-app/static/js/796.ad729153.chunk.js.map",
     "37.aa438904.chunk.js.map": "/dimondscraft-app/static/js/37.aa438904.chunk.js.map",
     "560.98d7a12b.chunk.js.map": "/dimondscraft-app/static/js/560.98d7a12b.chunk.js.map",
@@ -199,6 +199,6 @@
   },
   "entrypoints": [
     "static/css/main.930a1fd3.css",
-    "static/js/main.a1ee54a5.js"
+    "static/js/main.4b492540.js"
   ]
 }
