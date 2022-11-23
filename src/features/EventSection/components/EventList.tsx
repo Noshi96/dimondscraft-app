@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import SingleEvent from './SingleEvent'
-import poster2 from '../../../assets/homepage/posters/PierwszaAukjaTokenow.jpg'
+import poster2 from '../../../assets/homepage/posters/PierwszaAukjaTokenow.webp'
 import poster2hq from '../../../assets/homepage/posters/1_9_20.jpg'
-import poster3 from '../../../assets/homepage/posters/plakat2AukcjaTokenow.jpg'
-import poster4 from '../../../assets/homepage/posters/SummerArtBreak.jpg'
-import poster5 from '../../../assets/homepage/posters/SummerArtBreak2.jpg'
-import poster6 from '../../../assets/homepage/posters/art1.jpg'
+import poster3 from '../../../assets/homepage/posters/plakat2AukcjaTokenow.webp'
+import poster4 from '../../../assets/homepage/posters/SummerArtBreak-min.jpg'
+import poster5 from '../../../assets/homepage/posters/SummerArtBreak2.webp'
+import poster6 from '../../../assets/homepage/posters/art1.webp'
 import { EventType } from './Models/EventType'
 
 const EventList = () => {
