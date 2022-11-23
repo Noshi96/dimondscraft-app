@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { useState } from 'react'
 import background from '../../assets/entry/background.svg'
-import samanta from '../../assets/samanta2.jpg'
 import leftMiddleShape1 from '../../assets/entry/left_middle_shape_1.svg'
 import leftMiddleShape2 from '../../assets/entry/left_middle_shape_2.svg'
 import rightMiddleShape1 from '../../assets/entry/right_middle_shape1.svg'
@@ -31,11 +30,14 @@ import {
 } from './animations'
 import { useTextTyping } from '../../hooks/useTextTyping'
 import { delay } from '../../utils/DelayFunction'
+import { useLocation } from 'react-router-dom'
 
-const EntrySection = () => {
+const ErrorSection = () => {
+  const location = useLocation()
+  const errorMessage = `${location.pathname.slice(1, 11)} nie istnieje (404)`
   const [text, setText] = useState<string>('')
 
-  useTextTyping(delay, setText)
+  useTextTyping(delay, setText, errorMessage)
 
   const {
     sec025,
@@ -455,4 +457,4 @@ const Headline = styled.h1`
   }
 `
 
-export default EntrySection
+export default ErrorSection

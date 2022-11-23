@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react'
 import {
   AnimationProps,
   fadeInAnimationTwo,
-} from '../../EntrySection/animations'
+} from '../../ErrorSection/animations'
 import { ListOfAuctionsTitlesType } from '../model'
 
 interface Props {

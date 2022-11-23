@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 
 export function useTextTyping(
   delay: (ms: number) => Promise<unknown>,
-  setText: React.Dispatch<React.SetStateAction<string>>
+  setText: React.Dispatch<React.SetStateAction<string>>,
+  displayText?: string
 ) {
-  const textToDisplay = 'We Forge The Future'
+  const textToDisplay = displayText || 'We Forge The Future'
 
   useEffect(() => {
     async function typeText() {
@@ -19,5 +20,5 @@ export function useTextTyping(
       }, 60)
     }
     typeText()
-  }, [delay, setText])
+  }, [delay, setText, textToDisplay])
 }
