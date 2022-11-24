@@ -7,33 +7,33 @@ import { Layout } from '../../styles/breakpoints'
 
 import { useTextTyping } from '../../hooks/useTextTyping'
 import { delay } from '../../utils/DelayFunction'
-import ParticlesBackground from "../../layouts/Particles";
-import { customOptionsFour } from "../../layouts/Particles/config/customOptionsFour";
-import { AdjustingSection } from "../../layouts/AdjustingSection/AdjustingSection";
+// import ParticlesBackground from '../../layouts/Particles'
+// import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 
 const NewEntrySection = () => {
-    const [text, setText] = useState<string>('')
+  const [text, setText] = useState<string>('')
 
-    useTextTyping(delay, setText)
+  useTextTyping(delay, setText)
 
-    return (
-        <>
-            <Background />
-            <ParticlesBackground
+  return (
+    <>
+      <Background />
+      {/* <ParticlesBackground
                 width='100%'
                 height='100%'
                 options={customOptionsFour}
                 style={{ position: 'absolute', zIndex: '-1' }}
                 id={'NewEntrySectionParticles'}
-            />
-            <Samanta />
-            <Wrapper>
-                <ExtendedAdjustingSection>
-                    <Headline> {text} </Headline>
-                </ExtendedAdjustingSection>
-            </Wrapper>
-        </>
-    )
+            /> */}
+      <Samanta />
+      <Wrapper>
+        <ExtendedAdjustingSection>
+          <Headline> {text} </Headline>
+        </ExtendedAdjustingSection>
+      </Wrapper>
+    </>
+  )
 }
 
 const Wrapper = styled.section`
@@ -79,7 +79,6 @@ const Samanta = styled.div`
   background-attachment: fixed;
 `
 
-
 const Headline = styled.h1`
   margin-top: auto;
   color: #ffffff;
@@ -99,6 +98,5 @@ const Headline = styled.h1`
     padding: 0 9rem;
   }
 `
-
 
 export default NewEntrySection
