@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/dimondscraft-app/static/css/main.930a1fd3.css",
-    "main.js": "/dimondscraft-app/static/js/main.88f3d944.js",
+    "main.js": "/dimondscraft-app/static/js/main.42b87394.js",
     "static/js/567.8ec265b2.chunk.js": "/dimondscraft-app/static/js/567.8ec265b2.chunk.js",
     "static/js/778.ec334cca.chunk.js": "/dimondscraft-app/static/js/778.ec334cca.chunk.js",
-    "static/js/483.041ca691.chunk.js": "/dimondscraft-app/static/js/483.041ca691.chunk.js",
-    "static/js/796.ad729153.chunk.js": "/dimondscraft-app/static/js/796.ad729153.chunk.js",
+    "static/js/110.85cafbb8.chunk.js": "/dimondscraft-app/static/js/110.85cafbb8.chunk.js",
+    "static/js/796.57bb32a8.chunk.js": "/dimondscraft-app/static/js/796.57bb32a8.chunk.js",
     "static/js/37.aa438904.chunk.js": "/dimondscraft-app/static/js/37.aa438904.chunk.js",
     "static/js/560.98d7a12b.chunk.js": "/dimondscraft-app/static/js/560.98d7a12b.chunk.js",
     "static/js/787.f7421bd0.chunk.js": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js",
     "static/css/963.90165fd0.chunk.css": "/dimondscraft-app/static/css/963.90165fd0.chunk.css",
-    "static/js/963.6887df94.chunk.js": "/dimondscraft-app/static/js/963.6887df94.chunk.js",
+    "static/js/963.20d34386.chunk.js": "/dimondscraft-app/static/js/963.20d34386.chunk.js",
     "static/js/145.8ac0fc24.chunk.js": "/dimondscraft-app/static/js/145.8ac0fc24.chunk.js",
-    "static/js/742.3d263730.chunk.js": "/dimondscraft-app/static/js/742.3d263730.chunk.js",
+    "static/js/790.05c7f832.chunk.js": "/dimondscraft-app/static/js/790.05c7f832.chunk.js",
     "static/js/170.2d9a6ff0.chunk.js": "/dimondscraft-app/static/js/170.2d9a6ff0.chunk.js",
     "static/media/auction3.png": "/dimondscraft-app/static/media/auction3.1b2e7d81cc345dfbe494.png",
     "static/media/auction2.png": "/dimondscraft-app/static/media/auction2.e4c49b10018f76fe5545.png",
@@ -183,22 +183,22 @@
     "static/media/Auction6.txt": "/dimondscraft-app/static/media/Auction6.31d6cfe0d16ae931b73c.txt",
     "static/media/Auction7.txt": "/dimondscraft-app/static/media/Auction7.31d6cfe0d16ae931b73c.txt",
     "main.930a1fd3.css.map": "/dimondscraft-app/static/css/main.930a1fd3.css.map",
-    "main.88f3d944.js.map": "/dimondscraft-app/static/js/main.88f3d944.js.map",
+    "main.42b87394.js.map": "/dimondscraft-app/static/js/main.42b87394.js.map",
     "567.8ec265b2.chunk.js.map": "/dimondscraft-app/static/js/567.8ec265b2.chunk.js.map",
     "778.ec334cca.chunk.js.map": "/dimondscraft-app/static/js/778.ec334cca.chunk.js.map",
-    "483.041ca691.chunk.js.map": "/dimondscraft-app/static/js/483.041ca691.chunk.js.map",
-    "796.ad729153.chunk.js.map": "/dimondscraft-app/static/js/796.ad729153.chunk.js.map",
+    "110.85cafbb8.chunk.js.map": "/dimondscraft-app/static/js/110.85cafbb8.chunk.js.map",
+    "796.57bb32a8.chunk.js.map": "/dimondscraft-app/static/js/796.57bb32a8.chunk.js.map",
     "37.aa438904.chunk.js.map": "/dimondscraft-app/static/js/37.aa438904.chunk.js.map",
     "560.98d7a12b.chunk.js.map": "/dimondscraft-app/static/js/560.98d7a12b.chunk.js.map",
     "787.f7421bd0.chunk.js.map": "/dimondscraft-app/static/js/787.f7421bd0.chunk.js.map",
     "963.90165fd0.chunk.css.map": "/dimondscraft-app/static/css/963.90165fd0.chunk.css.map",
-    "963.6887df94.chunk.js.map": "/dimondscraft-app/static/js/963.6887df94.chunk.js.map",
+    "963.20d34386.chunk.js.map": "/dimondscraft-app/static/js/963.20d34386.chunk.js.map",
     "145.8ac0fc24.chunk.js.map": "/dimondscraft-app/static/js/145.8ac0fc24.chunk.js.map",
-    "742.3d263730.chunk.js.map": "/dimondscraft-app/static/js/742.3d263730.chunk.js.map",
+    "790.05c7f832.chunk.js.map": "/dimondscraft-app/static/js/790.05c7f832.chunk.js.map",
     "170.2d9a6ff0.chunk.js.map": "/dimondscraft-app/static/js/170.2d9a6ff0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.930a1fd3.css",
-    "static/js/main.88f3d944.js"
+    "static/js/main.42b87394.js"
   ]
 }
