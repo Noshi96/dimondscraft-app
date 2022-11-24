@@ -1,22 +1,24 @@
 import styled from 'styled-components'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 import Detail from '../../assets/contact3.png'
-import { Layout } from "../../styles/breakpoints";
+import { Layout } from '../../styles/breakpoints'
 
 const ContactPage = () => {
-    return (
-        <FullWidthContainer>
-            <ExtendedAdjustingSection>
-                <Header> Kontakt </Header>
-                <BaseText> Jeśli masz pytania lub sugestie, napisz do nas na adres e-mail: </BaseText>
-                <DataText> info@diamondscraft.io </DataText>
-                <BaseText> Jeśli chcesz kupić nasze obrazy, zadzwoń: </BaseText>
-                <DataText> 798 709 181 </DataText>
-                <Image src={Detail}></Image>
-
-            </ExtendedAdjustingSection>
-        </FullWidthContainer>
-    )
+  return (
+    <FullWidthContainer>
+      <ExtendedAdjustingSection>
+        <Header> Kontakt </Header>
+        <BaseText>
+          {' '}
+          Jeśli masz pytania lub sugestie, napisz do nas na adres e-mail:{' '}
+        </BaseText>
+        <DataText> info@diamondscraft.io </DataText>
+        <BaseText> Jeśli chcesz kupić nasze obrazy, zadzwoń: </BaseText>
+        <DataText> 538 458 272 </DataText>
+        <Image src={Detail}></Image>
+      </ExtendedAdjustingSection>
+    </FullWidthContainer>
+  )
 }
 
 const FullWidthContainer = styled.div`
@@ -39,7 +41,7 @@ const Header = styled.h3`
   margin: 8rem 0 0 0;
   padding: 0;
   box-sizing: border-box;
-  
+
   font-size: 4rem;
   line-height: 4rem;
 `
@@ -54,7 +56,7 @@ const DataText = styled.div`
   margin-top: 1rem;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  color: #FF00AA;
+  color: #ff00aa;
 `
 
 const Image = styled.img`
@@ -70,6 +72,4 @@ const Image = styled.img`
   }
 `
 
-
-
-export default ContactPage;
+export default ContactPage
