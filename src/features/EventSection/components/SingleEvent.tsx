@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components'
 import { TempEventButton } from '../../../layouts/Button/Button'
 import { Event } from './Models/Event'
 import { Layout } from '../../../styles/breakpoints'
-import gsap from 'gsap'
-import { useRef, useEffect } from 'react'
+// import gsap from 'gsap'
+// import { useRef, useEffect } from 'react'
 import { UpcomingEventType } from './Models/UpcomingEventType'
 
 interface Props {
@@ -16,7 +16,7 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
   const upcoming = event?.upcomingEvent?.upcoming
   const upcomingMessage = event?.upcomingEvent?.upcomingMessage
 
-  const eventRef = useRef(null)
+  //const eventRef = useRef(null)
   // const navigate = useNavigate()
   // const destination = '/event-page'
 
@@ -33,26 +33,30 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
   //   }, 300)
   // }
 
-  useEffect(() => {
-    const el = eventRef.current
-    gsap.fromTo(
-      el,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 2,
-        scrollTrigger: {
-          trigger: el,
-        },
-      }
-    )
-  }, [])
+  // useEffect(() => {
+  //   const el = eventRef.current
+  //   gsap.fromTo(
+  //     el,
+  //     { opacity: 0 },
+  //     {
+  //       opacity: 1,
+  //       duration: 2,
+  //       scrollTrigger: {
+  //         trigger: el,
+  //       },
+  //     }
+  //   )
+  // }, [])
 
   return (
+    // <Container
+    //   upcoming={upcoming || false}
+    //   upcomingMessage={upcomingMessage || ''}
+    //   ref={eventRef}
+    // >
     <Container
       upcoming={upcoming || false}
       upcomingMessage={upcomingMessage || ''}
-      ref={eventRef}
     >
       <Poster src={imgSrc} alt={alt} loading='lazy' />
       {/* <ExtendedButton onClick={navigateToEventHandler}> */}

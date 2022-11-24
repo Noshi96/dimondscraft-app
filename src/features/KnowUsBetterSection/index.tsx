@@ -11,9 +11,11 @@ const KnowUsBetterSection = () => {
     <FullWidthContainer>
       <ExtendedAdjustingSection>
         <Header> Technologia blockchain dla Twojego biznesu </Header>
-        Jeśli poszukujesz kompleksowych rozwiązań i zastosowania technologii Web3,
-        jeśli chcesz przenieść swoje produkty lub usługi do Metaverse w sposób bezpieczny i kompleksowy skontaktuj się z nami aby poznać szczegóły oferty dla Ciebie.
-        Pomożemy, doradzimy i wdrożymy Twoje produkty w formie Tokenu NFT.
+        Jeśli poszukujesz kompleksowych rozwiązań i zastosowania technologii
+        Web3, jeśli chcesz przenieść swoje produkty lub usługi do Metaverse w
+        sposób bezpieczny i kompleksowy skontaktuj się z nami aby poznać
+        szczegóły oferty dla Ciebie. Pomożemy, doradzimy i wdrożymy Twoje
+        produkty w formie Tokenu NFT.
         <SpotifyWidget>
           <iframe
             style={style}
