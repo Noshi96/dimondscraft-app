@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Layout } from '../../styles/breakpoints'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-// import { useEffect, useRef } from 'react'
-// import gsap from 'gsap'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 interface Props {
   sectionTitle: string
@@ -33,31 +33,29 @@ const sponsors = (importAll(
 })
 
 const PartnershipSection = ({ sectionTitle }: Props) => {
-  //const eventRef = useRef(null)
-  //console.log(sponsors)
+  const eventRef = useRef(null)
 
-  // useEffect(() => {
-  //   const el = eventRef.current
-  //   gsap.fromTo(
-  //     el,
-  //     { opacity: 0 },
-  //     {
-  //       opacity: 1,
-  //       duration: 2,
-  //       scrollTrigger: {
-  //         trigger: el,
-  //       },
-  //     }
-  //   )
-  // }, [])
+  useEffect(() => {
+    const el = eventRef.current
+    gsap.fromTo(
+      el,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: el,
+        },
+      }
+    )
+  }, [])
 
   return (
     <FullWidthContainer>
       <ExtendedAdjustingSection>
         <Container>
           <SectionTitle>{sectionTitle}</SectionTitle>
-          {/* <ImageList ref={eventRef}> */}
-          <ImageList>
+          <ImageList ref={eventRef}>
             {sponsors.map(({ imageSrc, bgColor }) => (
               <SponsorImgWrapper bgColor={bgColor} key={imageSrc}>
                 <SponsorImg src={imageSrc} alt='sopra' />

@@ -7,8 +7,8 @@ import { Layout } from '../../styles/breakpoints'
 
 import { useTextTyping } from '../../hooks/useTextTyping'
 import { delay } from '../../utils/DelayFunction'
-// import ParticlesBackground from '../../layouts/Particles'
-// import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+import ParticlesBackground from '../../layouts/Particles'
+import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 
 const NewEntrySection = () => {
@@ -19,13 +19,13 @@ const NewEntrySection = () => {
   return (
     <>
       <Background />
-      {/* <ParticlesBackground
-                width='100%'
-                height='100%'
-                options={customOptionsFour}
-                style={{ position: 'absolute', zIndex: '-1' }}
-                id={'NewEntrySectionParticles'}
-            /> */}
+      <ParticlesBackground
+        width='100%'
+        height='100%'
+        options={customOptionsFour}
+        style={{ position: 'absolute', zIndex: '-1' }}
+        id={'NewEntrySectionParticles'}
+      />
       <Samanta />
       <Wrapper>
         <ExtendedAdjustingSection>

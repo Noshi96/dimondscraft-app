@@ -11,8 +11,8 @@ import SpotifyLogo from '../../assets/media/spotify.png'
 
 import { MediaIcon } from './models/MediaIcon'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-// import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
-// import ParticlesBackground from '../../layouts/Particles'
+import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+import ParticlesBackground from '../../layouts/Particles'
 
 const Footer = () => {
   const baseMedia: MediaIcon[] = [
@@ -43,13 +43,13 @@ const Footer = () => {
 
   return (
     <FullWidthContainer>
-      {/* <ParticlesBackground
+      <ParticlesBackground
         width='100%'
         height='100%'
         options={customOptionsFour}
         style={{ position: 'absolute', zIndex: '-1' }}
         id={'FooterParticles'}
-      /> */}
+      />
       <ExtendedAdjustingSection>
         <ColumnWrapper>
           <CryptoPrices />
