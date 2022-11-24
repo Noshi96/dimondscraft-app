@@ -11,8 +11,8 @@ import SpotifyLogo from '../../assets/media/spotify.png'
 
 import { MediaIcon } from './models/MediaIcon'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
-import ParticlesBackground from '../../layouts/Particles'
+// import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+// import ParticlesBackground from '../../layouts/Particles'
 
 const Footer = () => {
   const baseMedia: MediaIcon[] = [
@@ -23,24 +23,33 @@ const Footer = () => {
     },
   ]
   const additionalMedia: MediaIcon[] = [
-    { path: OpenseaLogo, redirectionLink: 'https://opensea.io/DCFT/', altText: 'OpenseaLogo' },
     {
-        path: SpotifyLogo,
-        redirectionLink: 'https://open.spotify.com/show/33bLiSdONLfzUd8oNMYLTn?si=5dd99fa2d0744767',
-        altText: 'SpotifyLogo'
+      path: OpenseaLogo,
+      redirectionLink: 'https://opensea.io/DCFT/',
+      altText: 'OpenseaLogo',
     },
-    { path: OneBidLogo, redirectionLink: 'https://onebid.pl/pl/auction/-/3391', altText: 'OneBidLogo'},
+    {
+      path: SpotifyLogo,
+      redirectionLink:
+        'https://open.spotify.com/show/33bLiSdONLfzUd8oNMYLTn?si=5dd99fa2d0744767',
+      altText: 'SpotifyLogo',
+    },
+    {
+      path: OneBidLogo,
+      redirectionLink: 'https://onebid.pl/pl/auction/-/3391',
+      altText: 'OneBidLogo',
+    },
   ]
 
   return (
     <FullWidthContainer>
-      <ParticlesBackground
+      {/* <ParticlesBackground
         width='100%'
         height='100%'
         options={customOptionsFour}
         style={{ position: 'absolute', zIndex: '-1' }}
         id={'FooterParticles'}
-      />
+      /> */}
       <ExtendedAdjustingSection>
         <ColumnWrapper>
           <CryptoPrices />
