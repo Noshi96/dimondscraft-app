@@ -10,11 +10,11 @@ const ContactPage = () => {
         <Header> Kontakt </Header>
         <BaseText>
           {' '}
-          Jeśli masz pytania lub sugestie, napisz do nas na adres e-mail:{' '}
+          Jeśli masz pytania, napisz do nas na adres e-mail:{' '}
         </BaseText>
         <DataText> info@diamondscraft.io </DataText>
-        <BaseText> Jeśli chcesz kupić nasze obrazy, zadzwoń: </BaseText>
-        <DataText> 538 458 272 </DataText>
+        <BaseText> W sprawie kupna lub współpracy, zadzwoń: </BaseText>
+        <DataText> <CallablePhoneNumber href="tel:538458272"> 538 458 272 </CallablePhoneNumber> </DataText>
         <Image src={Detail}></Image>
       </ExtendedAdjustingSection>
     </FullWidthContainer>
@@ -70,6 +70,11 @@ const Image = styled.img`
   @media only screen and (${Layout.laptop}) {
     display: block;
   }
+`
+
+const CallablePhoneNumber = styled.a`
+  text-decoration: none;
+  color: #ff00aa;
 `
 
 export default ContactPage
