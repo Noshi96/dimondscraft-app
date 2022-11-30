@@ -6,7 +6,7 @@ import Auction2 from '../../assets/aboutUs/auction2.png'
 import Auction3 from '../../assets/aboutUs/auction3.png'
 import SamantaPhoto from '../../assets/aboutUs/samanta.jpg'
 import JanekPhoto from '../../assets/aboutUs/janek.jpg'
-import TomaszPhoto from '../../assets/aboutUs/tomasz.jpg'
+import TomaszPhoto from '../../assets/aboutUs/tomasBelling.webp'
 
 interface CustomStyledElement {
   marginTop?: string
