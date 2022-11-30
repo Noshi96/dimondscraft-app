@@ -1,26 +1,15 @@
-import { useLayoutEffect } from 'react'
-import styled from 'styled-components'
-import ErrorSection from '../../features/ErrorSection'
-import { scrollToSection } from '../../utils/scrollToSection'
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Page404 = () => {
-  useLayoutEffect(() => {
-    scrollToSection('entryPageEndHook')
-  }, [])
+  const navigate = useNavigate()
+  const destination = '/'
 
-  return (
-    <GradientFullWidthContainer>
-      <ErrorSection />
-    </GradientFullWidthContainer>
-  )
+  useEffect(() => {
+    navigate(destination)
+  }, [navigate])
+
+  return null
 }
-
-const GradientFullWidthContainer = styled(AdjustingSection)`
-  width: 100%;
-  max-width: 100%;
-  background: linear-gradient(#080924, #000000);
-  padding-top: 4rem;
-`
 
 export default Page404
