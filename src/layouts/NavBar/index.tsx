@@ -29,7 +29,7 @@ const Wrapper = styled.header<ScrollTypes>`
   top: 0;
   width: 100%;
   color: #ffffff;
-  z-index: 12;
+  z-index: 150;
 
   ${PageWrapper} {
     display: flex;
