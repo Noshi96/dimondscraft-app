@@ -1,5 +1,5 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 import 'material-icons/iconfont/material-icons.css'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
@@ -16,7 +16,7 @@ const suspenseComponent = (component: React.ReactNode) => {
   return <React.Suspense fallback=''>{component}</React.Suspense>
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   // createHashRouter on GH Pages
   {
     path: '/',
