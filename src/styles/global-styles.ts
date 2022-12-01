@@ -51,4 +51,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     text-decoration: none;
   }
+  
+  a {
+    &:active, &:hover, &:visited, &:link {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
 `

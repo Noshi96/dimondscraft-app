@@ -7,6 +7,7 @@ import Auction3 from '../../assets/aboutUs/auction3.png'
 import SamantaPhoto from '../../assets/aboutUs/samanta.jpg'
 import JanekPhoto from '../../assets/aboutUs/janek.jpg'
 import TomaszPhoto from '../../assets/aboutUs/tomasBelling.webp'
+import MediaSection from "../../features/MediaSection";
 
 interface CustomStyledElement {
   marginTop?: string
@@ -106,7 +107,13 @@ const AboutUsPage = () => {
         </ExtendedAdjustingSection>
         <ExtendedAdjustingSection marginTop={'4rem'}>
           <ColumnWrapper>
-            <TeamMemberPhoto src={SamantaPhoto} alt='Samanta Belling' />
+            <FancyCard>
+              <div className="content">
+                <TeamMemberPhoto src={SamantaPhoto} alt='Samanta Belling' />
+              </div>
+              <div className="card"></div>
+            </FancyCard>
+
             <Header marginTop={'4rem'}> Samanta Belling </Header>
             <BasicText marginTop={'2.5rem'} maxWidth={'420px'}>
               CEO i współzałożyciel „Diamondscraft” pierwszego Domu Aukcyjnego w Polsce sprzedającego dzieła sztuki oraz tokeny NFT,
@@ -138,7 +145,13 @@ const AboutUsPage = () => {
             </BasicText>
           </ColumnWrapper>
           <ColumnWrapper>
-            <TeamMemberPhoto src={TomaszPhoto} alt='Tomasz Belling' />
+            <FancyCard>
+              <div className="content">
+                <TeamMemberPhoto src={TomaszPhoto} alt='Tomasz Belling' />
+              </div>
+              <div className="card"></div>
+            </FancyCard>
+
             <Header marginTop={'4rem'}> Thomas Belling </Header>
             <BasicText marginTop={'2.5rem'} maxWidth={'420px'}>
               CoFounder & Board Member (Współzałożyciel i członek zarządu)
@@ -159,7 +172,13 @@ const AboutUsPage = () => {
 
         <ExtendedAdjustingSection marginTop={'6rem'}>
           <ColumnWrapper>
-            <TeamMemberPhoto src={JanekPhoto} alt='Jan' />
+            <FancyCard>
+              <div className="content">
+                <TeamMemberPhoto src={JanekPhoto} alt='Jan' />
+              </div>
+              <div className="card"></div>
+            </FancyCard>
+
             <Header marginTop={'4rem'}> Jan DrNico Okliński </Header>
             <BasicText marginTop={'2.5rem'} maxWidth={'420px'}>
               Artysta, muzyk, twórca tatuaży, rysunków, projektów graficznych
@@ -180,6 +199,10 @@ const AboutUsPage = () => {
             </BasicText>
           </ColumnWrapper>
           <ColumnWrapper></ColumnWrapper>
+        </ExtendedAdjustingSection>
+
+        <ExtendedAdjustingSection>
+          <MediaSection />
         </ExtendedAdjustingSection>
       </FullWidthContainerBlack>
     </FullWidthContainer>
@@ -250,11 +273,77 @@ const ImageLong = styled.img`
 `
 
 const TeamMemberPhoto = styled.img<CustomStyledElement>`
-  width: 250px;
+  width: 320px;
   object-fit: cover;
   object-position: top;
-  height: 300px;
+  height: 400px;
   margin-top: ${({ marginTop }) => marginTop};
+`
+
+const FancyCard = styled.div`
+  position: relative;
+  
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  .content {
+    z-index: 100;
+    position: absolute;
+    height: 100%;
+    background: #000000;
+  }
+
+  .card {
+    width: 320px;
+    height: 400px;
+    position: relative;
+    z-index: 10;
+  }
+
+
+  .card::before {
+    content: "";
+    width: 329px;
+    height: 411px;
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+    left: -4px;
+    animation: spin 2.5s linear infinite;
+  }
+
+  .card::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 329px;
+    height: 411px;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(130px);
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  
 `
 
 export default AboutUsPage
