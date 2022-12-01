@@ -1,20 +1,24 @@
 import styled from 'styled-components'
-import { MediaObjectList } from "./consts";
-import { Layout } from "../../styles/breakpoints";
+import { MediaObjectList } from './consts'
+import { Layout } from '../../styles/breakpoints'
 
 const MediaSection = () => {
-    return (
-        <>
-            <Header> Co o nas piszą media </Header>
-            <MediaList>
-                {MediaObjectList.map(({ displayName, link }, i) => (
-                    <MediaLi><a href={link} target='_blank'> {displayName}  </a></MediaLi>
-                ))}
-            </MediaList>
-        </>
-    )
+  return (
+    <>
+      <Header> Co o nas piszą media </Header>
+      <MediaList>
+        {MediaObjectList.map(({ displayName, link }, i) => (
+          <MediaLi>
+            <a href={link} target='_blank' rel='noreferrer'>
+              {' '}
+              {displayName}{' '}
+            </a>
+          </MediaLi>
+        ))}
+      </MediaList>
+    </>
+  )
 }
-
 
 const Header = styled.h3`
   margin: 8rem 0 0 0;
@@ -48,15 +52,15 @@ const MediaList = styled.ul`
 `
 
 const MediaLi = styled.li`
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   counter-increment: index;
   display: flex;
   align-items: center;
   padding: 12px 0;
   box-sizing: border-box;
-  
+
   &:before {
-    content: counters(index, ".", decimal-leading-zero);
+    content: counters(index, '.', decimal-leading-zero);
     font-size: 1.5rem;
     font-weight: bold;
     min-width: 50px;
@@ -71,5 +75,4 @@ const MediaLi = styled.li`
   }
 `
 
-
-export default MediaSection;
+export default MediaSection
