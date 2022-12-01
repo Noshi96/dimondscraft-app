@@ -308,7 +308,7 @@ const FancyCard = styled.div`
     content: "";
     width: 329px;
     height: 411px;
-    background-image: linear-gradient(var(--rotate), #ff00aa, #00a3ff);
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
     position: absolute;
     z-index: -1;
     top: -5px;
@@ -319,7 +319,7 @@ const FancyCard = styled.div`
   .card::after {
     position: absolute;
     content: "";
-    top: 60px;
+    top: 0;
     left: 0;
     right: 0;
     z-index: -1;
@@ -327,8 +327,8 @@ const FancyCard = styled.div`
     height: 411px;
     margin: 0 auto;
     transform: scale(0.8);
-    filter: blur(60px);
-    background-image: linear-gradient(var(--rotate), #ff00aa, #00a3ff);
+    filter: blur(130px);
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
     opacity: 1;
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
