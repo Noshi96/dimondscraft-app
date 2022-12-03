@@ -72,16 +72,17 @@ const EventList = () => {
   ]
 
 
-  // const [fsEvents, setEvents] = useState([]);
-  // const eventsCollectionRef = collection(db, 'events');
+  const [fsEvents, setEvents] = useState([]);
+  const eventsCollectionRef = collection(db, 'events'); 
 
-  // useEffect(() => {
-  //   const getEvents = async () => {
-  //     const fetchedEvents = await getDocs(eventsCollectionRef);
-  //   }
+  useEffect(() => {
+    const getEvents = async () => {
+      const fetchedEvents = await getDocs(eventsCollectionRef);
+      console.log(fetchedEvents);
+    }
 
-  //   getEvents();
-  // }, [])
+    getEvents();
+  }, [])
 
   return (
     <EventListContainer>
