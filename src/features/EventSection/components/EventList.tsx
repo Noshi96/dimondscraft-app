@@ -10,9 +10,13 @@ import { EventType } from './Models/EventType'
 import { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../../connections/firebase/firebase.config'
+import { store } from '../../../store'
+import { useDispatch } from 'react-redux'
+import { fetchEventsData } from '../../../store/reducers'
 
 const EventList = () => {
   const content = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
+  const dispatch = useDispatch()
 
   const events: EventType[] = [
     {
@@ -71,18 +75,27 @@ const EventList = () => {
     },
   ]
 
-
-  const [fsEvents, setEvents] = useState([]);
-  const eventsCollectionRef = collection(db, 'events'); 
+  const [fsEvents, setEvents] = useState([])
+  const eventsCollectionRef = collection(db, 'events')
 
   useEffect(() => {
     const getEvents = async () => {
-      const fetchedEvents = await getDocs(eventsCollectionRef);
-      console.log(fetchedEvents);
+      const fetchedEvents = await getDocs(eventsCollectionRef)
+      console.log(fetchedEvents)
     }
 
-    getEvents();
+    getEvents()
+
+    dispatch(fetchEventsData())
+    console.log('Sraaaaaaka')
+    console.log(store.getState())
   }, [])
+
+  //console.log(store.dispatch(eventSlice.actions.fetchEventsData))
+
+  // store.subscribe(() => {
+  //   console.log(store.getState())
+  // })
 
   return (
     <EventListContainer>
