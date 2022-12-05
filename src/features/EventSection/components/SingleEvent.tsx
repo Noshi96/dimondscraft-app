@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components'
 import { TempEventButton } from '../../../layouts/Button/Button'
-import { Event } from './Models/Event'
 import { Layout } from '../../../styles/breakpoints'
 import gsap from 'gsap'
 import { useRef, useEffect } from 'react'
-import { UpcomingEventType } from './Models/UpcomingEventType'
+import { DateOfEvent, Event } from '../Models/model'
 
 interface Props {
   imgSrc: string
@@ -13,8 +12,15 @@ interface Props {
 }
 
 const SingleEvent = ({ imgSrc, alt, event }: Props) => {
-  const upcoming = event?.upcomingEvent?.upcoming
-  const upcomingMessage = event?.upcomingEvent?.upcomingMessage
+  const nanoseconds = event?.dateOfEvent?.nanoseconds
+  const seconds = event?.dateOfEvent?.seconds ?? ''
+
+  const date = new Date(Number(seconds) * 1000)
+  const eventFormattedDate = new Intl.DateTimeFormat('pl-PL', {
+    dateStyle: 'full',
+    timeStyle: 'long',
+    timeZone: 'Poland',
+  }).format(date)
 
   const eventRef = useRef(null)
   // const navigate = useNavigate()
@@ -50,8 +56,8 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
 
   return (
     <Container
-      upcoming={upcoming || false}
-      upcomingMessage={upcomingMessage || ''}
+      seconds={eventFormattedDate || ''}
+      nanoseconds={nanoseconds || ''}
       ref={eventRef}
     >
       <Poster src={imgSrc} alt={alt} loading='lazy' />
@@ -61,28 +67,28 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
   )
 }
 
-const upcomingEventStyle = ({ upcomingMessage = '' }: UpcomingEventType) => css`
+const upcomingEventStyle = ({ seconds = '0' }: DateOfEvent) => css`
   &:before {
-    content: '${upcomingMessage}';
+    content: '${seconds}';
     position: absolute;
     top: -5%;
     left: 0;
     color: #FF00AA;
 
     @media only screen and (${Layout.tablet}){
-      top: -7%;
+      top: -14%;
     }
   }
 `
 
-const Container = styled.div<UpcomingEventType>`
+const Container = styled.div<DateOfEvent>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
-  ${({ upcoming }) => (upcoming ? upcomingEventStyle : '')}
+  ${({ seconds }) => (seconds ? upcomingEventStyle : '')}
 `
 
 const Poster = styled.img`

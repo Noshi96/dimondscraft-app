@@ -1,10 +1,11 @@
-interface EventType {
-  id: string
-  event: any
-}
+import { Event } from '../features/EventSection/Models/model'
 
+export interface FetchedEventType {
+  id: string
+  event: Event
+}
 export interface EventsState {
-  events: EventType[]
+  events: FetchedEventType[]
   status: string
   error: null
 }
