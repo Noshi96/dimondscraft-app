@@ -3,6 +3,8 @@ import { RouterProvider, createHashRouter } from 'react-router-dom'
 import 'material-icons/iconfont/material-icons.css'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
+import { Provider } from 'react-redux'
+import { store } from './store'
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutPage = React.lazy(() => import('./pages/AboutUsPage'))
@@ -47,7 +49,11 @@ const router = createHashRouter([
 ])
 
 const App = () => {
-  return <RouterProvider router={router} />
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  )
 }
 
 export default App
