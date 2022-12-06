@@ -1,5 +1,4 @@
 export interface DateOfEvent {
-  nanoseconds: string
   seconds: string
 }
 

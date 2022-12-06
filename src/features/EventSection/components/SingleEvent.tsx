@@ -12,15 +12,15 @@ interface Props {
 }
 
 const SingleEvent = ({ imgSrc, alt, event }: Props) => {
-  const nanoseconds = event?.dateOfEvent?.nanoseconds
-  const seconds = event?.dateOfEvent?.seconds ?? ''
-
+  const seconds = event?.dateOfEvent?.seconds
   const date = new Date(Number(seconds) * 1000)
-  const eventFormattedDate = new Intl.DateTimeFormat('pl-PL', {
+  const showDate = Math.floor(Date.now()) < +(seconds || 0)
+  
+  const eventFormattedDate = seconds ? new Intl.DateTimeFormat('pl-PL', {
     dateStyle: 'full',
     timeStyle: 'long',
     timeZone: 'Poland',
-  }).format(date)
+  }).format(date).split(' ').slice(0, -1).join(' ').slice(0, -3) : ''
 
   const eventRef = useRef(null)
   // const navigate = useNavigate()
@@ -56,8 +56,7 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
 
   return (
     <Container
-      seconds={eventFormattedDate || ''}
-      nanoseconds={nanoseconds || ''}
+      seconds={showDate ? eventFormattedDate : ''}
       ref={eventRef}
     >
       <Poster src={imgSrc} alt={alt} loading='lazy' />

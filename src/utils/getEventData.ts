@@ -9,19 +9,21 @@ export const getEvents = async () => {
   const descQuery = query(eventsCollectionRef, orderBy('dateOfEvent', 'desc'))
   const fetchedEvents = await getDocs(descQuery)
 
-  const events = fetchedEvents.docs.map((doc) => ({
-    event: {
-      title: doc.data().title,
-      imageSrc: doc.data().imageSrc,
-      alt: doc.data().alt,
-      description: doc.data().description,
-      dateOfEvent:
-        {
-          seconds: doc.data().dateOfEvent?.seconds?.toString() ?? '0',
-          nanoseconds: doc.data().dateOfEvent?.nanoseconds?.toString() ?? '0',
-        } ?? '0',
-    } as Event,
-    id: doc.id,
-  }))
-  return events as FetchedEventType[]
+  const events: FetchedEventType[] = fetchedEvents.docs.map((doc) => {
+    const { title, imageSrc, dateOfEvent, description, alt } = doc.data() as Event;
+    const { seconds } = dateOfEvent || {};
+
+    return {
+      event: {
+        title,
+        imageSrc,
+        alt,
+        description,
+        dateOfEvent: dateOfEvent ? { seconds: seconds?.toString() } : null,
+      } as Event,
+      id: doc.id,
+    }
+  })
+
+  return events;
 }
