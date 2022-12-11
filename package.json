@@ -1,7 +1,7 @@
 {
   "name": "dimondscraft-app",
   "version": "0.1.0",
-  "homepage": "https://Noshi96.github.io/dimondscraft-app/",
+  "homepage": "https://diamondscraft.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
