@@ -10,13 +10,14 @@ const EventPage = React.lazy(() => import('./pages/EventPage'))
 const RootPage = React.lazy(() => import('./pages/RootPage'))
 const ContactPage = React.lazy(() => import('./pages/ContactPage'))
 const GalleryPage = React.lazy(() => import('./pages/GalleryPage'))
-const Page404 = React.lazy(() => import('./pages/Page404'))
+const Redirect = React.lazy(() => import('./pages/Redirect'))
 
 const suspenseComponent = (component: React.ReactNode) => {
   return <React.Suspense fallback=''>{component}</React.Suspense>
 }
 
 const router = createHashRouter([
+  // createHashRouter on GH Pages
   {
     path: '/',
     element: suspenseComponent(<RootPage />),
@@ -39,7 +40,7 @@ const router = createHashRouter([
       },
       {
         path: '*',
-        element: suspenseComponent(<Page404 />),
+        element: suspenseComponent(<Redirect />),
       },
     ],
   },

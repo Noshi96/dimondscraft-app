@@ -8,6 +8,8 @@ import OpenseaLogo from '../../assets/media/opensea.png'
 import TwitterLogo from '../../assets/media/twitter.png'
 import OneBidLogo from '../../assets/media/onebidlogo.png'
 import SpotifyLogo from '../../assets/media/spotify.png'
+import InstagramLogo from '../../assets/media/instagramLogo.webp'
+import FacebookLogo from '../../assets/media/fb_icon_325x325.webp'
 
 import { MediaIcon } from './models/MediaIcon'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
@@ -17,9 +19,19 @@ import ParticlesBackground from '../../layouts/Particles'
 const Footer = () => {
   const baseMedia: MediaIcon[] = [
     {
+      path: FacebookLogo,
+      redirectionLink: 'https://www.facebook.com/DiamondsCraftNFTart/',
+      altText: 'FacebookLogo',
+    },
+    {
       path: TwitterLogo,
       redirectionLink: 'https://twitter.com/diamondsct',
       altText: 'TwitterLogo',
+    },
+    {
+      path: InstagramLogo,
+      redirectionLink: 'https://www.instagram.com/diamondscraft.io/',
+      altText: 'InstagramLogo',
     },
   ]
   const additionalMedia: MediaIcon[] = [
