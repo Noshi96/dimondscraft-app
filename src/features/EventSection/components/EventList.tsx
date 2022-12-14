@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { store } from '../../../store'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectEvents, updateEventsData } from '../../../store/reducers'
-import { getEvents } from '../../../utils/getEventData'
+import { getEvents } from '../../../../utils/getEventData'
 import { FetchedEventType } from '../../../store/model'
 
 const EventList = () => {

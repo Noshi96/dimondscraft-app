@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { AdjustingSection } from '../../../layouts/AdjustingSection/AdjustingSection'
 
 import Auction1 from '../../assets/aboutUs/auction1.png'
 import Auction2 from '../../assets/aboutUs/auction2.png'
@@ -7,7 +7,7 @@ import Auction3 from '../../assets/aboutUs/auction3.png'
 import SamantaPhoto from '../../assets/aboutUs/samanta.jpg'
 import JanekPhoto from '../../assets/aboutUs/janek.jpg'
 import TomaszPhoto from '../../assets/aboutUs/tomasBelling.webp'
-import MediaSection from "../../features/MediaSection";
+import MediaSection from '../../../features/MediaSection'
 
 interface CustomStyledElement {
   marginTop?: string
@@ -108,64 +108,72 @@ const AboutUsPage = () => {
         <ExtendedAdjustingSection marginTop={'4rem'}>
           <ColumnWrapper>
             <FancyCard>
-              <div className="content">
+              <div className='content'>
                 <TeamMemberPhoto src={SamantaPhoto} alt='Samanta Belling' />
               </div>
-              <div className="card"></div>
+              <div className='card'></div>
             </FancyCard>
 
             <Header marginTop={'4rem'}> Samanta Belling </Header>
             <BasicText marginTop={'2.5rem'} maxWidth={'420px'}>
-              CEO i współzałożyciel „Diamondscraft” pierwszego Domu Aukcyjnego w Polsce sprzedającego dzieła sztuki oraz tokeny NFT,
-              który posiada również swoją przestrzeń na platformie Metaverse Spatial,
-              gdzie regularnie organizowane są wystawy NFT oraz aukcje,
-              które symultanicznie odbywają się na żywo oraz online na platformie aukcyjnej.
-              Diamondscraft tworzy pomost pomiędzy tradycyjną, a wirtualną sztuką.
+              CEO i współzałożyciel „Diamondscraft” pierwszego Domu Aukcyjnego w
+              Polsce sprzedającego dzieła sztuki oraz tokeny NFT, który posiada
+              również swoją przestrzeń na platformie Metaverse Spatial, gdzie
+              regularnie organizowane są wystawy NFT oraz aukcje, które
+              symultanicznie odbywają się na żywo oraz online na platformie
+              aukcyjnej. Diamondscraft tworzy pomost pomiędzy tradycyjną, a
+              wirtualną sztuką.
               <br />
               <br />
               Tworząc projekty NFT starannie wyselekcjonowanym artystom.
-              Diamondscraft tworzy również przestrzenie w rozszerzonej rzeczywistości AR,
-              w której można spotykać się z przyjaciółmi i klientami.
+              Diamondscraft tworzy również przestrzenie w rozszerzonej
+              rzeczywistości AR, w której można spotykać się z przyjaciółmi i
+              klientami.
               <br />
               <br />
-              Historyk sztuki, studia na Katolickim Uniwersytecie Lubelskim, specjalizacja:
-              inwentaryzatorska oraz konserwatorska, (praca magisterska – „Kolekcjonerzy,
-              a Rynek Sztuki w Polsce po 1989 r.,
-              wieloletni kurator wystaw, marszand, redaktor magazynu „Artysta i Sztuka”,
-              Prezes „Belle Arte” – Galerii Sztuki w Centrum Praskim Koneser, wiceprezes
-              „Fundacji Dziedzictwa Kultury Polskiej” przywracającej pamięć o utraconych dobrach kultury podczas II wojny światowej.
+              Historyk sztuki, studia na Katolickim Uniwersytecie Lubelskim,
+              specjalizacja: inwentaryzatorska oraz konserwatorska, (praca
+              magisterska – „Kolekcjonerzy, a Rynek Sztuki w Polsce po 1989 r.,
+              wieloletni kurator wystaw, marszand, redaktor magazynu „Artysta i
+              Sztuka”, Prezes „Belle Arte” – Galerii Sztuki w Centrum Praskim
+              Koneser, wiceprezes „Fundacji Dziedzictwa Kultury Polskiej”
+              przywracającej pamięć o utraconych dobrach kultury podczas II
+              wojny światowej.
               <br />
               <br />
               Koordynator Aukcji Sztuki Fantastycznej w Desie Unicum,
               odpowiedzialna za: dobór prac, wycenę dzieł, ustalanie estymacji,
-              potwierdzenie autentyczności prac, kontakty z kolekcjonerami, kontakty z artystami,
-              przygotowanie katalogów: zakres merytoryczny oraz skład graficzny.
+              potwierdzenie autentyczności prac, kontakty z kolekcjonerami,
+              kontakty z artystami, przygotowanie katalogów: zakres merytoryczny
+              oraz skład graficzny.
               <br />
-              Promotorka polskich artystów w kraju i za granicą. Związana z rynkiem sztuki od kilkunastu lat
+              Promotorka polskich artystów w kraju i za granicą. Związana z
+              rynkiem sztuki od kilkunastu lat
             </BasicText>
           </ColumnWrapper>
           <ColumnWrapper>
             <FancyCard>
-              <div className="content">
+              <div className='content'>
                 <TeamMemberPhoto src={TomaszPhoto} alt='Tomasz Belling' />
               </div>
-              <div className="card"></div>
+              <div className='card'></div>
             </FancyCard>
 
             <Header marginTop={'4rem'}> Thomas Belling </Header>
             <BasicText marginTop={'2.5rem'} maxWidth={'420px'}>
-              CoFounder & Board Member (Współzałożyciel i członek zarządu)
-              NFT ART Spółka z ograniczoną odpowiedzialnością, twórca marki Diamondscraft.
+              CoFounder & Board Member (Współzałożyciel i członek zarządu) NFT
+              ART Spółka z ograniczoną odpowiedzialnością, twórca marki
+              Diamondscraft.
               <br />
               <br />
-
               Kilkuletnie doświadczenie w branży reklamowej w firma RGB Gdańsk,
-              13 lat doświadczenia w przemyśle energetycznym jako dyrektor w sektorze morza północnego dla kompanii energetyczny Shell i TAKA.
+              13 lat doświadczenia w przemyśle energetycznym jako dyrektor w
+              sektorze morza północnego dla kompanii energetyczny Shell i TAKA.
               <br />
               <br />
-
-              Pasjonat i miłośnik sztuk pięknych, kolekcjoner sztuki i współwłaściciel galerii Belle Arte.
-              Współorganizator wielu wystaw i eventów artystycznych.
+              Pasjonat i miłośnik sztuk pięknych, kolekcjoner sztuki i
+              współwłaściciel galerii Belle Arte. Współorganizator wielu wystaw
+              i eventów artystycznych.
             </BasicText>
           </ColumnWrapper>
         </ExtendedAdjustingSection>
@@ -173,10 +181,10 @@ const AboutUsPage = () => {
         <ExtendedAdjustingSection marginTop={'6rem'}>
           <ColumnWrapper>
             <FancyCard>
-              <div className="content">
+              <div className='content'>
                 <TeamMemberPhoto src={JanekPhoto} alt='Jan' />
               </div>
-              <div className="card"></div>
+              <div className='card'></div>
             </FancyCard>
 
             <Header marginTop={'4rem'}> Jan DrNico Okliński </Header>
@@ -282,13 +290,13 @@ const TeamMemberPhoto = styled.img<CustomStyledElement>`
 
 const FancyCard = styled.div`
   position: relative;
-  
+
   @property --rotate {
-    syntax: "<angle>";
+    syntax: '<angle>';
     initial-value: 132deg;
     inherits: false;
   }
-  
+
   .content {
     z-index: 100;
     position: absolute;
@@ -303,12 +311,16 @@ const FancyCard = styled.div`
     z-index: 10;
   }
 
-
   .card::before {
-    content: "";
+    content: '';
     width: 329px;
     height: 411px;
-    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
     position: absolute;
     z-index: -1;
     top: -5px;
@@ -318,7 +330,7 @@ const FancyCard = styled.div`
 
   .card::after {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     right: 0;
@@ -328,9 +340,14 @@ const FancyCard = styled.div`
     margin: 0 auto;
     transform: scale(0.8);
     filter: blur(130px);
-    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
     opacity: 1;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
   }
 
@@ -342,8 +359,6 @@ const FancyCard = styled.div`
       --rotate: 360deg;
     }
   }
-
-  
 `
 
 export default AboutUsPage

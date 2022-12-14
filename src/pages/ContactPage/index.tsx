@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { AdjustingSection } from '../../../layouts/AdjustingSection/AdjustingSection'
 import Detail from '../../assets/contact3.png'
-import { Layout } from '../../styles/breakpoints'
+import { Layout } from '../../../styles/breakpoints'
 
 const ContactPage = () => {
   return (
@@ -14,7 +14,13 @@ const ContactPage = () => {
         </BaseText>
         <DataText> info@diamondscraft.io </DataText>
         <BaseText> W sprawie kupna lub współpracy, zadzwoń: </BaseText>
-        <DataText> <CallablePhoneNumber href="tel:538458272"> 538 458 272 </CallablePhoneNumber> </DataText>
+        <DataText>
+          {' '}
+          <CallablePhoneNumber href='tel:538458272'>
+            {' '}
+            538 458 272{' '}
+          </CallablePhoneNumber>{' '}
+        </DataText>
         <Image src={Detail}></Image>
       </ExtendedAdjustingSection>
     </FullWidthContainer>

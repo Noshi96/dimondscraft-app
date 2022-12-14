@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import { Layout } from '../../styles/breakpoints'
+import { Layout } from '../../../styles/breakpoints'
 
 const EventPage = () => {
   const { state } = useLocation()

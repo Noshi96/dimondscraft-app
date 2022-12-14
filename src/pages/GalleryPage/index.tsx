@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { GallerySection } from '../../features/GallerySection'
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-import { Layout } from '../../styles/breakpoints'
+import { GallerySection } from '../../../features/GallerySection'
+import { AdjustingSection } from '../../../layouts/AdjustingSection/AdjustingSection'
+import { Layout } from '../../../styles/breakpoints'
 
 const GalleryPage = () => {
   return (

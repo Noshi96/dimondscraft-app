@@ -1,6 +1,4 @@
 import React from 'react'
-import { RouterProvider, createHashRouter } from 'react-router-dom'
-import 'material-icons/iconfont/material-icons.css'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 import { Provider } from 'react-redux'

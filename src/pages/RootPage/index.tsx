@@ -1,9 +1,9 @@
 import React from 'react'
-import NavBar from '../../layouts/NavBar'
-import { GlobalStyle } from '../../styles/global-styles'
+import NavBar from '../../../layouts/NavBar'
+import { GlobalStyle } from '../../../styles/global-styles'
 import { ScrollRestoration, useOutlet } from 'react-router-dom'
-import Footer from '../../features/Footer'
-import NewEntrySection from "../../features/NewEntrySection";
+import Footer from '../../../features/Footer'
+import NewEntrySection from '../../../features/NewEntrySection'
 const HomePage = React.lazy(() => import('../../pages/HomePage'))
 
 const suspenseComponent = (component: React.ReactNode) => {
