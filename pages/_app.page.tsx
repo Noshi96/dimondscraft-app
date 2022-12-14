@@ -2,9 +2,12 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { GlobalStyle } from '../styles/global-styles'
 import { wrapper } from '../store'
-import 'material-icons/iconfont/material-icons.css'
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '../styles/themes'
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+function MyApp({ Component, ...rest }: AppProps): JSX.Element {
+  const { store, props } = wrapper.useWrappedStore(rest)
   return (
     <>
       <Head>
@@ -15,12 +18,17 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           name='description'
           content='A website for nft and art enthusiasts'
         />
+        <link rel='icon' href='/favicon.ico' />
         <title>Diamondscraft | aukcje NFT</title>
       </Head>
-      <Component {...pageProps} />
-      <GlobalStyle />
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Component {...props.pageProps} />
+        </ThemeProvider>
+      </Provider>
     </>
   )
 }
 
-export default wrapper.withRedux(MyApp)
+export default MyApp

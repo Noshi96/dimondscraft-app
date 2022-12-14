@@ -1,31 +1,32 @@
 import styled from 'styled-components'
 import { useState } from 'react'
-import background from '../../assets/homepage/newEntrySection/tlosmall.webp'
-import samanta from '../../assets/homepage/newEntrySection/samantacompressed.webp'
+import background from '../../public/images/homepage/newEntrySection/tlosmall.webp'
+import samanta from '../../public/images/homepage/newEntrySection/samantacompressed.webp'
 
 import { Layout } from '../../styles/breakpoints'
 
 import { useTextTyping } from '../../hooks/useTextTyping'
 import { delay } from '../../utils/DelayFunction'
-import ParticlesBackground from '../../layouts/Particles'
-import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+// import ParticlesBackground from '../../layouts/Particles'
+// import { useCustomParticleOptions } from '../../hooks/useCustomParticleOptions'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 
 const NewEntrySection = () => {
   const [text, setText] = useState<string>('')
 
   useTextTyping(delay, setText)
+  // const options = useCustomParticleOptions()
 
   return (
     <>
       <Background />
-      <ParticlesBackground
+      {/* <ParticlesBackground
         width='100%'
         height='100%'
-        options={customOptionsFour}
+        options={options}
         style={{ position: 'absolute', zIndex: '-1' }}
         id={'NewEntrySectionParticles'}
-      />
+      /> */}
       <Samanta />
       <Wrapper>
         <ExtendedAdjustingSection>
@@ -59,7 +60,7 @@ const Background = styled.div`
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  background-image: url('${background}');
+  background-image: url('${background.src}');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -70,7 +71,7 @@ const Background = styled.div`
 const Samanta = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: url('${samanta}');
+  background-image: url('${samanta.src}');
   background-size: cover;
   background-position: center;
   object-fit: cover;

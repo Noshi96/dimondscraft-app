@@ -1,8 +1,16 @@
-import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import styled, { css } from 'styled-components'
 import { Layout } from '../../../styles/breakpoints'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+
+interface ActiveLink {
+  path: string
+  target: string
+}
 
 const NavigationMenu = () => {
+  const { asPath } = useRouter()
+
   const smoothNavigate = () => {
     setTimeout(() => {
       const element = document.getElementById('entryPageEndHook') as HTMLElement
@@ -18,25 +26,45 @@ const NavigationMenu = () => {
     <Container>
       <NavigationWrapper>
         <LinksColumn>
-          <NavLinkStyled end={true} to={'/'} onClick={smoothNavigate}>
+          <NavLinkStyled
+            path={asPath}
+            target={'/'}
+            href={'/'}
+            onClick={smoothNavigate}
+          >
             {' '}
             {'Strona główna'.toUpperCase()}{' '}
           </NavLinkStyled>
         </LinksColumn>
         <LinksColumn>
-          <NavLinkStyled to={'/about'} onClick={smoothNavigate}>
+          <NavLinkStyled
+            path={asPath}
+            target={'/about'}
+            href={'/about'}
+            onClick={smoothNavigate}
+          >
             {' '}
             {'O nas'.toUpperCase()}{' '}
           </NavLinkStyled>
         </LinksColumn>
         <LinksColumn>
-          <NavLinkStyled to={'/gallery'} onClick={smoothNavigate}>
+          <NavLinkStyled
+            path={asPath}
+            target={'/gallery'}
+            href={'/gallery'}
+            onClick={smoothNavigate}
+          >
             {' '}
             {'Galeria'.toUpperCase()}{' '}
           </NavLinkStyled>
         </LinksColumn>
         <LinksColumn>
-          <NavLinkStyled to={'/contact'} onClick={smoothNavigate}>
+          <NavLinkStyled
+            path={asPath}
+            target={'/contact'}
+            href={'/contact'}
+            onClick={smoothNavigate}
+          >
             {' '}
             {'Kontakt'.toUpperCase()}{' '}
           </NavLinkStyled>
@@ -76,7 +104,7 @@ const LinksColumn = styled.div`
   gap: 1rem;
 `
 
-const NavLinkStyled = styled(NavLink)`
+const NavLinkStyled = styled(Link)<ActiveLink>`
   background: transparent;
   color: #aeaeae;
   border: transparent;
@@ -86,12 +114,20 @@ const NavLinkStyled = styled(NavLink)`
   box-sizing: border-box;
   padding: 6px 8px;
 
-  &:hover {
-    background: #ffffff11;
+  &:visited {
+    color: #aeaeae;
   }
 
-  &.active {
-    background-color: #ffffff;
-    color: #22192f;
+  ${({ target, path }) =>
+    target === path &&
+    css`
+      background: #ffffff !important;
+      &:visited {
+        color: #22192f;
+      }
+    `}
+
+  &:hover {
+    background: #ffffff11;
   }
 `

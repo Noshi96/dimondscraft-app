@@ -5,6 +5,7 @@ import { DragEventHandler } from 'react'
 interface Props {
   name: string
   src: string
+  key: string
 }
 
 const CarouselItem = ({ name, src }: Props) => {

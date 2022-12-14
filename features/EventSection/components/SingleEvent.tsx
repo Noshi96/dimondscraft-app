@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components'
 import { TempEventButton } from '../../../layouts/Button/Button'
 import { Layout } from '../../../styles/breakpoints'
-import gsap from 'gsap'
-import { useRef, useEffect } from 'react'
 import { DateOfEvent, Event } from '../Models/model'
 
 interface Props {
@@ -29,7 +27,7 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
         .slice(0, -3)
     : ''
 
-  const eventRef = useRef(null)
+  // const eventRef = useRef(null)
   // const navigate = useNavigate()
   // const destination = '/event-page'
 
@@ -46,23 +44,23 @@ const SingleEvent = ({ imgSrc, alt, event }: Props) => {
   //   }, 300)
   // }
 
-  useEffect(() => {
-    const el = eventRef.current
-    gsap.fromTo(
-      el,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 2,
-        scrollTrigger: {
-          trigger: el,
-        },
-      }
-    )
-  }, [])
+  // useEffect(() => {
+  //   const el = eventRef.current
+  //   gsap.fromTo(
+  //     el,
+  //     { opacity: 0 },
+  //     {
+  //       opacity: 1,
+  //       duration: 2,
+  //       scrollTrigger: {
+  //         trigger: el,
+  //       },
+  //     }
+  //   )
+  // }, [])
 
   return (
-    <Container seconds={showDate ? eventFormattedDate : ''} ref={eventRef}>
+    <Container seconds={showDate ? eventFormattedDate : ''}>
       <Poster src={imgSrc} alt={alt} loading='lazy' />
       {/* <ExtendedButton onClick={navigateToEventHandler}> */}
       <ExtendedButton>Dowiedz się więcej</ExtendedButton>

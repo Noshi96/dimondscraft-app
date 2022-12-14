@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import EventList from './components/EventList'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-import Detail from '../../assets/homepage/posters/21savage.webp'
+import Detail from '../../public/images/homepage/posters/21savage.webp'
 import { Layout } from '../../styles/breakpoints'
 
 export function EventSection() {
@@ -11,7 +11,7 @@ export function EventSection() {
         <EventList />
       </ExtendedAdjustingSection>
       <ContentCenteredAdjustingSection>
-        <Image src={Detail} alt={'motto'}></Image>
+        <Image src={Detail.src} alt={'motto'}></Image>
       </ContentCenteredAdjustingSection>
     </FullWidthContainer>
   )

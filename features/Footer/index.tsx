@@ -4,50 +4,58 @@ import CryptoPrices from './components/CryptoPrices'
 import NavigationMenu from './components/NavigationMenu'
 import { Layout } from '../../styles/breakpoints'
 
-import OpenseaLogo from '../../assets/media/opensea.png'
-import TwitterLogo from '../../assets/media/twitter.png'
-import OneBidLogo from '../../assets/media/onebidlogo.png'
-import SpotifyLogo from '../../assets/media/spotify.png'
-import InstagramLogo from '../../assets/media/instagramLogo.webp'
-import FacebookLogo from '../../assets/media/fb_icon_325x325.webp'
+// import OpenseaLogo from '../../public/images/media/opensea.png'
+// import TwitterLogo from '../../public/images/media/twitter.png'
+// import OneBidLogo from '../../public/images/media/onebidlogo.png'
+// import SpotifyLogo from '../../public/images/media/spotify.png'
+import InstagramLogo from '../../public/images/media/instagramLogo.webp'
+import FacebookLogo from '../../public/images/media/fb_icon_325x325.webp'
 
 import { MediaIcon } from './models/MediaIcon'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
+// import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
 import ParticlesBackground from '../../layouts/Particles'
+import { useCustomParticleOptions } from '../../hooks/useCustomParticleOptions'
+
+const openseaLogo = '/images/media/opensea.png'
+const twitterLogo = '/images/media/twitter.png'
+const oneBidLogo = '/images/media/onebidlogo.png'
+const spotifyLogo = '/images/media/spotify.png'
 
 const Footer = () => {
+  const options = useCustomParticleOptions()
+
   const baseMedia: MediaIcon[] = [
     {
-      path: FacebookLogo,
+      path: FacebookLogo.src,
       redirectionLink: 'https://www.facebook.com/DiamondsCraftNFTart/',
       altText: 'FacebookLogo',
     },
     {
-      path: TwitterLogo,
+      path: twitterLogo,
       redirectionLink: 'https://twitter.com/diamondsct',
       altText: 'TwitterLogo',
     },
     {
-      path: InstagramLogo,
+      path: InstagramLogo.src,
       redirectionLink: 'https://www.instagram.com/diamondscraft.io/',
       altText: 'InstagramLogo',
     },
   ]
   const additionalMedia: MediaIcon[] = [
     {
-      path: OpenseaLogo,
+      path: openseaLogo,
       redirectionLink: 'https://opensea.io/DCFT/',
       altText: 'OpenseaLogo',
     },
     {
-      path: SpotifyLogo,
+      path: spotifyLogo,
       redirectionLink:
         'https://open.spotify.com/show/33bLiSdONLfzUd8oNMYLTn?si=5dd99fa2d0744767',
       altText: 'SpotifyLogo',
     },
     {
-      path: OneBidLogo,
+      path: oneBidLogo,
       redirectionLink: 'https://onebid.pl/pl/auction/-/3391',
       altText: 'OneBidLogo',
     },
@@ -58,7 +66,7 @@ const Footer = () => {
       <ParticlesBackground
         width='100%'
         height='100%'
-        options={customOptionsFour}
+        options={options}
         style={{ position: 'absolute', zIndex: '-1' }}
         id={'FooterParticles'}
       />

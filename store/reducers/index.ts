@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { EventsState } from '../model'
+import { EventsState, FetchedEventType } from '../model'
 
 const initialState: EventsState = {
   events: [],
@@ -13,12 +13,21 @@ export const eventSlice = createSlice({
   reducers: {
     updateEventsData: (state, action) => {
       state.events = action.payload
+      state.status = 'loaded'
     },
   },
 })
 
-export const selectEvents = (state: any) => {
+export const selectEvents = (state: {
+  events: { events: FetchedEventType[]; status: string }
+}) => {
   return state.events.events
+}
+
+export const selectStatus = (state: {
+  events: { events: FetchedEventType[]; status: string }
+}) => {
+  return state.events.status
 }
 
 export const { updateEventsData } = eventSlice.actions

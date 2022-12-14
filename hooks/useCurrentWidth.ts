@@ -11,10 +11,12 @@ export function useCurrentWidth() {
       global.window?.innerWidth ||
       document.documentElement.clientWidth ||
       document.body.clientWidth
+
+    setWidth(getWidth())
+
     let isMounted = true
     // timeoutId for debounce mechanism
     let timeoutId: NodeJS.Timeout
-
     const resizeListener = () => {
       if (isMounted) {
         // prevent execution of previous setTimeout

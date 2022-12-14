@@ -4,10 +4,15 @@ import { Header3 } from '../layouts/Header3'
 import styled from 'styled-components'
 import TokenData from './TokenData'
 
-import BitcoinLogo from '../../../assets/tokens/btc.png'
-import EthereumLogo from '../../../assets/tokens/eth.png'
-import CardanoLogo from '../../../assets/tokens/ada.png'
-import DogeLogo from '../../../assets/tokens/doge.png'
+// import BitcoinLogo from '../../../public/images/tokens/btc.png'
+// import EthereumLogo from '../../../public/images/tokens/eth.png'
+// import CardanoLogo from '../../../public/images/tokens/ada.png'
+// import DogeLogo from '../../../public/images/tokens/doge.png'
+
+const bitcoinLogo = '/images/tokens/btc.png'
+const ethereumLogo = '/images/tokens/eth.png'
+const cardanoLogo = '/images/tokens/ada.png'
+const dogeLogo = '/images/tokens/doge.png'
 
 interface TokenPrices {
   bitcoin: string
@@ -82,22 +87,22 @@ const CryptoPrices = () => {
     <Container>
       <Header3> Aktualne ceny kryptowalut: </Header3>
       <TokenDataStyled
-        iconPath={BitcoinLogo}
+        iconPath={bitcoinLogo}
         name={'Bitcoin (BTC)'}
         price={prices?.bitcoin}
       />
       <TokenDataStyled
-        iconPath={EthereumLogo}
+        iconPath={ethereumLogo}
         name={'Ethereum (ETH)'}
         price={prices?.ethereum}
       />
       <TokenDataStyled
-        iconPath={CardanoLogo}
+        iconPath={cardanoLogo}
         name={'Cardano (ADA)'}
         price={prices?.cardano}
       />
       <TokenDataStyled
-        iconPath={DogeLogo}
+        iconPath={dogeLogo}
         name={'Dogecoin (doge)'}
         price={prices?.doge}
       />
