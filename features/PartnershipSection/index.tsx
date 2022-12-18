@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Layout } from '../../styles/breakpoints'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 interface Sponsor {
-  imageSrc: string
+  imageSrc: any
   bgColor: string
 }
 
@@ -22,10 +22,11 @@ const importAll = (r: __WebpackModuleApi.RequireContext) => {
 }
 
 const sponsors = (importAll(
-  require.context(`../../assets/sponsors/`, false, /\.(png|jpe?g|svg)$/)
-) as string[]).map((imageSrc) => {
-  const bgColor = (imageSrc.split('backgroundcolor')[1] || '').substring(0, 6)
-
+  require.context(`../../public/images/sponsors/`, false, /\.(webp)$/)
+) as any[]).map((imageSrc) => {
+  const bgColor = (
+    imageSrc.default.src.split('backgroundcolor')[1] || ''
+  ).substring(0, 6)
   return {
     imageSrc,
     bgColor: bgColor ? `#${bgColor}` : 'transparent',
@@ -34,6 +35,8 @@ const sponsors = (importAll(
 
 const PartnershipSection = ({ sectionTitle }: Props) => {
   const eventRef = useRef(null)
+
+  const [sponsorsList, setSponsorsList] = useState<Sponsor[]>([])
 
   useEffect(() => {
     const el = eventRef.current
@@ -48,6 +51,7 @@ const PartnershipSection = ({ sectionTitle }: Props) => {
         },
       }
     )
+    setSponsorsList(sponsors)
   }, [])
 
   return (
@@ -56,9 +60,12 @@ const PartnershipSection = ({ sectionTitle }: Props) => {
         <Container>
           <SectionTitle>{sectionTitle}</SectionTitle>
           <ImageList ref={eventRef}>
-            {sponsors.map(({ imageSrc, bgColor }) => (
-              <SponsorImgWrapper bgColor={bgColor} key={imageSrc}>
-                <SponsorImg src={imageSrc} alt='sopra' />
+            {sponsorsList.map(({ imageSrc, bgColor }: Sponsor) => (
+              <SponsorImgWrapper bgColor={bgColor} key={imageSrc.default.src}>
+                <SponsorImg
+                  src={imageSrc.default.src}
+                  alt={imageSrc.default.src}
+                />
               </SponsorImgWrapper>
             ))}
           </ImageList>

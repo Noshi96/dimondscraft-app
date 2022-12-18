@@ -1,14 +1,21 @@
 import styled from 'styled-components'
 
-import Auction1 from '../public/images/aboutUs/auction1.png'
-import Auction2 from '../public/images/aboutUs/auction2.png'
-import Auction3 from '../public/images/aboutUs/auction3.png'
-import SamantaPhoto from '../public/images/aboutUs/samanta.jpg'
-import JanekPhoto from '../public/images/aboutUs/janek.jpg'
-import TomaszPhoto from '../public/images/aboutUs/tomasBelling.webp'
+// import Auction1 from '../public/images/aboutUs/auction1.png'
+// import Auction2 from '../public/images/aboutUs/auction2.png'
+// import Auction3 from '../public/images/aboutUs/auction3.png'
+// import SamantaPhoto from '../public/images/aboutUs/samanta.jpg'
+// import JanekPhoto from '../public/images/aboutUs/janek.jpg'
+// import TomaszPhoto from '../public/images/aboutUs/tomasBelling.webp'
 
 import { AdjustingSection } from '../layouts/AdjustingSection/AdjustingSection'
 import MediaSection from '../features/MediaSection'
+
+const auction1 = '/images/aboutUs/auction1.png'
+const auction2 = '/images/aboutUs/auction2.png'
+const auction3 = '/images/aboutUs/auction3.png'
+const samantaPhoto = '/images/aboutUs/samanta.jpg'
+const janekPhoto = '/images/aboutUs/janek.jpg'
+const tomaszPhoto = '/images/aboutUs/tomasBelling.webp'
 
 interface CustomStyledElement {
   marginTop?: string
@@ -41,10 +48,10 @@ const AboutUsComponent = () => {
         </ExtendedAdjustingSection>
         <ExtendedAdjustingSection marginTop={'4rem'}>
           <ColumnWrapper>
-            <ImageShort src={Auction1.src} alt='Krzysztof Ibisz' />
+            <ImageShort src={auction1} alt='Krzysztof Ibisz' />
           </ColumnWrapper>
           <ColumnWrapper>
-            <ImageShort src={Auction2.src} alt='Pałac kultury' />
+            <ImageShort src={auction2} alt='Pałac kultury' />
           </ColumnWrapper>
         </ExtendedAdjustingSection>
       </FullWidthContainer>
@@ -79,7 +86,7 @@ const AboutUsComponent = () => {
             </BasicText>
           </ColumnWrapper>
           <ColumnWrapper>
-            <ImageLong src={Auction3.src} alt='Aukcje' />
+            <ImageLong src={auction3} alt='Aukcje' />
           </ColumnWrapper>
         </ExtendedAdjustingSection>
       </GradientFullWidthContainer>
@@ -110,7 +117,7 @@ const AboutUsComponent = () => {
           <ColumnWrapper>
             <FancyCard>
               <div className='content'>
-                <TeamMemberPhoto src={SamantaPhoto.src} alt='Samanta Belling' />
+                <TeamMemberPhoto src={samantaPhoto} alt='Samanta Belling' />
               </div>
               <div className='card'></div>
             </FancyCard>
@@ -155,7 +162,7 @@ const AboutUsComponent = () => {
           <ColumnWrapper>
             <FancyCard>
               <div className='content'>
-                <TeamMemberPhoto src={TomaszPhoto.src} alt='Tomasz Belling' />
+                <TeamMemberPhoto src={tomaszPhoto} alt='Tomasz Belling' />
               </div>
               <div className='card'></div>
             </FancyCard>
@@ -183,7 +190,7 @@ const AboutUsComponent = () => {
           <ColumnWrapper>
             <FancyCard>
               <div className='content'>
-                <TeamMemberPhoto src={JanekPhoto.src} alt='Jan' />
+                <TeamMemberPhoto src={janekPhoto} alt='Jan' />
               </div>
               <div className='card'></div>
             </FancyCard>

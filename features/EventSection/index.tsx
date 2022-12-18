@@ -4,7 +4,7 @@ import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSectio
 import Detail from '../../public/images/homepage/posters/21savage.webp'
 import { Layout } from '../../styles/breakpoints'
 
-export function EventSection() {
+const EventSection = () => {
   return (
     <FullWidthContainer>
       <ExtendedAdjustingSection>
@@ -42,3 +42,5 @@ const Image = styled.img`
     width: 50%;
   }
 `
+
+export default EventSection

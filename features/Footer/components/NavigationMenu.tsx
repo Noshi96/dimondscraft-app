@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 interface ActiveLink {
   path: string
-  target: string
+  pathto: string
 }
 
 const NavigationMenu = () => {
@@ -13,7 +13,9 @@ const NavigationMenu = () => {
 
   const smoothNavigate = () => {
     setTimeout(() => {
-      const element = document.getElementById('entryPageEndHook') as HTMLElement
+      const element = document.getElementById(
+        'entryPageStartHook'
+      ) as HTMLElement
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -28,7 +30,7 @@ const NavigationMenu = () => {
         <LinksColumn>
           <NavLinkStyled
             path={asPath}
-            target={'/'}
+            pathto={'/'}
             href={'/'}
             onClick={smoothNavigate}
           >
@@ -39,7 +41,7 @@ const NavigationMenu = () => {
         <LinksColumn>
           <NavLinkStyled
             path={asPath}
-            target={'/about'}
+            pathto={'/about'}
             href={'/about'}
             onClick={smoothNavigate}
           >
@@ -50,7 +52,7 @@ const NavigationMenu = () => {
         <LinksColumn>
           <NavLinkStyled
             path={asPath}
-            target={'/gallery'}
+            pathto={'/gallery'}
             href={'/gallery'}
             onClick={smoothNavigate}
           >
@@ -61,7 +63,7 @@ const NavigationMenu = () => {
         <LinksColumn>
           <NavLinkStyled
             path={asPath}
-            target={'/contact'}
+            pathto={'/contact'}
             href={'/contact'}
             onClick={smoothNavigate}
           >
@@ -118,8 +120,8 @@ const NavLinkStyled = styled(Link)<ActiveLink>`
     color: #aeaeae;
   }
 
-  ${({ target, path }) =>
-    target === path &&
+  ${({ pathto, path }) =>
+    pathto === path &&
     css`
       background: #ffffff !important;
       &:visited {

@@ -13,11 +13,9 @@ interface Props {
 export default function Home({ eventList }: Props) {
   const dispatch = useDispatch()
   const statusSelector = useSelector(selectStatus) as string
-
   if (statusSelector === 'empty') {
     dispatch(updateEventsData(eventList))
   }
-
   return (
     <div className='container'>
       <RootComponent>
