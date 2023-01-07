@@ -1,9 +1,9 @@
-import styled from 'styled-components'
-import { AdjustingSection } from '../../../layouts/AdjustingSection/AdjustingSection'
-import Detail from '../../assets/contact3.png'
-import { Layout } from '../../../styles/breakpoints'
+import styled from 'styled-components';
+import { AdjustingSection } from '../layouts/AdjustingSection/AdjustingSection';
+import { Layout } from '../styles/breakpoints';
 
-const ContactPage = () => {
+const Detail = '/images/contact3.png';
+const ContactComponent = () => {
   return (
     <FullWidthContainer>
       <ExtendedAdjustingSection>
@@ -24,15 +24,15 @@ const ContactPage = () => {
         <Image src={Detail}></Image>
       </ExtendedAdjustingSection>
     </FullWidthContainer>
-  )
-}
+  );
+};
 
 const FullWidthContainer = styled.div`
   width: 100%;
   background-image: linear-gradient(#080924, #000000);
   box-sizing: border-box;
   min-height: 750px;
-`
+`;
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
   max-width: 1280px;
@@ -41,7 +41,7 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
   color: #ffffff;
   flex-direction: column;
   position: relative;
-`
+`;
 
 const Header = styled.h3`
   margin: 8rem 0 0 0;
@@ -50,20 +50,20 @@ const Header = styled.h3`
 
   font-size: 4rem;
   line-height: 4rem;
-`
+`;
 
 const BaseText = styled.div`
   margin-top: 3rem;
   font-size: 1.5rem;
   line-height: 1.5rem;
-`
+`;
 
 const DataText = styled.div`
   margin-top: 1rem;
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: #ff00aa;
-`
+`;
 
 const Image = styled.img`
   height: auto;
@@ -76,11 +76,11 @@ const Image = styled.img`
   @media only screen and (${Layout.laptop}) {
     display: block;
   }
-`
+`;
 
 const CallablePhoneNumber = styled.a`
   text-decoration: none;
   color: #ff00aa;
-`
+`;
 
-export default ContactPage
+export default ContactComponent;

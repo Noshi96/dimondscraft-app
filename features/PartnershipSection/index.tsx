@@ -4,6 +4,8 @@ import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSectio
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
+const egera = '/images/sponsors/egera.svg';
+
 interface Props {
   sectionTitle: string;
 }
@@ -62,10 +64,7 @@ const PartnershipSection = ({ sectionTitle }: Props) => {
           <ImageList ref={eventRef}>
             {sponsorsList.map(({ imageSrc, bgColor }: Sponsor) => (
               <SponsorImgWrapper bgColor={bgColor} key={imageSrc.default.src}>
-                <SponsorImg
-                  src={imageSrc.default.src}
-                  alt={imageSrc.default.src}
-                />
+                <SponsorImg src={egera} alt={'imageSrc.default.src'} />
               </SponsorImgWrapper>
             ))}
           </ImageList>
@@ -104,7 +103,6 @@ const SectionTitle = styled.h2`
 
 const ImageList = styled.div`
   display: flex;
-  //flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   gap: 3rem;

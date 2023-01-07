@@ -1,29 +1,22 @@
-import styled from 'styled-components'
-import SocialMedia from './components/SocialMedia'
-import CryptoPrices from './components/CryptoPrices'
-import NavigationMenu from './components/NavigationMenu'
-import { Layout } from '../../styles/breakpoints'
+import styled from 'styled-components';
+import SocialMedia from './components/SocialMedia';
+import CryptoPrices from './components/CryptoPrices';
+import NavigationMenu from './components/NavigationMenu';
+import { Layout } from '../../styles/breakpoints';
+import InstagramLogo from '../../public/images/media/instagramLogo.webp';
+import FacebookLogo from '../../public/images/media/fb_icon_325x325.webp';
+import { MediaIcon } from './models/MediaIcon';
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection';
+import ParticlesBackground from '../../layouts/Particles';
+import { useCustomParticleOptions } from '../../hooks/useCustomParticleOptions';
 
-// import OpenseaLogo from '../../public/images/media/opensea.png'
-// import TwitterLogo from '../../public/images/media/twitter.png'
-// import OneBidLogo from '../../public/images/media/onebidlogo.png'
-// import SpotifyLogo from '../../public/images/media/spotify.png'
-import InstagramLogo from '../../public/images/media/instagramLogo.webp'
-import FacebookLogo from '../../public/images/media/fb_icon_325x325.webp'
-
-import { MediaIcon } from './models/MediaIcon'
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-// import { customOptionsFour } from '../../layouts/Particles/config/customOptionsFour'
-import ParticlesBackground from '../../layouts/Particles'
-import { useCustomParticleOptions } from '../../hooks/useCustomParticleOptions'
-
-const openseaLogo = '/images/media/opensea.png'
-const twitterLogo = '/images/media/twitter.png'
-const oneBidLogo = '/images/media/onebidlogo.png'
-const spotifyLogo = '/images/media/spotify.png'
+const openseaLogo = '/images/media/opensea.png';
+const twitterLogo = '/images/media/twitter.png';
+const oneBidLogo = '/images/media/onebidlogo.png';
+const spotifyLogo = '/images/media/spotify.png';
 
 const Footer = () => {
-  const options = useCustomParticleOptions()
+  const options = useCustomParticleOptions();
 
   const baseMedia: MediaIcon[] = [
     {
@@ -41,7 +34,7 @@ const Footer = () => {
       redirectionLink: 'https://www.instagram.com/diamondscraft.io/',
       altText: 'InstagramLogo',
     },
-  ]
+  ];
   const additionalMedia: MediaIcon[] = [
     {
       path: openseaLogo,
@@ -59,7 +52,7 @@ const Footer = () => {
       redirectionLink: 'https://onebid.pl/pl/auction/-/3391',
       altText: 'OneBidLogo',
     },
-  ]
+  ];
 
   return (
     <FullWidthContainer>
@@ -96,13 +89,13 @@ const Footer = () => {
         <Restrictions> Ⓒ DIAMONDS CRAFT. ALL RIGHTS RESERVED. </Restrictions>
       </ExtendedAdjustingSection>
     </FullWidthContainer>
-  )
-}
+  );
+};
 
 const FullWidthContainer = styled.div`
   width: 100%;
   background: transparent;
-`
+`;
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
   display: flex;
@@ -113,7 +106,7 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
   @media only screen and (${Layout.laptop}) {
     flex-direction: row;
   }
-`
+`;
 
 const ColumnWrapper = styled.div`
   display: flex;
@@ -124,13 +117,13 @@ const ColumnWrapper = styled.div`
     min-width: 400px;
     margin-top: 12rem;
   }
-`
+`;
 
 const Restrictions = styled.div`
   margin: 4rem auto 0 auto;
   color: #aeaeae;
   font-size: 0.8rem;
   font-weight: bold;
-`
+`;
 
-export default Footer
+export default Footer;

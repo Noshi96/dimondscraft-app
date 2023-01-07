@@ -1,32 +1,22 @@
-import styled from 'styled-components'
-import { useState } from 'react'
-import background from '../../public/images/homepage/newEntrySection/tlosmall.webp'
-import samanta from '../../public/images/homepage/newEntrySection/samantacompressed.webp'
+import styled from 'styled-components';
+import { useState } from 'react';
+import background from '../../public/images/homepage/newEntrySection/tlosmall.webp';
+import samanta from '../../public/images/homepage/newEntrySection/samantacompressed.webp';
 
-import { Layout } from '../../styles/breakpoints'
+import { Layout } from '../../styles/breakpoints';
 
-import { useTextTyping } from '../../hooks/useTextTyping'
-import { delay } from '../../utils/DelayFunction'
-// import ParticlesBackground from '../../layouts/Particles'
-// import { useCustomParticleOptions } from '../../hooks/useCustomParticleOptions'
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
+import { useTextTyping } from '../../hooks/useTextTyping';
+import { delay } from '../../utils/DelayFunction';
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection';
 
 const NewEntrySection = () => {
-  const [text, setText] = useState<string>('')
+  const [text, setText] = useState<string>('');
 
-  useTextTyping(delay, setText)
-  // const options = useCustomParticleOptions()
+  useTextTyping(delay, setText);
 
   return (
     <>
       <Background />
-      {/* <ParticlesBackground
-        width='100%'
-        height='100%'
-        options={options}
-        style={{ position: 'absolute', zIndex: '-1' }}
-        id={'NewEntrySectionParticles'}
-      /> */}
       <Samanta />
       <Wrapper>
         <ExtendedAdjustingSection>
@@ -34,8 +24,8 @@ const NewEntrySection = () => {
         </ExtendedAdjustingSection>
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   width: 100%;
@@ -45,7 +35,7 @@ const Wrapper = styled.section`
   overflow-y: hidden;
   background: transparent;
   z-index: 10;
-`
+`;
 
 const ExtendedAdjustingSection = styled(AdjustingSection)`
   color: #ffffff;
@@ -54,7 +44,7 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
   display: flex;
   height: 100%;
   box-sizing: border-box;
-`
+`;
 
 const Background = styled.div`
   width: 100%;
@@ -66,7 +56,7 @@ const Background = styled.div`
   position: absolute;
   z-index: -2;
   background-attachment: fixed;
-`
+`;
 
 const Samanta = styled.div`
   width: 100%;
@@ -78,7 +68,7 @@ const Samanta = styled.div`
   position: absolute;
   z-index: 5;
   background-attachment: fixed;
-`
+`;
 
 const Headline = styled.h1`
   margin-top: auto;
@@ -98,6 +88,6 @@ const Headline = styled.h1`
   @media only screen and (${Layout.laptop}) {
     padding: 0 9rem;
   }
-`
+`;
 
-export default NewEntrySection
+export default NewEntrySection;

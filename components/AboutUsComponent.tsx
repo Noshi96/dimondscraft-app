@@ -1,26 +1,18 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { AdjustingSection } from '../layouts/AdjustingSection/AdjustingSection';
+import MediaSection from '../features/MediaSection';
 
-// import Auction1 from '../public/images/aboutUs/auction1.png'
-// import Auction2 from '../public/images/aboutUs/auction2.png'
-// import Auction3 from '../public/images/aboutUs/auction3.png'
-// import SamantaPhoto from '../public/images/aboutUs/samanta.jpg'
-// import JanekPhoto from '../public/images/aboutUs/janek.jpg'
-// import TomaszPhoto from '../public/images/aboutUs/tomasBelling.webp'
-
-import { AdjustingSection } from '../layouts/AdjustingSection/AdjustingSection'
-import MediaSection from '../features/MediaSection'
-
-const auction1 = '/images/aboutUs/auction1.png'
-const auction2 = '/images/aboutUs/auction2.png'
-const auction3 = '/images/aboutUs/auction3.png'
-const samantaPhoto = '/images/aboutUs/samanta.jpg'
-const janekPhoto = '/images/aboutUs/janek.jpg'
-const tomaszPhoto = '/images/aboutUs/tomasBelling.webp'
+const auction1 = '/images/aboutUs/auction1.png';
+const auction2 = '/images/aboutUs/auction2.png';
+const auction3 = '/images/aboutUs/auction3.png';
+const samantaPhoto = '/images/aboutUs/samanta.jpg';
+const janekPhoto = '/images/aboutUs/janek.jpg';
+const tomaszPhoto = '/images/aboutUs/tomasBelling.webp';
 
 interface CustomStyledElement {
-  marginTop?: string
-  maxWidth?: string
-  paddingTop?: string
+  marginTop?: string;
+  maxWidth?: string;
+  paddingTop?: string;
 }
 
 const AboutUsComponent = () => {
@@ -222,25 +214,25 @@ const AboutUsComponent = () => {
         </ExtendedAdjustingSection>
       </FullWidthContainerBlack>
     </FullWidthContainer>
-  )
-}
+  );
+};
 
 const FullWidthContainer = styled.div`
   width: 100%;
   background: #080924;
   box-sizing: border-box;
-`
+`;
 
 const FullWidthContainerBlack = styled.div`
   width: 100%;
   background: #000000;
   box-sizing: border-box;
-`
+`;
 
 const GradientFullWidthContainer = styled(FullWidthContainer)`
   background: linear-gradient(#080924, #000000);
   padding-top: 4rem;
-`
+`;
 
 const ExtendedAdjustingSection = styled(AdjustingSection)<CustomStyledElement>`
   max-width: 1280px;
@@ -249,7 +241,7 @@ const ExtendedAdjustingSection = styled(AdjustingSection)<CustomStyledElement>`
   color: #ffffff;
   gap: 2rem;
   margin-top: ${({ marginTop }) => marginTop};
-`
+`;
 
 const ColumnWrapper = styled.div<CustomStyledElement>`
   flex: 1;
@@ -257,7 +249,7 @@ const ColumnWrapper = styled.div<CustomStyledElement>`
   box-sizing: border-box;
   min-width: 320px;
   margin-top: ${({ marginTop }) => marginTop};
-`
+`;
 
 const Header = styled.h3<CustomStyledElement>`
   font-size: 2rem;
@@ -265,7 +257,7 @@ const Header = styled.h3<CustomStyledElement>`
   margin: ${({ marginTop }) => marginTop} 0 0 0;
   padding-top: ${({ paddingTop }) => paddingTop};
   box-sizing: border-box;
-`
+`;
 
 const BasicText = styled.div<CustomStyledElement>`
   font-size: 1rem;
@@ -273,20 +265,20 @@ const BasicText = styled.div<CustomStyledElement>`
   margin-top: ${({ marginTop }) => marginTop};
   max-width: ${({ maxWidth }) => maxWidth};
   padding-top: ${({ paddingTop }) => paddingTop};
-`
+`;
 
 const ImageShort = styled.img`
   width: 100%;
   height: 440px;
   object-fit: cover;
-`
+`;
 
 const ImageLong = styled.img`
   width: 100%;
   object-fit: cover;
   object-position: top;
   height: 660px;
-`
+`;
 
 const TeamMemberPhoto = styled.img<CustomStyledElement>`
   width: 320px;
@@ -294,7 +286,7 @@ const TeamMemberPhoto = styled.img<CustomStyledElement>`
   object-position: top;
   height: 400px;
   margin-top: ${({ marginTop }) => marginTop};
-`
+`;
 
 const FancyCard = styled.div`
   position: relative;
@@ -367,6 +359,6 @@ const FancyCard = styled.div`
       --rotate: 360deg;
     }
   }
-`
+`;
 
-export default AboutUsComponent
+export default AboutUsComponent;
