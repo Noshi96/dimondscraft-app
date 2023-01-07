@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import {
   AnimationProps,
   fadeInAnimationTwo,
-} from '../../ErrorSection/animations'
+} from '../../ErrorSection/animations';
 
 interface Props {
-  imagePath: string
-  altImgText: string
+  imagePath: any;
+  altImgText: string;
 }
 
 const GalleryElement = ({ imagePath, altImgText }: Props) => {
@@ -19,20 +19,20 @@ const GalleryElement = ({ imagePath, altImgText }: Props) => {
         animationLength='0.3s'
       />
     </ColumnWrapper>
-  )
-}
+  );
+};
 
 const ColumnWrapper = styled.div`
   min-width: 240px;
   position: relative;
   //transition: all 0.2s;
-`
+`;
 
 const Image = styled.img<AnimationProps>`
   max-width: 100%;
   object-fit: cover;
 
   animation: ${fadeInAnimationTwo};
-`
+`;
 
-export default GalleryElement
+export default GalleryElement;

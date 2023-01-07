@@ -1,30 +1,29 @@
-import styled from 'styled-components'
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
-import GalleryOpener from './components/GalleryOpener'
-import GalleryElement from './components/GalleryElement'
-import { useEffect, useState } from 'react'
-import { Layout } from '../../styles/breakpoints'
-import { GalleryItemType, ListOfAuctionsTitlesType } from './model'
-import { importAll } from '../../utils/importAll'
-import { output } from '../../utils/mapUnknownOnString'
+import styled from 'styled-components';
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection';
+import GalleryOpener from './components/GalleryOpener';
+import GalleryElement from './components/GalleryElement';
+import { useEffect, useState } from 'react';
+import { Layout } from '../../styles/breakpoints';
+import { GalleryItemType, ListOfAuctionsTitlesType } from './model';
+import { output } from '../../utils/mapUnknownOnString';
 import {
   getImagesList,
   TemplateListObjectType,
-} from '../../utils/getImagesList'
-import Icon from '../../layouts/Icon'
+} from '../../utils/getImagesList';
+import CloseIcon from '@mui/icons-material/Close';
 
 const scrollToEntrySection = (
   scrollHook: 'entryPageStartHook' | 'entryPageEndHook'
 ): void => {
   setTimeout(() => {
-    const element = document.getElementById(scrollHook) as HTMLElement
+    const element = document.getElementById(scrollHook) as HTMLElement;
     element.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
       inline: 'start',
-    })
-  }, 300)
-}
+    });
+  }, 300);
+};
 
 const galleryTitles: ListOfAuctionsTitlesType = {
   Auction1:
@@ -38,47 +37,50 @@ const galleryTitles: ListOfAuctionsTitlesType = {
   Auction6:
     'Konferencja prasowa Diamondscraft i HT NFT Gallery. Wernisaż „Latent Glitches” Ivony Tau.',
   Auction7: 'Pierwsza na Świecie aukcja TURTLE UNITED NFT.',
-}
+};
 
 export function GallerySection() {
   const [currentGalleryName, setCurrentGalleryName] = useState<string>(
     'Auction1'
-  )
+  );
   const [currentGalleryList, setCurrentGalleryList] = useState<
     GalleryItemType[]
-  >([])
-  const [galleriesNames, setGalleriesNames] = useState<string[]>([])
-  const [showGallery, setShowGallery] = useState<boolean>(true)
-  const [galleryTitle, setGalleryTitle] = useState<string>('')
+  >([]);
+  const [galleriesNames, setGalleriesNames] = useState<string[]>([]);
+  const [showGallery, setShowGallery] = useState<boolean>(true);
+  const [galleryTitle, setGalleryTitle] = useState<string>('');
 
   useEffect(() => {
-    const getGalleries = importAll(
-      require.context('../../assets/gallery/', true, /\.(txt)$/)
-    )
-    const allNames = getGalleries.map((el) =>
-      output(el)?.split('/').at(-1)?.split('.').at(0)
-    ) as string[]
-    setGalleriesNames(allNames)
-  }, [])
+    const allNames = [
+      'Auction1',
+      'Auction2',
+      'Auction3',
+      'Auction4',
+      'Auction5',
+      'Auction6',
+      'Auction7',
+    ];
+    setGalleriesNames(allNames);
+  }, []);
 
   useEffect(() => {
     const imagesList =
-      getImagesList[currentGalleryName as keyof TemplateListObjectType]
-    const allImagesList = imagesList.map((galleryItem: string) => ({
-      imagePath: output(galleryItem),
+      getImagesList[currentGalleryName as keyof TemplateListObjectType];
+    const allImagesList = imagesList.map((galleryItem: any) => ({
+      imagePath: output(galleryItem.default.src),
       altImgText: output(galleryItem),
-    })) as GalleryItemType[]
+    })) as GalleryItemType[];
 
-    setCurrentGalleryList(allImagesList)
+    setCurrentGalleryList(allImagesList);
     setGalleryTitle(
       galleryTitles[currentGalleryName as keyof ListOfAuctionsTitlesType]
-    )
-  }, [currentGalleryName])
+    );
+  }, [currentGalleryName]);
 
   const hideGallery = () => {
-    setShowGallery(true)
-    scrollToEntrySection('entryPageEndHook')
-  }
+    setShowGallery(true);
+    scrollToEntrySection('entryPageEndHook');
+  };
 
   return (
     <>
@@ -86,7 +88,7 @@ export function GallerySection() {
         <UpperBar>
           <Text>{galleryTitle}</Text>
           <WrapperIcon onClick={hideGallery}>
-            <StyledIcon name='close' />
+            <StyledIcon />
           </WrapperIcon>
         </UpperBar>
       ) : (
@@ -112,7 +114,7 @@ export function GallerySection() {
             ))}
       </Gallery>
     </>
-  )
+  );
 }
 
 const UpperBar = styled.div`
@@ -124,7 +126,7 @@ const UpperBar = styled.div`
   width: 100%;
   color: #ffffff;
   background: #000000aa;
-`
+`;
 
 const Text = styled.div`
   width: 100%;
@@ -137,7 +139,7 @@ const Text = styled.div`
     padding-left: 10rem;
     font-size: 2rem;
   }
-`
+`;
 const WrapperIcon = styled.div`
   width: 4rem;
   margin-right: 1rem;
@@ -148,9 +150,9 @@ const WrapperIcon = styled.div`
   @media only screen and (${Layout.tablet}) {
     margin-right: 6rem;
   }
-`
+`;
 
-const StyledIcon = styled(Icon)`
+const StyledIcon = styled(CloseIcon)`
   font-size: 2.5rem;
   color: #ffffff;
   cursor: pointer;
@@ -158,7 +160,7 @@ const StyledIcon = styled(Icon)`
   @media only screen and (${Layout.laptop}) {
     font-size: 3rem;
   }
-`
+`;
 
 const Gallery = styled(AdjustingSection)`
   display: flex;
@@ -171,4 +173,4 @@ const Gallery = styled(AdjustingSection)`
   padding-top: 3rem;
   padding-bottom: 8rem;
   justify-content: center;
-`
+`;

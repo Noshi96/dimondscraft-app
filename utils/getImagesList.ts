@@ -1,35 +1,35 @@
-import { importAll } from './importAll'
+import { importAll } from './importAll';
 
 export interface TemplateListObjectType {
-  Auction1: string[]
-  Auction2: string[]
-  Auction3: string[]
-  Auction4: string[]
-  Auction5: string[]
-  Auction6: string[]
-  Auction7: string[]
+  Auction1: any[];
+  Auction2: any[];
+  Auction3: any[];
+  Auction4: any[];
+  Auction5: any[];
+  Auction6: any[];
+  Auction7: any[];
 }
 
 export const getImagesList: TemplateListObjectType = {
   Auction1: importAll(
-    require.context('../assets/gallery/Auction1/', false, /\.(png|jpe?g|svg)$/)
-  ) as string[],
+    require.context('/public/images/gallery/Auction1/', false, /\.(webp)$/)
+  ) as any[],
   Auction2: importAll(
-    require.context('../assets/gallery/Auction2/', false, /\.(png|jpe?g|svg)$/)
-  ) as string[],
+    require.context('/public/images/gallery/Auction2/', false, /\.(webp)$/)
+  ) as any[],
   Auction3: importAll(
-    require.context('../assets/gallery/Auction3/', false, /\.(png|jpe?g|svg)$/)
-  ) as string[],
+    require.context('/public/images/gallery/Auction3/', false, /\.(webp)$/)
+  ) as any[],
   Auction4: importAll(
-    require.context('../assets/gallery/Auction4/', false, /\.(png|jpe?g|svg)$/)
-  ) as string[],
+    require.context('/public/images/gallery/Auction4/', false, /\.(webp)$/)
+  ) as any[],
   Auction5: importAll(
-    require.context('../assets/gallery/Auction5/', false, /\.(png|jpe?g|svg)$/)
-  ) as string[],
+    require.context('/public/images/gallery/Auction5/', false, /\.(webp)$/)
+  ) as any[],
   Auction6: importAll(
-    require.context('../assets/gallery/Auction6/', false, /\.(png|jpe?g|svg)$/)
-  ) as string[],
+    require.context('/public/images/gallery/Auction6/', false, /\.(webp)$/)
+  ) as any[],
   Auction7: importAll(
-    require.context('../assets/gallery/Auction7/', false, /\.(png|jpe?g|svg)$/)
-  ) as string[],
-}
+    require.context('/public/images/gallery/Auction7/', false, /\.(webp)$/)
+  ) as any[],
+};
