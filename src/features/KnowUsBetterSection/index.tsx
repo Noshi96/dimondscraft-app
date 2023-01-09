@@ -1,14 +1,42 @@
 import styled from 'styled-components'
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection'
 import { Layout } from '../../styles/breakpoints'
+import React from "react";
+import Slider from "../../layouts/Slider";
+
+
+import andrzej from '../../assets/homepage/artists/andrzej-kielar-artist-painter.webp'
+import gosia from '../../assets/homepage/artists/gosia-kosiec-fot-agnieszka-cytacka.webp'
+import jan from '../../assets/homepage/artists/jan-drnico-oklinski-artysta.webp'
+import jaroslaw from '../../assets/homepage/artists/jaroslaw-jasnikowski-artist-painter.webp'
+import lucyna from '../../assets/homepage/artists/lucyna-goralczyk.webp'
+import piotr from '../../assets/homepage/artists/piotr-horodynski-artysta-malarz.webp'
+import orzechowski from '../../assets/homepage/artists/orzechowski.webp'
+import CarouselItem from "../ArtistsSection/components/CarouselItem";
+import ChampionCard from "../../layouts/ChampionCard";
+
 
 const KnowUsBetterSection = () => {
-  const style = {
-    color: 'white',
-    fontSize: 200,
-  }
   return (
     <FullWidthContainer>
+      <ExtendedAdjustingSection>
+        {/*<Block1>*/}
+        {/*  <ArtCard size={'large'}></ArtCard>*/}
+        {/*  <CollectionBadge></CollectionBadge>*/}
+        {/*  <ArtCard size={'medium'}></ArtCard>*/}
+        {/*</Block1>*/}
+
+        <Slider>
+          <ChampionCard></ChampionCard>
+          <CarouselItem name={'Janusz Orzechowski'} src={orzechowski} />
+          <CarouselItem name={'Jan DrNico Okliński '} src={jan} />
+          <CarouselItem name={'Andrzej Kielar'} src={andrzej} />
+          <CarouselItem name={'Małgorzata Kosiec'} src={gosia} />
+          <CarouselItem name={'Jarosław Jaśnikowski'} src={jaroslaw} />
+          <CarouselItem name={'Lucyna Góralczyk'} src={lucyna} />
+          <CarouselItem name={'Piotr Horodyński'} src={piotr} />
+        </Slider>
+      </ExtendedAdjustingSection>
       <ExtendedAdjustingSection>
         <Header> Technologia blockchain dla Twojego biznesu </Header>
         Jeśli poszukujesz kompleksowych rozwiązań i zastosowania technologii
@@ -18,7 +46,6 @@ const KnowUsBetterSection = () => {
         produkty w formie Tokenu NFT.
         <SpotifyWidget>
           <iframe
-            style={style}
             src='https://open.spotify.com/embed/episode/5bX870sornBdKFQgik2utu?utm_source=generator&theme=0'
             width='100%'
             height='152'

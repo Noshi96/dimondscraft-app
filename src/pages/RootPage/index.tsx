@@ -4,6 +4,7 @@ import { GlobalStyle } from '../../styles/global-styles'
 import { ScrollRestoration, useOutlet } from 'react-router-dom'
 import Footer from '../../features/Footer'
 import NewEntrySection from "../../features/NewEntrySection";
+import HeroPage from "../HeroPage";
 const HomePage = React.lazy(() => import('../../pages/HomePage'))
 
 const suspenseComponent = (component: React.ReactNode) => {
@@ -17,7 +18,8 @@ const RootPage = () => {
     <>
       <NavBar />
       <div id={'entryPageStartHook'}></div>
-      <NewEntrySection />
+      <HeroPage />
+      {/*<NewEntrySection />*/}
       <div id={'entryPageEndHook'}></div>
       {outlet || suspenseComponent(<HomePage />)}
       <Footer />
