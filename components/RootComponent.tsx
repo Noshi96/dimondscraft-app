@@ -1,6 +1,5 @@
 import React from 'react';
 import Footer from '../features/Footer';
-import NewEntrySection from '../features/NewEntrySection';
 import NavBar from '../layouts/NavBar';
 interface Props {
   children: React.ReactNode | React.ReactNode[];
@@ -15,7 +14,6 @@ const RootComponent = ({ children }: Props) => {
     <>
       <NavBar />
       <div id={'entryPageStartHook'}></div>
-      <NewEntrySection />
       <div id={'entryPageEndHook'}></div>
       {suspenseComponent(children)}
       <Footer />

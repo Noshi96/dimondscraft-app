@@ -3,6 +3,7 @@ import { Layout } from '../../styles/breakpoints';
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import HeroPage from '../../components/HeroPage';
 
 const egera = '/images/sponsors/egera.svg';
 
@@ -58,6 +59,7 @@ const PartnershipSection = ({ sectionTitle }: Props) => {
 
   return (
     <FullWidthContainer>
+      <HeroPage></HeroPage>
       <ExtendedAdjustingSection>
         <Container>
           <SectionTitle>{sectionTitle}</SectionTitle>

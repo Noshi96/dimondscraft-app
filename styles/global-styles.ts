@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
-import regular from '../asset/fonts/metropolis.regular.otf'
-import bold from '../asset/fonts/metropolis.bold.otf'
+import regular from '../public/fonts/metropolis.regular.otf'
+import bold from '../public/fonts/metropolis.bold.otf'
 
 export const GlobalStyle = createGlobalStyle`
 

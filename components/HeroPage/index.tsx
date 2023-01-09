@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import React from "react";
-import CollectionBadge from "../../layouts/CollectionBadge";
-import Slider from "../../layouts/Slider";
-import { Layout } from "../../../styles/breakpoints";
-import { AdjustingSection } from "../../../layouts/AdjustingSection/AdjustingSection";
+import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection';
+import { Layout } from '../../styles/breakpoints';
+
+import CollectionBadge from '../../layouts/CollectionBadge';
+import Slider from '../../layouts/Slider';
+
 const bg = '/images/heroPage/bg.png'
 
 const HeroPage = () => {
