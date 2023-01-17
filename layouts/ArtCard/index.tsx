@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
     largeCardStyles,
     mediumCardStyles, selectArtistName,
@@ -8,8 +8,17 @@ import {
 } from "./utils";
 
 
-const ArtCard: React.FC<{ size: 'medium' | 'large' }> = ({ size = 'large' }) => {
+const ArtCard = ({ size = 'large' }) => {
     const [styleConfig, setStyleConfig] = useState(largeCardStyles);
+
+    useLayoutEffect(() => {
+        const updateSize = () => {
+            size === 'medium' || window.innerWidth < 460 ? setStyleConfig(mediumCardStyles) : setStyleConfig(largeCardStyles)
+        }
+
+        window.addEventListener('resize', updateSize);
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
 
     useEffect(() => {
         if (size === 'medium') {
@@ -42,8 +51,12 @@ const Card = styled.div<SliderElementData>`
   box-sizing: border-box;
   border: 1px solid #e5e5e5;
   color: #ffffff;
+  width: 100%;
 
-  width:  ${({styleConfig}) => styleConfig.width};
+  @media only screen and (min-width: 460px) {
+    width:  ${({styleConfig}) => styleConfig.width};
+  }
+  
   height: ${({styleConfig}) => styleConfig.height};
 `
 

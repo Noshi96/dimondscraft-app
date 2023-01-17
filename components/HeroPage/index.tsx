@@ -1,53 +1,108 @@
 import styled from 'styled-components';
-import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection';
+import { AdjustingSection, BasicSection } from '../../layouts/AdjustingSection/AdjustingSection';
 import { Layout } from '../../styles/breakpoints';
 
 import CollectionBadge from '../../layouts/CollectionBadge';
 import Slider from '../../layouts/Slider';
+import ArtCard from '../../layouts/ArtCard';
+import { UiHeader1, UiHeader3 } from '../../layouts/Headers';
+import ChampionCard from '../../layouts/ChampionCard';
+import OurTeam from './components/OurTeam/OurTeam';
+import ArtistsPage from '../ArtistsPage';
+import ArtistsDetailsPage from '../ArtistsDetailsPage';
 
 const bg = '/images/heroPage/bg.png'
 
 const HeroPage = () => {
     return (
-        <Wrapper>
-            <ExtendedAdjustingSection>
-                <EvenColumnsWrapper>
-                    <LeftColumn>
-                        <Header> Łączymy rynek sztuki z rynkiem NFT, </Header>
-                        <SpotifyWidget>
-                            <iframe
-                                src='https://open.spotify.com/embed/episode/5bX870sornBdKFQgik2utu?utm_source=generator&theme=0'
-                                width='100%'
-                                height='152'
-                                frameBorder='0'
-                                allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-                                loading='lazy'
-                                title='NFTpodcast'
-                            ></iframe>
-                        </SpotifyWidget>
-                    </LeftColumn>
-                    <RightColumn>
-                        <NextEvent> @The genesis </NextEvent>
-                        <NextEventCounter> 00 DNI : 22 H :22M:23S </NextEventCounter>
-                        <button> 123123123 </button>
-                        <button> 123123123 </button>
-                    </RightColumn>
-                </EvenColumnsWrapper>
+        <>
+            <Wrapper>
+                <ExtendedAdjustingSection>
+                    <EvenColumnsWrapper>
+                        <LeftColumn>
+                            <Header> Łączymy rynek sztuki z rynkiem NFT, </Header>
+                            <SpotifyWidget>
+                                <iframe
+                                    src='https://open.spotify.com/embed/episode/5bX870sornBdKFQgik2utu?utm_source=generator&theme=0'
+                                    width='100%'
+                                    height='152'
+                                    frameBorder='0'
+                                    allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+                                    loading='lazy'
+                                    title='NFTpodcast'
+                                ></iframe>
+                            </SpotifyWidget>
+                        </LeftColumn>
+                        <RightColumn>
+                            <NextEvent> @The genesis </NextEvent>
+                            <NextEventCounter> 00 DNI : 22 H :22M:23S </NextEventCounter>
+                            <button> 123123123 </button>
+                            <button> 123123123 </button>
+                        </RightColumn>
+                    </EvenColumnsWrapper>
 
 
-            </ExtendedAdjustingSection>
-            <ExtendedAdjustingSection>
-                <Header3> Last auction records: </Header3>
+                </ExtendedAdjustingSection>
+                <ExtendedAdjustingSection>
+                    <LastAuctionRecordsHeader> Najnowsze aukcje: </LastAuctionRecordsHeader>
+                    <Slider>
+                        <CollectionBadge></CollectionBadge>
+                        <CollectionBadge></CollectionBadge>
+                        <CollectionBadge></CollectionBadge>
+                        <CollectionBadge></CollectionBadge>
+                        <CollectionBadge></CollectionBadge>
+                    </Slider>
+
+                </ExtendedAdjustingSection>
+            </Wrapper>
+            <StyledBasicSection>
+                <LastSalesHeader> Ostatnie sprzedaże: </LastSalesHeader>
+                <LastSalesCardContainer>
+                    <ArtCard size={'large'}></ArtCard>
+                    <ArtCard size={'large'}></ArtCard>
+                    <ArtCard size={'large'}></ArtCard>
+                    <ArtCard size={'large'}></ArtCard>
+                    <ArtCard size={'large'}></ArtCard>
+                </LastSalesCardContainer>
+                <FeaturedArtistsHeader> Wyróżnieni artyści: </FeaturedArtistsHeader>
                 <Slider>
-                    <CollectionBadge></CollectionBadge>
-                    <CollectionBadge></CollectionBadge>
-                    <CollectionBadge></CollectionBadge>
-                    <CollectionBadge></CollectionBadge>
-                    <CollectionBadge></CollectionBadge>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                </Slider>
+                <PreviewHeader> Preview: </PreviewHeader>
+                <PreviewCardContainer>
+                    <ArtCard size={'medium'}></ArtCard>
+                    <ArtCard size={'medium'}></ArtCard>
+                    <ArtCard size={'medium'}></ArtCard>
+                    <ArtCard size={'medium'}></ArtCard>
+                    <ArtCard size={'medium'}></ArtCard>
+                    <ArtCard size={'medium'}></ArtCard>
+                    <ArtCard size={'medium'}></ArtCard>
+                </PreviewCardContainer>
+
+                <PartnershipHeader> Sponsorzy: </PartnershipHeader>
+                <Slider>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
+                    <ChampionCard></ChampionCard>
                 </Slider>
 
-            </ExtendedAdjustingSection>
-        </Wrapper>
+            </StyledBasicSection>
+            <OurTeam></OurTeam>
+            <ArtistsPage></ArtistsPage>
+            <ArtistsDetailsPage></ArtistsDetailsPage>
+        </>
     )
 }
 
@@ -73,6 +128,10 @@ const ExtendedAdjustingSection = styled(AdjustingSection)`
   color: #ffffff;
   flex-direction: column;
   position: relative;
+`
+
+const StyledBasicSection = styled(BasicSection)`
+  margin-top: 20px;  
 `
 
 const EvenColumnsWrapper = styled.div`
@@ -103,6 +162,13 @@ const RightColumn = styled.div`
   flex-direction: column;
 `
 
+const Header = styled(UiHeader1)`
+`
+
+const LastAuctionRecordsHeader = styled(UiHeader3)`
+  margin: 450px 0 24px 0;
+`
+
 const NextEvent = styled.div`
   height: 22px;
   font-style: normal;
@@ -127,21 +193,73 @@ const SpotifyWidget = styled.div`
   padding: 1rem 0 0 0;
 
   @media only screen and (${Layout.laptop}) {
-    //padding: 2rem 0;
     padding: 0;
   }
 `
 
-const Header = styled.h1`
-  font-size: 3rem;
-  margin: 0;
-  box-sizing: border-box;
+const LastSalesHeader = styled(UiHeader3)`
+    margin-top: 200px;
+
 `
 
-const Header3 = styled.h3`
-  font-size: 2rem;
-  margin: 450px 0 24px 0;
-  box-sizing: border-box;
+const LastSalesCardContainer = styled.div`
+  display: grid;
+  //grid-template-columns: repeat(auto-fit, 420px);
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 10px;
+  row-gap: 80px;
+  place-items: center;
+  
+  @media only screen and (min-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  @media only screen and (min-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    place-items: flex-start
+  }
 `
+
+const FeaturedArtistsHeader = styled(UiHeader3)`
+  margin-top: 150px;
+`
+
+const PreviewHeader = styled(UiHeader3)`
+  margin-top: 150px;
+`
+
+const PreviewCardContainer = styled.div`
+  display: grid;
+  //grid-template-columns: repeat(auto-fit, 420px);
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 10px;
+  row-gap: 80px;
+  place-items: center;
+  
+  
+
+  @media only screen and (min-width: 740px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media only screen and (min-width: 1060px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  @media only screen and (min-width: 1400px) {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 0px;
+    place-items: flex-start
+  }
+`
+
+const PartnershipHeader = styled(UiHeader3)`
+  margin-top: 150px;
+`
+
 
 export default HeroPage;

@@ -44,11 +44,11 @@ export interface StylingConfig {
 }
 
 export const largeCardStyles: StylingConfig = {
-    width: '420px',
+    width: '410px',
     height: '660px',
 
     cardImage: {
-        height: '420px',
+        height: '410px',
     },
 
     cardData: {
@@ -82,11 +82,11 @@ export const largeCardStyles: StylingConfig = {
 }
 
 export const mediumCardStyles: StylingConfig = {
-    width: '320px',
+    width: '300px',
     height: '490px',
 
     cardImage: {
-        height: '320px',
+        height: '300px',
     },
 
     cardData: {

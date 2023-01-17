@@ -7,3 +7,12 @@ export const AdjustingSection = styled.div`
   box-sizing: content-box;
   position: relative;
 `
+
+export const BasicSection = styled(AdjustingSection)`
+  max-width: 1280px;
+  color: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+`
+
+
