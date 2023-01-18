@@ -1,23 +1,22 @@
 import styled from 'styled-components';
 import { BasicSection } from '../../layouts/AdjustingSection/AdjustingSection';
 import AuthorData from '../../layouts/AuthorData';
-const ryba = '/images/heroPage/ryba2.jpg'
+const ryba = '/images/heroPage/ryba2.webp';
 
 const ArtistsDetailsPage = () => {
-
-    return (
-        <Wrapper>
-            <StyledBasicSection>
-                <HeaderBox>
-                    <AvatarBox></AvatarBox>
-                </HeaderBox>
-                <ContentBox>
-                    <AuthorData></AuthorData>
-                </ContentBox>
-            </StyledBasicSection>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <StyledBasicSection>
+        <HeaderBox>
+          <AvatarBox></AvatarBox>
+        </HeaderBox>
+        <ContentBox>
+          <AuthorData></AuthorData>
+        </ContentBox>
+      </StyledBasicSection>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   width: 100%;
@@ -32,18 +31,18 @@ const Wrapper = styled.div`
   background-size: 100% auto;
   background-position: center;
   background-attachment: fixed;
-`
+`;
 
 const StyledBasicSection = styled(BasicSection)`
-  margin-top: 20px;  
-`
+  margin-top: 20px;
+`;
 
 const HeaderBox = styled.div`
   width: 100%;
   height: 200px;
-  background: #34A69E;
+  background: #34a69e;
   position: relative;
-`
+`;
 
 const AvatarBox = styled.div`
   width: 140px;
@@ -53,15 +52,13 @@ const AvatarBox = styled.div`
   position: absolute;
   left: calc(50% - 70px);
   top: 138px;
-`
+`;
 
 const ContentBox = styled.div`
   width: 100%;
   background: #000000aa;
   min-height: 1000px;
   margin-top: 20px;
-`
-
+`;
 
 export default ArtistsDetailsPage;
-

@@ -14,7 +14,7 @@ import OurTeam from './components/OurTeam/OurTeam';
 import ArtistsPage from '../ArtistsPage';
 import ArtistsDetailsPage from '../ArtistsDetailsPage';
 
-const bg = '/images/heroPage/bg.png';
+const bg = '/images/heroPage/bg.webp';
 
 const HeroPage = () => {
   return (
