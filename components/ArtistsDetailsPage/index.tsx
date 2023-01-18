@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BasicSection } from '../../layouts/AdjustingSection/AdjustingSection';
 import AuthorData from '../../layouts/AuthorData';
-const ryba = '/images/heroPage/ryba2.webp';
+import ryba from '../../public/images/heroPage/ryba2.webp';
 
 const ArtistsDetailsPage = () => {
   return (
@@ -22,12 +22,12 @@ const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: url('${ryba}'), #000000aa;
+  background: url('${ryba.src}'), #000000aa;
   background-blend-mode: multiply;
   box-sizing: border-box;
   padding: 220px 0 300px 0;
 
-  background-image: url('${ryba}');
+  background-image: url('${ryba.src}');
   background-size: 100% auto;
   background-position: center;
   background-attachment: fixed;

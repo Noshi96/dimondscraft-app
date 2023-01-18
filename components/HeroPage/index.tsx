@@ -13,8 +13,7 @@ import ChampionCard from '../../layouts/ChampionCard';
 import OurTeam from './components/OurTeam/OurTeam';
 import ArtistsPage from '../ArtistsPage';
 import ArtistsDetailsPage from '../ArtistsDetailsPage';
-
-const bg = '/images/heroPage/bg.webp';
+import bg from '../../public/images/heroPage/bg.webp';
 
 const HeroPage = () => {
   return (
@@ -112,12 +111,12 @@ const Wrapper = styled.section`
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: url('${bg}'), #000000aa;
+  background: url('${bg.src}'), #000000aa;
   background-blend-mode: multiply;
   box-sizing: border-box;
   padding: 0 0 300px 0;
   
-  background-image: url('${bg}');
+  background-image: url('${bg.src}');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
