@@ -4,8 +4,7 @@ import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSectio
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import HeroPage from '../../components/HeroPage';
-
-const egera = '/images/sponsors/egera.svg';
+// import egera from '../../public/images/sponsors/egera.svg'; // also work
 
 interface Props {
   sectionTitle: string;
@@ -25,14 +24,15 @@ const importAll = (r: __WebpackModuleApi.RequireContext) => {
 };
 
 const sponsors = (importAll(
-  require.context(`../../public/images/sponsors/`, false, /\.(webp)$/)
+  require.context(`../../public/images/sponsors/`, false, /\.(svg)$/)
 ) as any[]).map((imageSrc) => {
-  const bgColor = (
-    imageSrc.default.src.split('backgroundcolor')[1] || ''
-  ).substring(0, 6);
+  // const bgColor = (
+  //   imageSrc.default.src.split('backgroundcolor')[1] || ''
+  // ).substring(0, 6);
+  const image = imageSrc.default;
   return {
-    imageSrc,
-    bgColor: bgColor ? `#${bgColor}` : 'transparent',
+    imageSrc: image,
+    bgColor: 'bgColor' ? `#${'bgColor'}` : 'transparent',
   } as Sponsor;
 });
 
@@ -65,8 +65,8 @@ const PartnershipSection = ({ sectionTitle }: Props) => {
           <SectionTitle>{sectionTitle}</SectionTitle>
           <ImageList ref={eventRef}>
             {sponsorsList.map(({ imageSrc, bgColor }: Sponsor) => (
-              <SponsorImgWrapper bgColor={bgColor} key={imageSrc.default.src}>
-                <SponsorImg src={egera} alt={'imageSrc.default.src'} />
+              <SponsorImgWrapper bgColor={bgColor} key={imageSrc}>
+                <SponsorImg src={imageSrc} alt={imageSrc} />
               </SponsorImgWrapper>
             ))}
           </ImageList>
