@@ -5,15 +5,14 @@ import NavigationMenu from './components/NavigationMenu';
 import { Layout } from '../../styles/breakpoints';
 import InstagramLogo from '../../public/images/media/instagramLogo.webp';
 import FacebookLogo from '../../public/images/media/fb_icon_325x325.webp';
+import openseaLogo from '../../public/images/media/opensea.webp';
+import twitterLogo from '../../public/images/media/twitter.webp';
+import oneBidLogo from '../../public/images/media/onebidlogo.webp';
+import spotifyLogo from '../../public/images/media/spotify.webp';
 import { MediaIcon } from './models/MediaIcon';
 import { AdjustingSection } from '../../layouts/AdjustingSection/AdjustingSection';
 import ParticlesBackground from '../../layouts/Particles';
 import { useCustomParticleOptions } from '../../hooks/useCustomParticleOptions';
-
-const openseaLogo = '/images/media/opensea.png';
-const twitterLogo = '/images/media/twitter.png';
-const oneBidLogo = '/images/media/onebidlogo.png';
-const spotifyLogo = '/images/media/spotify.png';
 
 const Footer = () => {
   const options = useCustomParticleOptions();
@@ -25,7 +24,7 @@ const Footer = () => {
       altText: 'FacebookLogo',
     },
     {
-      path: twitterLogo,
+      path: twitterLogo.src,
       redirectionLink: 'https://twitter.com/diamondsct',
       altText: 'TwitterLogo',
     },
@@ -37,18 +36,18 @@ const Footer = () => {
   ];
   const additionalMedia: MediaIcon[] = [
     {
-      path: openseaLogo,
+      path: openseaLogo.src,
       redirectionLink: 'https://opensea.io/DCFT/',
       altText: 'OpenseaLogo',
     },
     {
-      path: spotifyLogo,
+      path: spotifyLogo.src,
       redirectionLink:
         'https://open.spotify.com/show/33bLiSdONLfzUd8oNMYLTn?si=5dd99fa2d0744767',
       altText: 'SpotifyLogo',
     },
     {
-      path: oneBidLogo,
+      path: oneBidLogo.src,
       redirectionLink: 'https://onebid.pl/pl/auction/-/3391',
       altText: 'OneBidLogo',
     },
