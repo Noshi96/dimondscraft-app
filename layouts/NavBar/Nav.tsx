@@ -52,6 +52,14 @@ const Nav = () => {
       scrollHook: 'entryPageStartHook',
     },
     {
+      key: 'events',
+      destination: '/events',
+      path: asPath,
+      pathto: '/events',
+      nameOfPage: 'Events',
+      scrollHook: 'entryPageStartHook',
+    },
+    {
       key: 'contact',
       destination: '/contact',
       path: asPath,

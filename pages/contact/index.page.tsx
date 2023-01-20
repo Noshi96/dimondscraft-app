@@ -1,7 +1,7 @@
 import ContactComponent from '../../components/ContactComponent';
 import RootComponent from '../../components/RootComponent';
 
-const Gallery = () => {
+const Contact = () => {
   return (
     <RootComponent>
       <ContactComponent />
@@ -9,4 +9,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Contact;

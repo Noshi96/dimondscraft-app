@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import logoImg from '../../public/images/logoforge.webp';
 
-const logoImg = '/images/logoforge.png';
 const Logo = () => {
   return (
     <Wrapper>
       <Link href='/'>
-        <Image src={logoImg} loading='lazy' alt='logo_diamondscraft' />
+        <Image src={logoImg.src} loading='lazy' alt='logo_diamondscraft' />
       </Link>
     </Wrapper>
   );
