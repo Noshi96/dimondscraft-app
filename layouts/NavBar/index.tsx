@@ -14,6 +14,7 @@ const NavBar = () => {
 
   return (
     <Wrapper showState={show}>
+      <IncomingEvent> 19/01/23 <b>NEXT EVENT!</b> GET YOUR <b> NFT TICKET </b> HERE! </IncomingEvent>
       <PageWrapper>
         <Logo />
         <Drawer />
@@ -24,7 +25,6 @@ const NavBar = () => {
 
 const Wrapper = styled.header<ScrollTypes>`
   height: 5rem;
-  display: flex;
   position: fixed;
   top: 0;
   width: 100%;
@@ -48,5 +48,18 @@ const Wrapper = styled.header<ScrollTypes>`
     background-color: transparent;
   }
 `
+
+const IncomingEvent = styled.div`
+  width: 100%;
+  background: #ffff00;
+  color: #000000;
+  min-height: 28px;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 6px 0;
+`
+
 
 export default NavBar

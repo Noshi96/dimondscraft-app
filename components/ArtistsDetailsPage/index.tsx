@@ -1,18 +1,31 @@
 import styled from 'styled-components';
 import { BasicSection } from '../../layouts/AdjustingSection/AdjustingSection';
 import AuthorData from '../../layouts/AuthorData';
+import ArtCard from '../../layouts/ArtCard';
+import { Layout } from '../../styles/breakpoints';
+import ArtDetails from '../../features/ArtDetails';
 const ryba = '/images/heroPage/ryba2.jpg'
 
 const ArtistsDetailsPage = () => {
 
     return (
         <Wrapper>
+            <ArtDetails></ArtDetails>
             <StyledBasicSection>
                 <HeaderBox>
                     <AvatarBox></AvatarBox>
                 </HeaderBox>
                 <ContentBox>
-                    <AuthorData></AuthorData>
+                    <AuthorDataContainer>
+                        <AuthorData></AuthorData>
+                    </AuthorDataContainer>
+                    <AuthorsWorkCardsContainer>
+                        <ArtCard size={'medium'}></ArtCard>
+                        <ArtCard size={'medium'}></ArtCard>
+                        <ArtCard size={'medium'}></ArtCard>
+                        <ArtCard size={'medium'}></ArtCard>
+                        <ArtCard size={'medium'}></ArtCard>
+                    </AuthorsWorkCardsContainer>
                 </ContentBox>
             </StyledBasicSection>
         </Wrapper>
@@ -60,6 +73,37 @@ const ContentBox = styled.div`
   background: #000000aa;
   min-height: 1000px;
   margin-top: 20px;
+`
+
+const AuthorDataContainer = styled.div`
+  box-sizing: border-box;
+  padding: 90px 20px 18px 20px;
+
+  @media only screen and (${Layout.laptop}) {
+    padding: 2rem 2rem;
+  }
+`
+
+const AuthorsWorkCardsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 60px;
+  row-gap: 80px;
+  place-items: center;
+  margin-top: 70px;
+  box-sizing: border-box;
+  padding: 0 20px 70px;
+
+  @media only screen and (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 80px;
+    column-gap: 40px;
+    place-items: center
+  }
 `
 
 

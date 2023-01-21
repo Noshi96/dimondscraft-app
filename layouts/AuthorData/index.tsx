@@ -57,25 +57,13 @@ const AuthorData = () => {
                 headerText={''}
                 media={baseMedia}
             />
-            <AuthorsWorkCardsContainer>
-                <ArtCard size={'medium'}></ArtCard>
-                <ArtCard size={'medium'}></ArtCard>
-                <ArtCard size={'medium'}></ArtCard>
-                <ArtCard size={'medium'}></ArtCard>
-                <ArtCard size={'medium'}></ArtCard>
-            </AuthorsWorkCardsContainer>
         </ComponentWrapper>
     )
 
 }
 
 const ComponentWrapper = styled.div`
-  box-sizing: border-box;
-  padding: 90px 20px 18px 20px;
-
-  @media only screen and (${Layout.laptop}) {
-    padding: 24px 20px;
-  }
+  padding: 0.5rem;  
 `
 
 const Header1 = styled.div`
@@ -86,6 +74,7 @@ const Header1 = styled.div`
 
   @media only screen and (${Layout.laptop}) {
     font-size: 3rem;
+    line-height: 3rem;
   }
 `
 
@@ -98,33 +87,8 @@ const AuthorName = styled.div`
 const AuthorDesc = styled.div`
   font-size: 1rem;
   line-height: 1rem;
-  margin-top: 40px;
+  margin-top: 30px;
   color: #ffffffaa;
-`
-
-const AuthorsWorkCardsContainer = styled.div`
-  display: grid;
-  //grid-template-columns: repeat(auto-fit, 300px);
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: 60px;
-  row-gap: 80px;
-  place-items: center;
-  margin-top: 100px;
-  box-sizing: border-box;
-  padding-bottom: 40px;
-  
-  
-
-  @media only screen and (min-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media only screen and (min-width: 1400px) {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 80px;
-    column-gap: 40px;
-    place-items: center
-  }
 `
 
 export default AuthorData
