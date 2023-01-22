@@ -13,6 +13,8 @@ interface Props {
 export default function Home({ eventList }: Props) {
   const dispatch = useDispatch();
   const statusSelector = useSelector(selectStatus) as string;
+  console.log(statusSelector);
+  console.log(eventList);
   if (statusSelector === 'empty') {
     dispatch(updateEventsData(eventList));
   }
