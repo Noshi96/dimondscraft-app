@@ -48,7 +48,7 @@ const Nav = () => {
       destination: '/artistDetails',
       path: asPath,
       pathto: '/artistDetails',
-      nameOfPage: 'dupa',
+      nameOfPage: 'Prace artysty',
       scrollHook: 'entryPageStartHook',
     },
     {
