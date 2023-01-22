@@ -14,8 +14,13 @@ import OurTeam from './components/OurTeam/OurTeam';
 import MediaSection from '../../features/MediaSection';
 import UiButton from '../../layouts/UiButton';
 import bg from '../../public/images/heroPage/bg.webp';
+import { getEvents } from '../../utils/getEventData';
 
 const HeroPage = () => {
+  const getEventsHandler = async () => {
+    const events = await getEvents();
+    console.log(events);
+  };
   return (
     <>
       <Wrapper>
@@ -44,7 +49,10 @@ const HeroPage = () => {
                 <NextEventCounter> 00 DNI : 22 H :22M:23S </NextEventCounter>
               </NextEvent>
 
-              <ColumnRightButton variant='btnPrimary'>
+              <ColumnRightButton
+                variant='btnPrimary'
+                onClick={getEventsHandler}
+              >
                 {'Dołącz do aukcji'}
               </ColumnRightButton>
               <ColumnRightButton variant='btnPrimary'>
