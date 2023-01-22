@@ -30,7 +30,7 @@ const Header = styled.h3`
   width: 100%;
 
   @media only screen and (${Layout.tablet}) {
-    margin: 8rem 0 1.5rem 0;
+    margin: 14rem 0 1.5rem 0;
   }
 `
 

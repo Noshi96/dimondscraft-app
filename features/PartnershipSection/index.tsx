@@ -78,7 +78,6 @@ const PartnershipSection = ({ sectionTitle }: Props) => {
 
 const FullWidthContainer = styled.div`
   width: 100%;
-  background-image: linear-gradient(#080924, #000000);
   padding-bottom: 5rem;
 `;
 

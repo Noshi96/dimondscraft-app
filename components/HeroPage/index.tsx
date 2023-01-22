@@ -11,8 +11,8 @@ import ArtCard from '../../layouts/ArtCard';
 import { UiHeader1, UiHeader3 } from '../../layouts/Headers';
 import ChampionCard from '../../layouts/ChampionCard';
 import OurTeam from './components/OurTeam/OurTeam';
-import ArtistsPage from '../ArtistsPage';
-import ArtistsDetailsPage from '../ArtistsDetailsPage';
+import MediaSection from '../../features/MediaSection';
+import UiButton from '../../layouts/UiButton';
 import bg from '../../public/images/heroPage/bg.webp';
 
 const HeroPage = () => {
@@ -34,19 +34,29 @@ const HeroPage = () => {
                   title='NFTpodcast'
                 ></iframe>
               </SpotifyWidget>
+              <ColumnLeftBtn variant='btnPrimary'>
+                Zobacz nasze prace
+              </ColumnLeftBtn>
             </LeftColumn>
             <RightColumn>
-              <NextEvent> @The genesis </NextEvent>
-              <NextEventCounter> 00 DNI : 22 H :22M:23S </NextEventCounter>
-              <button> 123123123 </button>
-              <button> 123123123 </button>
+              <NextEvent>
+                @The genesis
+                <NextEventCounter> 00 DNI : 22 H :22M:23S </NextEventCounter>
+              </NextEvent>
+
+              <ColumnRightButton variant='btnPrimary'>
+                {'Dołącz do aukcji'}
+              </ColumnRightButton>
+              <ColumnRightButton variant='btnPrimary'>
+                {'Zgłoś obiek na aukcję'}
+              </ColumnRightButton>
             </RightColumn>
           </EvenColumnsWrapper>
         </ExtendedAdjustingSection>
         <ExtendedAdjustingSection>
           <LastAuctionRecordsHeader>
             {' '}
-            Nasze najnowsze aukcje:{' '}
+            Najnowsze aukcje:{' '}
           </LastAuctionRecordsHeader>
           <Slider>
             <CollectionBadge></CollectionBadge>
@@ -101,8 +111,9 @@ const HeroPage = () => {
         </Slider>
       </StyledBasicSection>
       <OurTeam></OurTeam>
-      <ArtistsPage></ArtistsPage>
-      <ArtistsDetailsPage></ArtistsDetailsPage>
+      <StyledBasicSection>
+        <MediaSection></MediaSection>
+      </StyledBasicSection>
     </>
   );
 };
@@ -151,16 +162,25 @@ const EvenColumnsWrapper = styled.div`
 
 const LeftColumn = styled.div`
   box-sizing: border-box;
-  border: 1px solid crimson;
   display: flex;
   flex-direction: column;
 `;
 
+const ColumnLeftBtn = styled(UiButton)`
+  margin-top: 28px;
+`;
+
 const RightColumn = styled.div`
   box-sizing: border-box;
-  border: 1px solid crimson;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 24px;
+`;
+
+const ColumnRightButton = styled(UiButton)`
+  margin-bottom: 28px;
 `;
 
 const Header = styled(UiHeader1)``;
@@ -170,15 +190,15 @@ const LastAuctionRecordsHeader = styled(UiHeader3)`
 `;
 
 const NextEvent = styled.div`
-  height: 22px;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 33px;
+  text-align: start;
+  margin-bottom: 22px;
 `;
 
 const NextEventCounter = styled.div`
-  height: 22px;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;

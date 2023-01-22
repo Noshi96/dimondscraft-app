@@ -36,6 +36,22 @@ const Nav = () => {
       scrollHook: 'entryPageStartHook',
     },
     {
+      key: 'artists',
+      destination: '/artists',
+      path: asPath,
+      pathto: '/artists',
+      nameOfPage: 'Nasi artyści',
+      scrollHook: 'entryPageStartHook',
+    },
+    {
+      key: 'artistDetails',
+      destination: '/artistDetails',
+      path: asPath,
+      pathto: '/artistDetails',
+      nameOfPage: 'dupa',
+      scrollHook: 'entryPageStartHook',
+    },
+    {
       key: 'about',
       destination: '/about',
       path: asPath,

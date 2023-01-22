@@ -32,7 +32,7 @@ const Container = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   color: #ffffff;
-  margin-bottom: 2.5rem;
+  //margin-bottom: 2.5rem;
 `
 
 const LinkIconsWrapper = styled.div`
