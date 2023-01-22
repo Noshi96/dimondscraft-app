@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { AdjustingSection } from '../layouts/AdjustingSection/AdjustingSection';
 import { Layout } from '../styles/breakpoints';
+import detail from '../public/images/contact3.webp';
 
-const Detail = '/images/contact3.png';
 const ContactComponent = () => {
   return (
     <FullWidthContainer>
@@ -21,7 +21,7 @@ const ContactComponent = () => {
             538 458 272{' '}
           </CallablePhoneNumber>{' '}
         </DataText>
-        <Image src={Detail}></Image>
+        <Image src={detail.src}></Image>
       </ExtendedAdjustingSection>
     </FullWidthContainer>
   );
