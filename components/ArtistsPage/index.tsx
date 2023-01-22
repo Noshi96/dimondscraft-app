@@ -6,7 +6,6 @@ import CollectionBadge from '../../layouts/CollectionBadge';
 import ArtCard from '../../layouts/ArtCard';
 
 const ArtistsPage = () => {
-
     return (
         <StyledBasicSection>
             <ArtistsHeader> Wszyscy Artyści: </ArtistsHeader>
@@ -59,6 +58,8 @@ const ArtistsPage = () => {
 
 const StyledBasicSection = styled(BasicSection)`
   margin-top: 20px;  
+  box-sizing: border-box;
+  padding-bottom: 100px;
 `
 
 const ArtistsHeader = styled(UiHeader3)`

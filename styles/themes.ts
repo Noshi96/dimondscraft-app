@@ -1,4 +1,27 @@
+import { css } from 'styled-components';
+
+const btnPrimary = css`
+  box-sizing: border-box;
+  background: #000000;
+  color: #ffffff;
+  padding: 0.5rem 0 0.5rem 0;
+  
+  &:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+`;
+
+const btnSecondary = css`
+  box-sizing: border-box;
+  background: black;
+  color: white;
+  padding: 0;
+`;
+
 export const theme = {
+  btnPrimary,
+  btnSecondary,
   color: {
     white: '#ffffff',
     black: '#000000',
@@ -26,3 +49,7 @@ export const theme = {
     greenButtonHover: '#20b11f',
   },
 }
+
+
+
+
