@@ -20,6 +20,7 @@ const HeroPage = () => {
   const getEventsHandler = async () => {
     const events = await getEvents();
     console.log(events);
+    console.log(process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN);
   };
   return (
     <>
