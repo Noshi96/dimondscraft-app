@@ -1,15 +1,16 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from '@firebase/firestore';
+import { initializeFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+  apiKey: 'AIzaSyASRVK_5Kbu0MPAMwFNA_eHtIK9a3U_LnQ',
+  authDomain: 'diamondscraft-dev.firebaseapp.com',
+  projectId: 'diamondscraft-dev',
+  storageBucket: 'diamondscraft-dev.appspot.com',
+  messagingSenderId: '714055447773',
+  appId: '1:714055447773:web:4b46197c471c546aded734',
+  measurementId: 'G-P82LX1TN1D',
 };
-
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+export const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+});

@@ -25,9 +25,6 @@ const Slider = ({ children }: SliderProps) => {
   useLayoutEffect(() => {
     setSliderWidth(sliderRef?.current?.offsetWidth || 0);
     setSliderContentWidth(sliderContentRef?.current?.offsetWidth || 0);
-
-    // console.log(sliderContentRef?.current)
-    // console.log(sliderContentRef?.current?.offsetLeft)
   }, []);
 
   const changeWidth = (event: React.ChangeEvent<HTMLInputElement>) => {
