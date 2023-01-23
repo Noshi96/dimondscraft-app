@@ -4,6 +4,7 @@ import { getEvents } from '../utils/getEventData';
 import { FetchedEventType } from '../store/model';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectStatus, updateEventsData } from '../store/reducers';
+import { useRouter } from 'next/router';
 
 interface FireConfig {
   apiKey: string | undefined;
@@ -21,6 +22,12 @@ interface Props {
 }
 
 export default function Home({ eventList, firebaseConfig }: Props) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <h1>Loading...</h1>;
+  }
+
   const dispatch = useDispatch();
   const statusSelector = useSelector(selectStatus) as string;
   if (statusSelector === 'empty') {
