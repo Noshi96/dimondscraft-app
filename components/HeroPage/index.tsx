@@ -14,21 +14,10 @@ import OurTeam from './components/OurTeam/OurTeam';
 import MediaSection from '../../features/MediaSection';
 import UiButton from '../../layouts/UiButton';
 import bg from '../../public/images/heroPage/bg.webp';
-import getConfig from 'next/config';
 
 const HeroPage = () => {
-  const { publicRuntimeConfig } = getConfig();
-  const firebaseConfig = {
-    apiKey: publicRuntimeConfig.apiKey,
-    authDomain: publicRuntimeConfig.authDomain,
-    projectId: publicRuntimeConfig.projectId,
-    storageBucket: publicRuntimeConfig.storageBucket,
-    messagingSenderId: publicRuntimeConfig.messagingSenderId,
-    appId: publicRuntimeConfig.appId,
-    measurementId: publicRuntimeConfig.measurementId,
-  };
   const clickHandler = () => {
-    console.log(firebaseConfig);
+    console.log();
   };
   return (
     <>
