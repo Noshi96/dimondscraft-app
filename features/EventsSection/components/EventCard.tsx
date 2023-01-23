@@ -21,12 +21,12 @@ const EventCard = () => {
 
 const CardAndButtonContainer = styled.div`
   position: relative;
-  width: 100%;
+  width: 290px;
   height: 430px;
   background: transparent;
-  @media only screen and (min-width: 460px) {
+  @media only screen and (min-width: 992px) {
     position: absolute;
-    width: 290px;
+
     bottom: 0;
     right: 5rem;
   }
