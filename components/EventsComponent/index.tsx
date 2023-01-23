@@ -12,7 +12,10 @@ const EventsComponent = ({ title }: Props) => {
     <StyledBasicSection>
       <HeaderBox>
         <SectionTitle>{title}</SectionTitle>
-        <Sorting>Sorting comp</Sorting>
+        <Sorting>
+          <p>Sortowanie</p>
+          <p>Od najnowszych</p>
+        </Sorting>
       </HeaderBox>
       <ContentBox>
         <EventsSection />
@@ -22,19 +25,22 @@ const EventsComponent = ({ title }: Props) => {
 };
 
 const StyledBasicSection = styled(BasicSection)`
-  margin-top: 20px;
+  margin-top: 8rem;
 `;
 
 const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 200px;
-  background: #34a69e;
+  height: 100%;
   position: relative;
 `;
 
-const SectionTitle = styled.p``;
+const SectionTitle = styled.p`
+  font-size: 2rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+`;
 
 const Sorting = styled.div``;
 

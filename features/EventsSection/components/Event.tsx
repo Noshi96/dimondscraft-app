@@ -18,10 +18,11 @@ const EventContainer = styled.div`
   gap: 1rem;
   flex-direction: column;
   width: 100%;
-  height: 700px;
+  height: auto;
   position: relative;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 992px) {
+    height: 700px;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0;
@@ -32,11 +33,11 @@ const AvailabilityInformation = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25rem;
-  height: 6rem;
+  width: 100%;
+  height: 3rem;
   background: #000000;
   color: #ffff00;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   box-sizing: border-box;
   border-top: 1px solid #e5e5e5;
@@ -44,18 +45,25 @@ const AvailabilityInformation = styled.div`
   border-right: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 992px) {
+    width: 25rem;
+    height: 6rem;
     border-top: 0px solid transparent;
+    font-size: 40px;
   }
 `;
 
 const EventImage = styled.div`
   width: 100%;
   background: #0e7ebc;
-  height: 600px;
+  height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
   border: 2px solid #e5e5e5;
+
+  @media only screen and (min-width: 992px) {
+    height: 600px;
+  }
 `;
 
 export default Event;
