@@ -16,9 +16,6 @@ import UiButton from '../../layouts/UiButton';
 import bg from '../../public/images/heroPage/bg.webp';
 
 const HeroPage = () => {
-  const clickHandler = () => {
-    console.log();
-  };
   return (
     <>
       <Wrapper>
@@ -47,7 +44,7 @@ const HeroPage = () => {
                 <NextEventCounter> 00 DNI : 22 H :22M:23S </NextEventCounter>
               </NextEvent>
 
-              <ColumnRightButton variant='btnPrimary' onClick={clickHandler}>
+              <ColumnRightButton variant='btnPrimary'>
                 {'Dołącz do aukcji'}
               </ColumnRightButton>
               <ColumnRightButton variant='btnPrimary'>

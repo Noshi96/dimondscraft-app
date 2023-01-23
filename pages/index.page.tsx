@@ -25,7 +25,7 @@ export default function Home({ eventList }: Props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const events = (await getEvents()) as FetchedEventType[];
 
   if (!events) {
