@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   AnimationProps,
   fadeInAnimationTwo,
-} from '../../ErrorSection/animations';
+} from '../../RobotSection/animations';
 
 interface Props {
   imagePath: any;
