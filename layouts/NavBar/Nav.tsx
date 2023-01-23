@@ -36,6 +36,14 @@ const Nav = () => {
       scrollHook: 'entryPageStartHook',
     },
     {
+      key: 'robot',
+      destination: '/robot',
+      path: asPath,
+      pathto: '/robot',
+      nameOfPage: 'Robot',
+      scrollHook: 'entryPageStartHook',
+    },
+    {
       key: 'artists',
       destination: '/artists',
       path: asPath,
