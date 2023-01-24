@@ -14,8 +14,41 @@ import OurTeam from './components/OurTeam/OurTeam';
 import MediaSection from '../../features/MediaSection';
 import UiButton from '../../layouts/UiButton';
 import bg from '../../public/images/heroPage/bg.webp';
+import yoda from '../../public/images/drnico/yoda.webp';
+import rer from '../../public/images/drnico/rer.webp';
+import kotwicz from '../../public/images/drnico/kotwicz.webp';
+import karaoke from '../../public/images/drnico/karaoke.webp';
+import han from '../../public/images/drnico/han.webp';
 
 const HeroPage = () => {
+  const collectionBadge = [
+    {
+      src: yoda.src,
+      alt: 'art1',
+      price: '200,000',
+    },
+    {
+      src: rer.src,
+      alt: 'art2',
+      price: '250,000',
+    },
+    {
+      src: kotwicz.src,
+      alt: 'art3',
+      price: '320,000',
+    },
+    {
+      src: karaoke.src,
+      alt: 'art4',
+      price: '420,000',
+    },
+    {
+      src: han.src,
+      alt: 'art5',
+      price: '500,000',
+    },
+  ];
+
   return (
     <>
       <Wrapper>
@@ -59,11 +92,16 @@ const HeroPage = () => {
             Najnowsze aukcje:{' '}
           </LastAuctionRecordsHeader>
           <Slider>
-            <CollectionBadge></CollectionBadge>
-            <CollectionBadge></CollectionBadge>
-            <CollectionBadge></CollectionBadge>
-            <CollectionBadge></CollectionBadge>
-            <CollectionBadge></CollectionBadge>
+            {collectionBadge.map(({ src, alt, price }, index) => {
+              return (
+                <CollectionBadge
+                  src={src}
+                  alt={alt}
+                  price={price}
+                  index={index}
+                />
+              );
+            })}
           </Slider>
         </ExtendedAdjustingSection>
       </Wrapper>
