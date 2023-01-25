@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 interface Props {
-  src: string;
-  alt: string;
-  index: number;
-  price: string;
+  src?: string;
+  alt?: string;
+  index?: number;
+  price?: string;
 }
 
 const CollectionBadge = ({ src, alt, index, price }: Props) => {
   return (
     <BadgeContainer>
-      <IndexText> {index + 1} </IndexText>
+      <IndexText> {(index || 0) + 1} </IndexText>
       <Image src={src} alt={alt} />
       <DataContainer>
         <BaseText> @Dr Nico </BaseText>
